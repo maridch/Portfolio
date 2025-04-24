@@ -11,9 +11,12 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: about.qmd
-      text: Project 1
-      - href: 
+      - text: Portfolio
+        menu:
+          - href: about.qmd
+            text: Overview
+
+
 
 format:
   html:
