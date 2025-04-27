@@ -3,3 +3,9 @@ title: "About"
 ---
 
 About this site
+This does not want to work
+
+```{r}
+x= 1+5
+x
+```
