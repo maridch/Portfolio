@@ -185,20 +185,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Loading required package: ggplot2</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.2.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: lattice</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rpart)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caretEnsemble)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'readr' was built under R version 4.2.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'dplyr' was built under R version 4.2.3</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rpart)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caretEnsemble)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
@@ -213,10 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 ✖ purrr::lift()   masks caret::lift()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fastshap)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'fastshap' was built under R version 4.2.3</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fastshap)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'fastshap'
@@ -225,8 +213,8 @@ The following object is masked from 'package:dplyr':
 
     explain</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'data.table'
@@ -244,7 +232,7 @@ The following object is masked from 'package:purrr':
 
     transpose</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mltools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mltools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'mltools'
@@ -253,10 +241,7 @@ The following object is masked from 'package:tidyr':
 
     replace_na</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MLmetrics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'MLmetrics' was built under R version 4.2.3</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MLmetrics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'MLmetrics'
@@ -269,9 +254,9 @@ The following object is masked from 'package:base':
 
     Recall</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(conflicted)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(parallel)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doParallel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(conflicted)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(parallel)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doParallel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: foreach
 
@@ -283,25 +268,25 @@ The following objects are masked from 'package:purrr':
 
 Loading required package: iterators</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">conflicts_prefer</span>(dplyr<span class="sc">::</span>filter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">conflicts_prefer</span>(dplyr<span class="sc">::</span>filter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>[conflicted] Will prefer dplyr::filter over any other package.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check out individual models</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>get_best_result <span class="ot">=</span> <span class="cf">function</span>(caret_fit) {</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  best <span class="ot">=</span> <span class="fu">which</span>(<span class="fu">rownames</span>(caret_fit<span class="sc">$</span>results) <span class="sc">==</span> <span class="fu">rownames</span>(caret_fit<span class="sc">$</span>bestTune))</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  best_result <span class="ot">=</span> caret_fit<span class="sc">$</span>results[best, ]</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames</span>(best_result) <span class="ot">=</span> <span class="cn">NULL</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  best_result</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co"># set WD and load data</span></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check out individual models</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>get_best_result <span class="ot">=</span> <span class="cf">function</span>(caret_fit) {</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  best <span class="ot">=</span> <span class="fu">which</span>(<span class="fu">rownames</span>(caret_fit<span class="sc">$</span>results) <span class="sc">==</span> <span class="fu">rownames</span>(caret_fit<span class="sc">$</span>bestTune))</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  best_result <span class="ot">=</span> caret_fit<span class="sc">$</span>results[best, ]</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames</span>(best_result) <span class="ot">=</span> <span class="cn">NULL</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  best_result</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># set WD and load data</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>here() starts at /Users/marynaridchenko/Documents/Data Science/Portfolio/portfolio</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>ProjectData <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"DataScience_Data.xlsx"</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ProjectData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>ProjectData <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"DataScience_Data.xlsx"</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ProjectData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Participant"     "Complex"         "Simple"          "L2"             
  [5] "SRT"             "Declearn"        "MLAT"            "DM"             
@@ -309,7 +294,7 @@ Loading required package: iterators</code></pre>
 [13] "BAARS"           "ADHD"            "PHQ"             "Sex"            
 [17] "Age"             "SpokenLanguages" "Education"      </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ProjectData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ProjectData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Participant      Complex           Simple             L2        
  Min.   :4201   Min.   :0.0000   Min.   :0.1700   Min.   :0.2200  
@@ -352,7 +337,7 @@ Loading required package: iterators</code></pre>
  Max.   :38.00   Max.   :5.000   Max.   :19.00  
                                                 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ProjectData<span class="sc">$</span>BAARS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ProjectData<span class="sc">$</span>BAARS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -360,24 +345,24 @@ Loading required package: iterators</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#39+ for diagnosis</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Sample Size</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>ProjectData <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#39+ for diagnosis</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Sample Size</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>ProjectData <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
       n
   &lt;int&gt;
 1   153</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="do">########################################################################################</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Question 1: What factors best predict the ADHD diagnosis? </span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="do">########################################################################################</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Variables to keep</span></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>ProjectData.K<span class="ot">&lt;-</span>ProjectData <span class="sc">%&gt;%</span> <span class="fu">select</span>(Participant, L2, SRT, DM, WM, BAARS, ADHD, PHQ, Sex, Age, SpokenLanguages, Education)</span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ProjectData.K)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="do">########################################################################################</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Question 1: What factors best predict the ADHD diagnosis? </span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="do">########################################################################################</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Variables to keep</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>ProjectData.K<span class="ot">&lt;-</span>ProjectData <span class="sc">%&gt;%</span> <span class="fu">select</span>(Participant, L2, SRT, DM, WM, BAARS, ADHD, PHQ, Sex, Age, SpokenLanguages, Education)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ProjectData.K)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Participant         L2              SRT                DM           
  Min.   :4201   Min.   :0.2200   Min.   :-0.2000   Min.   :-2.489000  
@@ -401,408 +386,254 @@ Loading required package: iterators</code></pre>
  3rd Qu.:1.0000   3rd Qu.:20.00   3rd Qu.:3.000   3rd Qu.:15.00  
  Max.   :2.0000   Max.   :38.00   Max.   :5.000   Max.   :19.00  </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>ProjectData.K<span class="sc">$</span>Participant <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(ProjectData.K<span class="sc">$</span>Participant)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>ProjectData.K<span class="sc">$</span>ADHD[ProjectData.K<span class="sc">$</span>ADHD <span class="sc">==</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"adhd"</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>ProjectData.K<span class="sc">$</span>ADHD[ProjectData.K<span class="sc">$</span>ADHD <span class="sc">==</span> <span class="dv">0</span>] <span class="ot">&lt;-</span> <span class="st">"no_adhd"</span></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>ProjectData.K<span class="sc">$</span>ADHD <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(ProjectData.K<span class="sc">$</span>ADHD)</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ProjectData.K<span class="sc">$</span>ADHD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>ProjectData.K<span class="sc">$</span>Participant <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(ProjectData.K<span class="sc">$</span>Participant)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>ProjectData.K<span class="sc">$</span>ADHD[ProjectData.K<span class="sc">$</span>ADHD <span class="sc">==</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"adhd"</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>ProjectData.K<span class="sc">$</span>ADHD[ProjectData.K<span class="sc">$</span>ADHD <span class="sc">==</span> <span class="dv">0</span>] <span class="ot">&lt;-</span> <span class="st">"no_adhd"</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>ProjectData.K<span class="sc">$</span>ADHD <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(ProjectData.K<span class="sc">$</span>ADHD)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ProjectData.K<span class="sc">$</span>ADHD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
    adhd no_adhd 
      44     109 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Split   </span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">666</span>)  <span class="co"># For reproducibility</span></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 75% of data will go into training</span></span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>train_idx <span class="ot">&lt;-</span> <span class="fu">createDataPartition</span>(ProjectData.K<span class="sc">$</span>ADHD, <span class="at">p =</span> <span class="fl">0.75</span>, <span class="at">list =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create training and test datasets</span></span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>train_data_ADHD_Status <span class="ot">&lt;-</span> ProjectData.K[train_idx, ]</span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>test_data_ADHD_Status  <span class="ot">&lt;-</span> ProjectData.K[<span class="sc">-</span>train_idx, ]</span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(train_data_ADHD_Status<span class="sc">$</span>ADHD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Split   </span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">666</span>)  <span class="co"># For reproducibility</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 75% of data will go into training</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>train_idx <span class="ot">&lt;-</span> <span class="fu">createDataPartition</span>(ProjectData.K<span class="sc">$</span>ADHD, <span class="at">p =</span> <span class="fl">0.75</span>, <span class="at">list =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create training and test datasets</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>train_data_ADHD_Status <span class="ot">&lt;-</span> ProjectData.K[train_idx, ]</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>test_data_ADHD_Status  <span class="ot">&lt;-</span> ProjectData.K[<span class="sc">-</span>train_idx, ]</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(train_data_ADHD_Status<span class="sc">$</span>ADHD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
    adhd no_adhd 
      33      82 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(test_data_ADHD_Status<span class="sc">$</span>ADHD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(test_data_ADHD_Status<span class="sc">$</span>ADHD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
    adhd no_adhd 
      11      27 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(train_data_ADHD_Status<span class="sc">$</span>ADHD))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(train_data_ADHD_Status<span class="sc">$</span>ADHD))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
      adhd   no_adhd 
 0.2869565 0.7130435 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(test_data_ADHD_Status<span class="sc">$</span>ADHD))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(test_data_ADHD_Status<span class="sc">$</span>ADHD))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
      adhd   no_adhd 
 0.2894737 0.7105263 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="do">##############################################################</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="do">#########Set up all models ###################################</span></span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="do">##############################################################</span></span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up cross-validation using ROC as the metric</span></span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>BI_cv_control <span class="ot">&lt;-</span> <span class="fu">trainControl</span>(</span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"cv"</span>, <span class="co">#trained on 9, validated on 1</span></span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">number =</span> <span class="dv">10</span>, <span class="co">#split data into 10 folds</span></span>
-<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># summaryFunction = prSummary,   # Use caret’s prSummary for binary classification for AUC</span></span>
-<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># summaryFunction = twoClassSummary,   # Use caret’s twoClassSummary for binary classification for ROC metric</span></span>
-<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># summaryFunction = defaultSummary,   # Use caret’s defaultSummary for binary classification for accuracy</span></span>
-<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">summaryFunction =</span> multiClassSummary,   <span class="co"># multiClassSummary returns Mean_Balanced_Accuracy</span></span>
-<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">classProbs =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">allowParallel =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">savePredictions =</span> <span class="st">"final"</span></span>
-<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Setup parallel processing</span></span>
-<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>cl <span class="ot">&lt;-</span> <span class="fu">makePSOCKcluster</span>(<span class="fu">detectCores</span>())</span>
-<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a><span class="fu">registerDoParallel</span>(cl)</span>
-<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Train binary models for group 0 (using base predictors)</span></span>
-<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a>models.binary_ADHD_1 <span class="ot">&lt;-</span> <span class="fu">caretList</span>(</span>
-<span id="cb45-23"><a href="#cb45-23" aria-hidden="true" tabindex="-1"></a>  ADHD <span class="sc">~</span> SRT<span class="sc">+</span>DM<span class="sc">+</span>WM<span class="sc">+</span>PHQ<span class="sc">+</span>Sex<span class="sc">+</span>Age<span class="sc">+</span>Education,</span>
-<span id="cb45-24"><a href="#cb45-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> train_data_ADHD_Status,</span>
-<span id="cb45-25"><a href="#cb45-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">trControl =</span> BI_cv_control,</span>
-<span id="cb45-26"><a href="#cb45-26" aria-hidden="true" tabindex="-1"></a>  <span class="co">#metric = "AUC",</span></span>
-<span id="cb45-27"><a href="#cb45-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">metric =</span> <span class="st">"Mean_Balanced_Accuracy"</span>,</span>
-<span id="cb45-28"><a href="#cb45-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">tuneList =</span> <span class="fu">list</span>(</span>
-<span id="cb45-29"><a href="#cb45-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Logistic regression for binary classification</span></span>
-<span id="cb45-30"><a href="#cb45-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">Logit =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb45-31"><a href="#cb45-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"glm"</span>,</span>
-<span id="cb45-32"><a href="#cb45-32" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
-<span id="cb45-33"><a href="#cb45-33" aria-hidden="true" tabindex="-1"></a>      <span class="at">family =</span> <span class="st">"binomial"</span></span>
-<span id="cb45-34"><a href="#cb45-34" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb45-35"><a href="#cb45-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Lasso using glmnet with family binomial</span></span>
-<span id="cb45-36"><a href="#cb45-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">Lasso =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb45-37"><a href="#cb45-37" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"glmnet"</span>,</span>
-<span id="cb45-38"><a href="#cb45-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
-<span id="cb45-39"><a href="#cb45-39" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(<span class="at">alpha =</span> <span class="dv">1</span>, <span class="at">lambda =</span> <span class="fu">seq</span>(<span class="fl">0.005</span>, <span class="fl">0.1</span>, <span class="fl">0.005</span>)),</span>
-<span id="cb45-40"><a href="#cb45-40" aria-hidden="true" tabindex="-1"></a>      <span class="at">family =</span> <span class="st">"binomial"</span></span>
-<span id="cb45-41"><a href="#cb45-41" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb45-42"><a href="#cb45-42" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Linear Discriminant Analysis</span></span>
-<span id="cb45-43"><a href="#cb45-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">LDA =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb45-44"><a href="#cb45-44" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"lda"</span>,</span>
-<span id="cb45-45"><a href="#cb45-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>)</span>
-<span id="cb45-46"><a href="#cb45-46" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb45-47"><a href="#cb45-47" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Quadratic Discriminant Analysis</span></span>
-<span id="cb45-48"><a href="#cb45-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">QDA =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb45-49"><a href="#cb45-49" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"qda"</span>,</span>
-<span id="cb45-50"><a href="#cb45-50" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>)</span>
-<span id="cb45-51"><a href="#cb45-51" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb45-52"><a href="#cb45-52" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Random Forest model</span></span>
-<span id="cb45-53"><a href="#cb45-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">RF =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb45-54"><a href="#cb45-54" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"rf"</span>,</span>
-<span id="cb45-55"><a href="#cb45-55" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
-<span id="cb45-56"><a href="#cb45-56" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(<span class="at">mtry =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">1</span>)),</span>
-<span id="cb45-57"><a href="#cb45-57" aria-hidden="true" tabindex="-1"></a>      <span class="at">ntree =</span> <span class="dv">1000</span>,</span>
-<span id="cb45-58"><a href="#cb45-58" aria-hidden="true" tabindex="-1"></a>      <span class="at">importance =</span> <span class="cn">TRUE</span></span>
-<span id="cb45-59"><a href="#cb45-59" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb45-60"><a href="#cb45-60" aria-hidden="true" tabindex="-1"></a>    <span class="co"># XGBoost model for classification</span></span>
-<span id="cb45-61"><a href="#cb45-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">XGBOOST =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb45-62"><a href="#cb45-62" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"xgbTree"</span>,</span>
-<span id="cb45-63"><a href="#cb45-63" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
-<span id="cb45-64"><a href="#cb45-64" aria-hidden="true" tabindex="-1"></a>      <span class="at">verbosity =</span> <span class="dv">0</span>,</span>
-<span id="cb45-65"><a href="#cb45-65" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(</span>
-<span id="cb45-66"><a href="#cb45-66" aria-hidden="true" tabindex="-1"></a>        <span class="at">nrounds =</span> <span class="dv">20</span>,</span>
-<span id="cb45-67"><a href="#cb45-67" aria-hidden="true" tabindex="-1"></a>        <span class="at">max_depth =</span> <span class="dv">3</span>, </span>
-<span id="cb45-68"><a href="#cb45-68" aria-hidden="true" tabindex="-1"></a>        <span class="at">eta =</span> <span class="fl">0.3</span>,</span>
-<span id="cb45-69"><a href="#cb45-69" aria-hidden="true" tabindex="-1"></a>        <span class="at">gamma =</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.05</span>),</span>
-<span id="cb45-70"><a href="#cb45-70" aria-hidden="true" tabindex="-1"></a>        <span class="at">colsample_bytree =</span> <span class="dv">1</span>,</span>
-<span id="cb45-71"><a href="#cb45-71" aria-hidden="true" tabindex="-1"></a>        <span class="at">min_child_weight =</span> <span class="dv">1</span>,</span>
-<span id="cb45-72"><a href="#cb45-72" aria-hidden="true" tabindex="-1"></a>        <span class="at">subsample =</span> <span class="fu">seq</span>(<span class="fl">0.7</span>, <span class="fl">0.8</span>, <span class="fl">0.05</span>)</span>
-<span id="cb45-73"><a href="#cb45-73" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb45-74"><a href="#cb45-74" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb45-75"><a href="#cb45-75" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb45-76"><a href="#cb45-76" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
-: There were missing values in resampled performance measures.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
-: There were missing values in resampled performance measures.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
-: There were missing values in resampled performance measures.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
-: There were missing values in resampled performance measures.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
-: There were missing values in resampled performance measures.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
-: There were missing values in resampled performance measures.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Train binary models for group 1 (adding language info)</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>models.binary_ADHD_2 <span class="ot">&lt;-</span> <span class="fu">caretList</span>(</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>  ADHD <span class="sc">~</span> SRT<span class="sc">+</span>DM<span class="sc">+</span>WM<span class="sc">+</span>PHQ<span class="sc">+</span>Sex<span class="sc">+</span>Age<span class="sc">+</span>Education<span class="sc">+</span>L2<span class="sc">+</span>SpokenLanguages,</span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> train_data_ADHD_Status,</span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">trControl =</span> BI_cv_control,</span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#metric = "AUC",</span></span>
-<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">metric =</span> <span class="st">"Mean_Balanced_Accuracy"</span>,</span>
-<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">tuneList =</span> <span class="fu">list</span>(</span>
-<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Logistic regression for binary classification</span></span>
-<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">Logit =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"glm"</span>,</span>
-<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
-<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">family =</span> <span class="st">"binomial"</span></span>
-<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Lasso using glmnet with family binomial</span></span>
-<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Lasso =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"glmnet"</span>,</span>
-<span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
-<span id="cb58-19"><a href="#cb58-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(<span class="at">alpha =</span> <span class="dv">1</span>, <span class="at">lambda =</span> <span class="fu">seq</span>(<span class="fl">0.005</span>, <span class="fl">0.1</span>, <span class="fl">0.005</span>)),</span>
-<span id="cb58-20"><a href="#cb58-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">family =</span> <span class="st">"binomial"</span></span>
-<span id="cb58-21"><a href="#cb58-21" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb58-22"><a href="#cb58-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Linear Discriminant Analysis</span></span>
-<span id="cb58-23"><a href="#cb58-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">LDA =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb58-24"><a href="#cb58-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"lda"</span>,</span>
-<span id="cb58-25"><a href="#cb58-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>)</span>
-<span id="cb58-26"><a href="#cb58-26" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb58-27"><a href="#cb58-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Quadratic Discriminant Analysis</span></span>
-<span id="cb58-28"><a href="#cb58-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">QDA =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb58-29"><a href="#cb58-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"qda"</span>,</span>
-<span id="cb58-30"><a href="#cb58-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>)</span>
-<span id="cb58-31"><a href="#cb58-31" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb58-32"><a href="#cb58-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Random Forest model</span></span>
-<span id="cb58-33"><a href="#cb58-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">RF =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb58-34"><a href="#cb58-34" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"rf"</span>,</span>
-<span id="cb58-35"><a href="#cb58-35" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
-<span id="cb58-36"><a href="#cb58-36" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(<span class="at">mtry =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">1</span>)),</span>
-<span id="cb58-37"><a href="#cb58-37" aria-hidden="true" tabindex="-1"></a>      <span class="at">ntree =</span> <span class="dv">1000</span>,</span>
-<span id="cb58-38"><a href="#cb58-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">importance =</span> <span class="cn">TRUE</span></span>
-<span id="cb58-39"><a href="#cb58-39" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb58-40"><a href="#cb58-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># XGBoost model for classification</span></span>
-<span id="cb58-41"><a href="#cb58-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">XGBOOST =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb58-42"><a href="#cb58-42" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"xgbTree"</span>,</span>
-<span id="cb58-43"><a href="#cb58-43" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
-<span id="cb58-44"><a href="#cb58-44" aria-hidden="true" tabindex="-1"></a>      <span class="at">verbosity =</span> <span class="dv">0</span>,</span>
-<span id="cb58-45"><a href="#cb58-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(</span>
-<span id="cb58-46"><a href="#cb58-46" aria-hidden="true" tabindex="-1"></a>        <span class="at">nrounds =</span> <span class="dv">20</span>,</span>
-<span id="cb58-47"><a href="#cb58-47" aria-hidden="true" tabindex="-1"></a>        <span class="at">max_depth =</span> <span class="dv">3</span>, </span>
-<span id="cb58-48"><a href="#cb58-48" aria-hidden="true" tabindex="-1"></a>        <span class="at">eta =</span> <span class="fl">0.3</span>,</span>
-<span id="cb58-49"><a href="#cb58-49" aria-hidden="true" tabindex="-1"></a>        <span class="at">gamma =</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.05</span>),</span>
-<span id="cb58-50"><a href="#cb58-50" aria-hidden="true" tabindex="-1"></a>        <span class="at">colsample_bytree =</span> <span class="dv">1</span>,</span>
-<span id="cb58-51"><a href="#cb58-51" aria-hidden="true" tabindex="-1"></a>        <span class="at">min_child_weight =</span> <span class="dv">1</span>,</span>
-<span id="cb58-52"><a href="#cb58-52" aria-hidden="true" tabindex="-1"></a>        <span class="at">subsample =</span> <span class="fu">seq</span>(<span class="fl">0.7</span>, <span class="fl">0.8</span>, <span class="fl">0.05</span>)</span>
-<span id="cb58-53"><a href="#cb58-53" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb58-54"><a href="#cb58-54" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb58-55"><a href="#cb58-55" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb58-56"><a href="#cb58-56" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.
-
-Warning in train.default(x, y, weights = w, ...): There were missing values in
-resampled performance measures.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
-: There were missing values in resampled performance measures.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
-: There were missing values in resampled performance measures.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
-: There were missing values in resampled performance measures.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
-: There were missing values in resampled performance measures.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
-: There were missing values in resampled performance measures.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Train binary models for group 2 (adding BAARS survey)</span></span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>models.binary_ADHD_3 <span class="ot">&lt;-</span> <span class="fu">caretList</span>(</span>
-<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>  ADHD <span class="sc">~</span> SRT<span class="sc">+</span>DM<span class="sc">+</span>WM<span class="sc">+</span>PHQ<span class="sc">+</span>Sex<span class="sc">+</span>Age<span class="sc">+</span>Education<span class="sc">+</span>L2<span class="sc">+</span>SpokenLanguages<span class="sc">+</span>BAARS,</span>
-<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> train_data_ADHD_Status,</span>
-<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">trControl =</span> BI_cv_control,</span>
-<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#metric = "AUC",</span></span>
-<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">metric =</span> <span class="st">"Mean_Balanced_Accuracy"</span>,</span>
-<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">tuneList =</span> <span class="fu">list</span>(</span>
-<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Logistic regression for binary classification</span></span>
-<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">Logit =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb70-11"><a href="#cb70-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"glm"</span>,</span>
-<span id="cb70-12"><a href="#cb70-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
-<span id="cb70-13"><a href="#cb70-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">family =</span> <span class="st">"binomial"</span></span>
-<span id="cb70-14"><a href="#cb70-14" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb70-15"><a href="#cb70-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Lasso using glmnet with family binomial</span></span>
-<span id="cb70-16"><a href="#cb70-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Lasso =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb70-17"><a href="#cb70-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"glmnet"</span>,</span>
-<span id="cb70-18"><a href="#cb70-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
-<span id="cb70-19"><a href="#cb70-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(<span class="at">alpha =</span> <span class="dv">1</span>, <span class="at">lambda =</span> <span class="fu">seq</span>(<span class="fl">0.005</span>, <span class="fl">0.1</span>, <span class="fl">0.005</span>)),</span>
-<span id="cb70-20"><a href="#cb70-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">family =</span> <span class="st">"binomial"</span></span>
-<span id="cb70-21"><a href="#cb70-21" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb70-22"><a href="#cb70-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Linear Discriminant Analysis</span></span>
-<span id="cb70-23"><a href="#cb70-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">LDA =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb70-24"><a href="#cb70-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"lda"</span>,</span>
-<span id="cb70-25"><a href="#cb70-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>)</span>
-<span id="cb70-26"><a href="#cb70-26" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb70-27"><a href="#cb70-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Quadratic Discriminant Analysis</span></span>
-<span id="cb70-28"><a href="#cb70-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">QDA =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb70-29"><a href="#cb70-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"qda"</span>,</span>
-<span id="cb70-30"><a href="#cb70-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>)</span>
-<span id="cb70-31"><a href="#cb70-31" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb70-32"><a href="#cb70-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Random Forest model</span></span>
-<span id="cb70-33"><a href="#cb70-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">RF =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb70-34"><a href="#cb70-34" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"rf"</span>,</span>
-<span id="cb70-35"><a href="#cb70-35" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
-<span id="cb70-36"><a href="#cb70-36" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(<span class="at">mtry =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">1</span>)),</span>
-<span id="cb70-37"><a href="#cb70-37" aria-hidden="true" tabindex="-1"></a>      <span class="at">ntree =</span> <span class="dv">1000</span>,</span>
-<span id="cb70-38"><a href="#cb70-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">importance =</span> <span class="cn">TRUE</span></span>
-<span id="cb70-39"><a href="#cb70-39" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb70-40"><a href="#cb70-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># XGBoost model for classification</span></span>
-<span id="cb70-41"><a href="#cb70-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">XGBOOST =</span> <span class="fu">caretModelSpec</span>(</span>
-<span id="cb70-42"><a href="#cb70-42" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"xgbTree"</span>,</span>
-<span id="cb70-43"><a href="#cb70-43" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
-<span id="cb70-44"><a href="#cb70-44" aria-hidden="true" tabindex="-1"></a>      <span class="at">verbosity =</span> <span class="dv">0</span>,</span>
-<span id="cb70-45"><a href="#cb70-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(</span>
-<span id="cb70-46"><a href="#cb70-46" aria-hidden="true" tabindex="-1"></a>        <span class="at">nrounds =</span> <span class="dv">20</span>,</span>
-<span id="cb70-47"><a href="#cb70-47" aria-hidden="true" tabindex="-1"></a>        <span class="at">max_depth =</span> <span class="dv">3</span>, </span>
-<span id="cb70-48"><a href="#cb70-48" aria-hidden="true" tabindex="-1"></a>        <span class="at">eta =</span> <span class="fl">0.3</span>,</span>
-<span id="cb70-49"><a href="#cb70-49" aria-hidden="true" tabindex="-1"></a>        <span class="at">gamma =</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.05</span>),</span>
-<span id="cb70-50"><a href="#cb70-50" aria-hidden="true" tabindex="-1"></a>        <span class="at">colsample_bytree =</span> <span class="dv">1</span>,</span>
-<span id="cb70-51"><a href="#cb70-51" aria-hidden="true" tabindex="-1"></a>        <span class="at">min_child_weight =</span> <span class="dv">1</span>,</span>
-<span id="cb70-52"><a href="#cb70-52" aria-hidden="true" tabindex="-1"></a>        <span class="at">subsample =</span> <span class="fu">seq</span>(<span class="fl">0.7</span>, <span class="fl">0.8</span>, <span class="fl">0.05</span>)</span>
-<span id="cb70-53"><a href="#cb70-53" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb70-54"><a href="#cb70-54" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb70-55"><a href="#cb70-55" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb70-56"><a href="#cb70-56" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.
-
-Warning in train.default(x, y, weights = w, ...): There were missing values in
-resampled performance measures.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
-: There were missing values in resampled performance measures.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
-: There were missing values in resampled performance measures.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
-: There were missing values in resampled performance measures.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
-: There were missing values in resampled performance measures.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in train.default(x, y, weights = w, ...): The metric
-"Mean_Balanced_Accuracy" was not in the result set. logLoss will be used
-instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo,
-: There were missing values in resampled performance measures.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stop parallel processing when finished</span></span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopCluster</span>(cl)</span>
-<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare resampling results across all binary models</span></span>
-<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a>results.binary.ADHD_1 <span class="ot">&lt;-</span> <span class="fu">resamples</span>(models.binary_ADHD_1)</span>
-<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a>results.binary.ADHD_2 <span class="ot">&lt;-</span> <span class="fu">resamples</span>(models.binary_ADHD_2)</span>
-<span id="cb82-7"><a href="#cb82-7" aria-hidden="true" tabindex="-1"></a>results.binary.ADHD_3 <span class="ot">&lt;-</span> <span class="fu">resamples</span>(models.binary_ADHD_3)</span>
-<span id="cb82-8"><a href="#cb82-8" aria-hidden="true" tabindex="-1"></a><span class="fu">bwplot</span>(results.binary.ADHD_1, <span class="at">scales =</span> <span class="fu">list</span>(<span class="at">x =</span> <span class="fu">list</span>(<span class="at">relation =</span> <span class="st">"free"</span>), <span class="at">y =</span> <span class="fu">list</span>(<span class="at">relation =</span> <span class="st">"free"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="do">##############################################################</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="do">#########Set up all models ###################################</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="do">##############################################################</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up cross-validation using ROC as the metric</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>BI_cv_control <span class="ot">&lt;-</span> <span class="fu">trainControl</span>(</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"cv"</span>, <span class="co">#trained on 9, validated on 1</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">number =</span> <span class="dv">10</span>, <span class="co">#split data into 10 folds</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># summaryFunction = prSummary,   # Use caret’s prSummary for binary classification for AUC</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># summaryFunction = twoClassSummary,   # Use caret’s twoClassSummary for binary classification for ROC metric</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># summaryFunction = defaultSummary,   # Use caret’s defaultSummary for binary classification for accuracy</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">summaryFunction =</span> multiClassSummary,   <span class="co"># multiClassSummary returns Mean_Balanced_Accuracy</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">classProbs =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">allowParallel =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">savePredictions =</span> <span class="st">"final"</span></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Setup parallel processing</span></span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>cl <span class="ot">&lt;-</span> <span class="fu">makePSOCKcluster</span>(<span class="fu">detectCores</span>())</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Train binary models for group 0 (using base predictors)</span></span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>models.binary_ADHD_1 <span class="ot">&lt;-</span> <span class="fu">caretList</span>(</span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>  ADHD <span class="sc">~</span> SRT<span class="sc">+</span>DM<span class="sc">+</span>WM<span class="sc">+</span>PHQ<span class="sc">+</span>Sex<span class="sc">+</span>Age<span class="sc">+</span>Education,</span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> train_data_ADHD_Status,</span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">trControl =</span> BI_cv_control,</span>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>  <span class="co">#metric = "AUC",</span></span>
+<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">metric =</span> <span class="st">"Mean_Balanced_Accuracy"</span>,</span>
+<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">tuneList =</span> <span class="fu">list</span>(</span>
+<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Logistic regression for binary classification</span></span>
+<span id="cb40-30"><a href="#cb40-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">Logit =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-31"><a href="#cb40-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"glm"</span>,</span>
+<span id="cb40-32"><a href="#cb40-32" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
+<span id="cb40-33"><a href="#cb40-33" aria-hidden="true" tabindex="-1"></a>      <span class="at">family =</span> <span class="st">"binomial"</span></span>
+<span id="cb40-34"><a href="#cb40-34" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb40-35"><a href="#cb40-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Lasso using glmnet with family binomial</span></span>
+<span id="cb40-36"><a href="#cb40-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">Lasso =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-37"><a href="#cb40-37" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"glmnet"</span>,</span>
+<span id="cb40-38"><a href="#cb40-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
+<span id="cb40-39"><a href="#cb40-39" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(<span class="at">alpha =</span> <span class="dv">1</span>, <span class="at">lambda =</span> <span class="fu">seq</span>(<span class="fl">0.005</span>, <span class="fl">0.1</span>, <span class="fl">0.005</span>)),</span>
+<span id="cb40-40"><a href="#cb40-40" aria-hidden="true" tabindex="-1"></a>      <span class="at">family =</span> <span class="st">"binomial"</span></span>
+<span id="cb40-41"><a href="#cb40-41" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb40-42"><a href="#cb40-42" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Linear Discriminant Analysis</span></span>
+<span id="cb40-43"><a href="#cb40-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">LDA =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-44"><a href="#cb40-44" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"lda"</span>,</span>
+<span id="cb40-45"><a href="#cb40-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>)</span>
+<span id="cb40-46"><a href="#cb40-46" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb40-47"><a href="#cb40-47" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Quadratic Discriminant Analysis</span></span>
+<span id="cb40-48"><a href="#cb40-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">QDA =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-49"><a href="#cb40-49" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"qda"</span>,</span>
+<span id="cb40-50"><a href="#cb40-50" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>)</span>
+<span id="cb40-51"><a href="#cb40-51" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb40-52"><a href="#cb40-52" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Random Forest model</span></span>
+<span id="cb40-53"><a href="#cb40-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">RF =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-54"><a href="#cb40-54" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"rf"</span>,</span>
+<span id="cb40-55"><a href="#cb40-55" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
+<span id="cb40-56"><a href="#cb40-56" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(<span class="at">mtry =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">1</span>)),</span>
+<span id="cb40-57"><a href="#cb40-57" aria-hidden="true" tabindex="-1"></a>      <span class="at">ntree =</span> <span class="dv">1000</span>,</span>
+<span id="cb40-58"><a href="#cb40-58" aria-hidden="true" tabindex="-1"></a>      <span class="at">importance =</span> <span class="cn">TRUE</span></span>
+<span id="cb40-59"><a href="#cb40-59" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb40-60"><a href="#cb40-60" aria-hidden="true" tabindex="-1"></a>    <span class="co"># XGBoost model for classification</span></span>
+<span id="cb40-61"><a href="#cb40-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">XGBOOST =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-62"><a href="#cb40-62" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"xgbTree"</span>,</span>
+<span id="cb40-63"><a href="#cb40-63" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
+<span id="cb40-64"><a href="#cb40-64" aria-hidden="true" tabindex="-1"></a>      <span class="at">verbosity =</span> <span class="dv">0</span>,</span>
+<span id="cb40-65"><a href="#cb40-65" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(</span>
+<span id="cb40-66"><a href="#cb40-66" aria-hidden="true" tabindex="-1"></a>        <span class="at">nrounds =</span> <span class="dv">20</span>,</span>
+<span id="cb40-67"><a href="#cb40-67" aria-hidden="true" tabindex="-1"></a>        <span class="at">max_depth =</span> <span class="dv">3</span>, </span>
+<span id="cb40-68"><a href="#cb40-68" aria-hidden="true" tabindex="-1"></a>        <span class="at">eta =</span> <span class="fl">0.3</span>,</span>
+<span id="cb40-69"><a href="#cb40-69" aria-hidden="true" tabindex="-1"></a>        <span class="at">gamma =</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.05</span>),</span>
+<span id="cb40-70"><a href="#cb40-70" aria-hidden="true" tabindex="-1"></a>        <span class="at">colsample_bytree =</span> <span class="dv">1</span>,</span>
+<span id="cb40-71"><a href="#cb40-71" aria-hidden="true" tabindex="-1"></a>        <span class="at">min_child_weight =</span> <span class="dv">1</span>,</span>
+<span id="cb40-72"><a href="#cb40-72" aria-hidden="true" tabindex="-1"></a>        <span class="at">subsample =</span> <span class="fu">seq</span>(<span class="fl">0.7</span>, <span class="fl">0.8</span>, <span class="fl">0.05</span>)</span>
+<span id="cb40-73"><a href="#cb40-73" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb40-74"><a href="#cb40-74" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb40-75"><a href="#cb40-75" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb40-76"><a href="#cb40-76" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-77"><a href="#cb40-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-78"><a href="#cb40-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-79"><a href="#cb40-79" aria-hidden="true" tabindex="-1"></a><span class="co"># Train binary models for group 1 (adding language info)</span></span>
+<span id="cb40-80"><a href="#cb40-80" aria-hidden="true" tabindex="-1"></a>models.binary_ADHD_2 <span class="ot">&lt;-</span> <span class="fu">caretList</span>(</span>
+<span id="cb40-81"><a href="#cb40-81" aria-hidden="true" tabindex="-1"></a>  ADHD <span class="sc">~</span> SRT<span class="sc">+</span>DM<span class="sc">+</span>WM<span class="sc">+</span>PHQ<span class="sc">+</span>Sex<span class="sc">+</span>Age<span class="sc">+</span>Education<span class="sc">+</span>L2<span class="sc">+</span>SpokenLanguages,</span>
+<span id="cb40-82"><a href="#cb40-82" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> train_data_ADHD_Status,</span>
+<span id="cb40-83"><a href="#cb40-83" aria-hidden="true" tabindex="-1"></a>  <span class="at">trControl =</span> BI_cv_control,</span>
+<span id="cb40-84"><a href="#cb40-84" aria-hidden="true" tabindex="-1"></a>  <span class="co">#metric = "AUC",</span></span>
+<span id="cb40-85"><a href="#cb40-85" aria-hidden="true" tabindex="-1"></a>  <span class="at">metric =</span> <span class="st">"Mean_Balanced_Accuracy"</span>,</span>
+<span id="cb40-86"><a href="#cb40-86" aria-hidden="true" tabindex="-1"></a>  <span class="at">tuneList =</span> <span class="fu">list</span>(</span>
+<span id="cb40-87"><a href="#cb40-87" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Logistic regression for binary classification</span></span>
+<span id="cb40-88"><a href="#cb40-88" aria-hidden="true" tabindex="-1"></a>    <span class="at">Logit =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-89"><a href="#cb40-89" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"glm"</span>,</span>
+<span id="cb40-90"><a href="#cb40-90" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
+<span id="cb40-91"><a href="#cb40-91" aria-hidden="true" tabindex="-1"></a>      <span class="at">family =</span> <span class="st">"binomial"</span></span>
+<span id="cb40-92"><a href="#cb40-92" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb40-93"><a href="#cb40-93" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Lasso using glmnet with family binomial</span></span>
+<span id="cb40-94"><a href="#cb40-94" aria-hidden="true" tabindex="-1"></a>    <span class="at">Lasso =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-95"><a href="#cb40-95" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"glmnet"</span>,</span>
+<span id="cb40-96"><a href="#cb40-96" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
+<span id="cb40-97"><a href="#cb40-97" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(<span class="at">alpha =</span> <span class="dv">1</span>, <span class="at">lambda =</span> <span class="fu">seq</span>(<span class="fl">0.005</span>, <span class="fl">0.1</span>, <span class="fl">0.005</span>)),</span>
+<span id="cb40-98"><a href="#cb40-98" aria-hidden="true" tabindex="-1"></a>      <span class="at">family =</span> <span class="st">"binomial"</span></span>
+<span id="cb40-99"><a href="#cb40-99" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb40-100"><a href="#cb40-100" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Linear Discriminant Analysis</span></span>
+<span id="cb40-101"><a href="#cb40-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">LDA =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-102"><a href="#cb40-102" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"lda"</span>,</span>
+<span id="cb40-103"><a href="#cb40-103" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>)</span>
+<span id="cb40-104"><a href="#cb40-104" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb40-105"><a href="#cb40-105" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Quadratic Discriminant Analysis</span></span>
+<span id="cb40-106"><a href="#cb40-106" aria-hidden="true" tabindex="-1"></a>    <span class="at">QDA =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-107"><a href="#cb40-107" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"qda"</span>,</span>
+<span id="cb40-108"><a href="#cb40-108" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>)</span>
+<span id="cb40-109"><a href="#cb40-109" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb40-110"><a href="#cb40-110" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Random Forest model</span></span>
+<span id="cb40-111"><a href="#cb40-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">RF =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-112"><a href="#cb40-112" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"rf"</span>,</span>
+<span id="cb40-113"><a href="#cb40-113" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
+<span id="cb40-114"><a href="#cb40-114" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(<span class="at">mtry =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">1</span>)),</span>
+<span id="cb40-115"><a href="#cb40-115" aria-hidden="true" tabindex="-1"></a>      <span class="at">ntree =</span> <span class="dv">1000</span>,</span>
+<span id="cb40-116"><a href="#cb40-116" aria-hidden="true" tabindex="-1"></a>      <span class="at">importance =</span> <span class="cn">TRUE</span></span>
+<span id="cb40-117"><a href="#cb40-117" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb40-118"><a href="#cb40-118" aria-hidden="true" tabindex="-1"></a>    <span class="co"># XGBoost model for classification</span></span>
+<span id="cb40-119"><a href="#cb40-119" aria-hidden="true" tabindex="-1"></a>    <span class="at">XGBOOST =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-120"><a href="#cb40-120" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"xgbTree"</span>,</span>
+<span id="cb40-121"><a href="#cb40-121" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
+<span id="cb40-122"><a href="#cb40-122" aria-hidden="true" tabindex="-1"></a>      <span class="at">verbosity =</span> <span class="dv">0</span>,</span>
+<span id="cb40-123"><a href="#cb40-123" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(</span>
+<span id="cb40-124"><a href="#cb40-124" aria-hidden="true" tabindex="-1"></a>        <span class="at">nrounds =</span> <span class="dv">20</span>,</span>
+<span id="cb40-125"><a href="#cb40-125" aria-hidden="true" tabindex="-1"></a>        <span class="at">max_depth =</span> <span class="dv">3</span>, </span>
+<span id="cb40-126"><a href="#cb40-126" aria-hidden="true" tabindex="-1"></a>        <span class="at">eta =</span> <span class="fl">0.3</span>,</span>
+<span id="cb40-127"><a href="#cb40-127" aria-hidden="true" tabindex="-1"></a>        <span class="at">gamma =</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.05</span>),</span>
+<span id="cb40-128"><a href="#cb40-128" aria-hidden="true" tabindex="-1"></a>        <span class="at">colsample_bytree =</span> <span class="dv">1</span>,</span>
+<span id="cb40-129"><a href="#cb40-129" aria-hidden="true" tabindex="-1"></a>        <span class="at">min_child_weight =</span> <span class="dv">1</span>,</span>
+<span id="cb40-130"><a href="#cb40-130" aria-hidden="true" tabindex="-1"></a>        <span class="at">subsample =</span> <span class="fu">seq</span>(<span class="fl">0.7</span>, <span class="fl">0.8</span>, <span class="fl">0.05</span>)</span>
+<span id="cb40-131"><a href="#cb40-131" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb40-132"><a href="#cb40-132" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb40-133"><a href="#cb40-133" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb40-134"><a href="#cb40-134" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-135"><a href="#cb40-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-136"><a href="#cb40-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-137"><a href="#cb40-137" aria-hidden="true" tabindex="-1"></a><span class="co"># Train binary models for group 2 (adding BAARS survey)</span></span>
+<span id="cb40-138"><a href="#cb40-138" aria-hidden="true" tabindex="-1"></a>models.binary_ADHD_3 <span class="ot">&lt;-</span> <span class="fu">caretList</span>(</span>
+<span id="cb40-139"><a href="#cb40-139" aria-hidden="true" tabindex="-1"></a>  ADHD <span class="sc">~</span> SRT<span class="sc">+</span>DM<span class="sc">+</span>WM<span class="sc">+</span>PHQ<span class="sc">+</span>Sex<span class="sc">+</span>Age<span class="sc">+</span>Education<span class="sc">+</span>L2<span class="sc">+</span>SpokenLanguages<span class="sc">+</span>BAARS,</span>
+<span id="cb40-140"><a href="#cb40-140" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> train_data_ADHD_Status,</span>
+<span id="cb40-141"><a href="#cb40-141" aria-hidden="true" tabindex="-1"></a>  <span class="at">trControl =</span> BI_cv_control,</span>
+<span id="cb40-142"><a href="#cb40-142" aria-hidden="true" tabindex="-1"></a>  <span class="co">#metric = "AUC",</span></span>
+<span id="cb40-143"><a href="#cb40-143" aria-hidden="true" tabindex="-1"></a>  <span class="at">metric =</span> <span class="st">"Mean_Balanced_Accuracy"</span>,</span>
+<span id="cb40-144"><a href="#cb40-144" aria-hidden="true" tabindex="-1"></a>  <span class="at">tuneList =</span> <span class="fu">list</span>(</span>
+<span id="cb40-145"><a href="#cb40-145" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Logistic regression for binary classification</span></span>
+<span id="cb40-146"><a href="#cb40-146" aria-hidden="true" tabindex="-1"></a>    <span class="at">Logit =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-147"><a href="#cb40-147" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"glm"</span>,</span>
+<span id="cb40-148"><a href="#cb40-148" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
+<span id="cb40-149"><a href="#cb40-149" aria-hidden="true" tabindex="-1"></a>      <span class="at">family =</span> <span class="st">"binomial"</span></span>
+<span id="cb40-150"><a href="#cb40-150" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb40-151"><a href="#cb40-151" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Lasso using glmnet with family binomial</span></span>
+<span id="cb40-152"><a href="#cb40-152" aria-hidden="true" tabindex="-1"></a>    <span class="at">Lasso =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-153"><a href="#cb40-153" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"glmnet"</span>,</span>
+<span id="cb40-154"><a href="#cb40-154" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
+<span id="cb40-155"><a href="#cb40-155" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(<span class="at">alpha =</span> <span class="dv">1</span>, <span class="at">lambda =</span> <span class="fu">seq</span>(<span class="fl">0.005</span>, <span class="fl">0.1</span>, <span class="fl">0.005</span>)),</span>
+<span id="cb40-156"><a href="#cb40-156" aria-hidden="true" tabindex="-1"></a>      <span class="at">family =</span> <span class="st">"binomial"</span></span>
+<span id="cb40-157"><a href="#cb40-157" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb40-158"><a href="#cb40-158" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Linear Discriminant Analysis</span></span>
+<span id="cb40-159"><a href="#cb40-159" aria-hidden="true" tabindex="-1"></a>    <span class="at">LDA =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-160"><a href="#cb40-160" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"lda"</span>,</span>
+<span id="cb40-161"><a href="#cb40-161" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>)</span>
+<span id="cb40-162"><a href="#cb40-162" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb40-163"><a href="#cb40-163" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Quadratic Discriminant Analysis</span></span>
+<span id="cb40-164"><a href="#cb40-164" aria-hidden="true" tabindex="-1"></a>    <span class="at">QDA =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-165"><a href="#cb40-165" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"qda"</span>,</span>
+<span id="cb40-166"><a href="#cb40-166" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>)</span>
+<span id="cb40-167"><a href="#cb40-167" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb40-168"><a href="#cb40-168" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Random Forest model</span></span>
+<span id="cb40-169"><a href="#cb40-169" aria-hidden="true" tabindex="-1"></a>    <span class="at">RF =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-170"><a href="#cb40-170" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"rf"</span>,</span>
+<span id="cb40-171"><a href="#cb40-171" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
+<span id="cb40-172"><a href="#cb40-172" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(<span class="at">mtry =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">1</span>)),</span>
+<span id="cb40-173"><a href="#cb40-173" aria-hidden="true" tabindex="-1"></a>      <span class="at">ntree =</span> <span class="dv">1000</span>,</span>
+<span id="cb40-174"><a href="#cb40-174" aria-hidden="true" tabindex="-1"></a>      <span class="at">importance =</span> <span class="cn">TRUE</span></span>
+<span id="cb40-175"><a href="#cb40-175" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb40-176"><a href="#cb40-176" aria-hidden="true" tabindex="-1"></a>    <span class="co"># XGBoost model for classification</span></span>
+<span id="cb40-177"><a href="#cb40-177" aria-hidden="true" tabindex="-1"></a>    <span class="at">XGBOOST =</span> <span class="fu">caretModelSpec</span>(</span>
+<span id="cb40-178"><a href="#cb40-178" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"xgbTree"</span>,</span>
+<span id="cb40-179"><a href="#cb40-179" aria-hidden="true" tabindex="-1"></a>      <span class="at">preProcess =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"scale"</span>),</span>
+<span id="cb40-180"><a href="#cb40-180" aria-hidden="true" tabindex="-1"></a>      <span class="at">verbosity =</span> <span class="dv">0</span>,</span>
+<span id="cb40-181"><a href="#cb40-181" aria-hidden="true" tabindex="-1"></a>      <span class="at">tuneGrid =</span> <span class="fu">expand.grid</span>(</span>
+<span id="cb40-182"><a href="#cb40-182" aria-hidden="true" tabindex="-1"></a>        <span class="at">nrounds =</span> <span class="dv">20</span>,</span>
+<span id="cb40-183"><a href="#cb40-183" aria-hidden="true" tabindex="-1"></a>        <span class="at">max_depth =</span> <span class="dv">3</span>, </span>
+<span id="cb40-184"><a href="#cb40-184" aria-hidden="true" tabindex="-1"></a>        <span class="at">eta =</span> <span class="fl">0.3</span>,</span>
+<span id="cb40-185"><a href="#cb40-185" aria-hidden="true" tabindex="-1"></a>        <span class="at">gamma =</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.05</span>),</span>
+<span id="cb40-186"><a href="#cb40-186" aria-hidden="true" tabindex="-1"></a>        <span class="at">colsample_bytree =</span> <span class="dv">1</span>,</span>
+<span id="cb40-187"><a href="#cb40-187" aria-hidden="true" tabindex="-1"></a>        <span class="at">min_child_weight =</span> <span class="dv">1</span>,</span>
+<span id="cb40-188"><a href="#cb40-188" aria-hidden="true" tabindex="-1"></a>        <span class="at">subsample =</span> <span class="fu">seq</span>(<span class="fl">0.7</span>, <span class="fl">0.8</span>, <span class="fl">0.05</span>)</span>
+<span id="cb40-189"><a href="#cb40-189" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb40-190"><a href="#cb40-190" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb40-191"><a href="#cb40-191" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb40-192"><a href="#cb40-192" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-193"><a href="#cb40-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-194"><a href="#cb40-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-195"><a href="#cb40-195" aria-hidden="true" tabindex="-1"></a><span class="co"># Stop parallel processing when finished</span></span>
+<span id="cb40-196"><a href="#cb40-196" aria-hidden="true" tabindex="-1"></a><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb40-197"><a href="#cb40-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-198"><a href="#cb40-198" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare resampling results across all binary models</span></span>
+<span id="cb40-199"><a href="#cb40-199" aria-hidden="true" tabindex="-1"></a>results.binary.ADHD_1 <span class="ot">&lt;-</span> <span class="fu">resamples</span>(models.binary_ADHD_1)</span>
+<span id="cb40-200"><a href="#cb40-200" aria-hidden="true" tabindex="-1"></a>results.binary.ADHD_2 <span class="ot">&lt;-</span> <span class="fu">resamples</span>(models.binary_ADHD_2)</span>
+<span id="cb40-201"><a href="#cb40-201" aria-hidden="true" tabindex="-1"></a>results.binary.ADHD_3 <span class="ot">&lt;-</span> <span class="fu">resamples</span>(models.binary_ADHD_3)</span>
+<span id="cb40-202"><a href="#cb40-202" aria-hidden="true" tabindex="-1"></a><span class="fu">bwplot</span>(results.binary.ADHD_1, <span class="at">scales =</span> <span class="fu">list</span>(<span class="at">x =</span> <span class="fu">list</span>(<span class="at">relation =</span> <span class="st">"free"</span>), <span class="at">y =</span> <span class="fu">list</span>(<span class="at">relation =</span> <span class="st">"free"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -810,7 +641,7 @@ instead.</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bwplot</span>(results.binary.ADHD_2, <span class="at">scales =</span> <span class="fu">list</span>(<span class="at">x =</span> <span class="fu">list</span>(<span class="at">relation =</span> <span class="st">"free"</span>), <span class="at">y =</span> <span class="fu">list</span>(<span class="at">relation =</span> <span class="st">"free"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bwplot</span>(results.binary.ADHD_2, <span class="at">scales =</span> <span class="fu">list</span>(<span class="at">x =</span> <span class="fu">list</span>(<span class="at">relation =</span> <span class="st">"free"</span>), <span class="at">y =</span> <span class="fu">list</span>(<span class="at">relation =</span> <span class="st">"free"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -818,7 +649,7 @@ instead.</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bwplot</span>(results.binary.ADHD_3, <span class="at">scales =</span> <span class="fu">list</span>(<span class="at">x =</span> <span class="fu">list</span>(<span class="at">relation =</span> <span class="st">"free"</span>), <span class="at">y =</span> <span class="fu">list</span>(<span class="at">relation =</span> <span class="st">"free"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bwplot</span>(results.binary.ADHD_3, <span class="at">scales =</span> <span class="fu">list</span>(<span class="at">x =</span> <span class="fu">list</span>(<span class="at">relation =</span> <span class="st">"free"</span>), <span class="at">y =</span> <span class="fu">list</span>(<span class="at">relation =</span> <span class="st">"free"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -826,47 +657,47 @@ instead.</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Helper function to extract confusion matrices for a given model list</span></span>
-<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>extract_CM <span class="ot">&lt;-</span> <span class="cf">function</span>(model_list, train_data, test_data, response_col) {</span>
-<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Loop over models in the list and compute confusion matrices</span></span>
-<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>  cm_train <span class="ot">&lt;-</span> <span class="fu">lapply</span>(model_list, <span class="cf">function</span>(mod) {</span>
-<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">confusionMatrix</span>(</span>
-<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">predict</span>(mod, <span class="at">newdata =</span> train_data),</span>
-<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">reference =</span> train_data[[response_col]]</span>
-<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb85-11"><a href="#cb85-11" aria-hidden="true" tabindex="-1"></a>  cm_test <span class="ot">&lt;-</span> <span class="fu">lapply</span>(model_list, <span class="cf">function</span>(mod) {</span>
-<span id="cb85-12"><a href="#cb85-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">confusionMatrix</span>(</span>
-<span id="cb85-13"><a href="#cb85-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">predict</span>(mod, <span class="at">newdata =</span> test_data),</span>
-<span id="cb85-14"><a href="#cb85-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">reference =</span> test_data[[response_col]]</span>
-<span id="cb85-15"><a href="#cb85-15" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb85-16"><a href="#cb85-16" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb85-17"><a href="#cb85-17" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb85-18"><a href="#cb85-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Return a list containing both training and testing confusion matrices</span></span>
-<span id="cb85-19"><a href="#cb85-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">Train =</span> cm_train, <span class="at">Test =</span> cm_test)</span>
-<span id="cb85-20"><a href="#cb85-20" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb85-21"><a href="#cb85-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-22"><a href="#cb85-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract confusion matrices for each group</span></span>
-<span id="cb85-23"><a href="#cb85-23" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_1 <span class="ot">&lt;-</span> <span class="fu">extract_CM</span>(models.binary_ADHD_1, train_data_ADHD_Status, test_data_ADHD_Status, <span class="st">"ADHD"</span>)</span>
-<span id="cb85-24"><a href="#cb85-24" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_2 <span class="ot">&lt;-</span> <span class="fu">extract_CM</span>(models.binary_ADHD_2, train_data_ADHD_Status, test_data_ADHD_Status, <span class="st">"ADHD"</span>)</span>
-<span id="cb85-25"><a href="#cb85-25" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_3 <span class="ot">&lt;-</span> <span class="fu">extract_CM</span>(models.binary_ADHD_3, train_data_ADHD_Status, test_data_ADHD_Status, <span class="st">"ADHD"</span>)</span>
-<span id="cb85-26"><a href="#cb85-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-27"><a href="#cb85-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Optionally, print all confusion matrices for each group and each model</span></span>
-<span id="cb85-28"><a href="#cb85-28" aria-hidden="true" tabindex="-1"></a>print_confusion_matrices <span class="ot">&lt;-</span> <span class="cf">function</span>(cm_list, group_name) {</span>
-<span id="cb85-29"><a href="#cb85-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">--- Confusion Matrices for"</span>, group_name, <span class="st">"---</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb85-30"><a href="#cb85-30" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(model_name <span class="cf">in</span> <span class="fu">names</span>(cm_list<span class="sc">$</span>Train)) {</span>
-<span id="cb85-31"><a href="#cb85-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Model:"</span>, model_name, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb85-32"><a href="#cb85-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Training Data:</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb85-33"><a href="#cb85-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(cm_list<span class="sc">$</span>Train[[model_name]])</span>
-<span id="cb85-34"><a href="#cb85-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Testing Data:</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb85-35"><a href="#cb85-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(cm_list<span class="sc">$</span>Test[[model_name]])</span>
-<span id="cb85-36"><a href="#cb85-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">-------------------------------</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb85-37"><a href="#cb85-37" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb85-38"><a href="#cb85-38" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb85-39"><a href="#cb85-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-40"><a href="#cb85-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Print confusion matrices for each group</span></span>
-<span id="cb85-41"><a href="#cb85-41" aria-hidden="true" tabindex="-1"></a><span class="fu">print_confusion_matrices</span>(CM.models.binary_ADHD_1, <span class="st">"models.binary_ADHD_1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Helper function to extract confusion matrices for a given model list</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>extract_CM <span class="ot">&lt;-</span> <span class="cf">function</span>(model_list, train_data, test_data, response_col) {</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Loop over models in the list and compute confusion matrices</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  cm_train <span class="ot">&lt;-</span> <span class="fu">lapply</span>(model_list, <span class="cf">function</span>(mod) {</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">confusionMatrix</span>(</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">predict</span>(mod, <span class="at">newdata =</span> train_data),</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">reference =</span> train_data[[response_col]]</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>  cm_test <span class="ot">&lt;-</span> <span class="fu">lapply</span>(model_list, <span class="cf">function</span>(mod) {</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">confusionMatrix</span>(</span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">predict</span>(mod, <span class="at">newdata =</span> test_data),</span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">reference =</span> test_data[[response_col]]</span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Return a list containing both training and testing confusion matrices</span></span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">Train =</span> cm_train, <span class="at">Test =</span> cm_test)</span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract confusion matrices for each group</span></span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_1 <span class="ot">&lt;-</span> <span class="fu">extract_CM</span>(models.binary_ADHD_1, train_data_ADHD_Status, test_data_ADHD_Status, <span class="st">"ADHD"</span>)</span>
+<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_2 <span class="ot">&lt;-</span> <span class="fu">extract_CM</span>(models.binary_ADHD_2, train_data_ADHD_Status, test_data_ADHD_Status, <span class="st">"ADHD"</span>)</span>
+<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_3 <span class="ot">&lt;-</span> <span class="fu">extract_CM</span>(models.binary_ADHD_3, train_data_ADHD_Status, test_data_ADHD_Status, <span class="st">"ADHD"</span>)</span>
+<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-27"><a href="#cb43-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Optionally, print all confusion matrices for each group and each model</span></span>
+<span id="cb43-28"><a href="#cb43-28" aria-hidden="true" tabindex="-1"></a>print_confusion_matrices <span class="ot">&lt;-</span> <span class="cf">function</span>(cm_list, group_name) {</span>
+<span id="cb43-29"><a href="#cb43-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">--- Confusion Matrices for"</span>, group_name, <span class="st">"---</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb43-30"><a href="#cb43-30" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(model_name <span class="cf">in</span> <span class="fu">names</span>(cm_list<span class="sc">$</span>Train)) {</span>
+<span id="cb43-31"><a href="#cb43-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Model:"</span>, model_name, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb43-32"><a href="#cb43-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Training Data:</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb43-33"><a href="#cb43-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(cm_list<span class="sc">$</span>Train[[model_name]])</span>
+<span id="cb43-34"><a href="#cb43-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Testing Data:</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb43-35"><a href="#cb43-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(cm_list<span class="sc">$</span>Test[[model_name]])</span>
+<span id="cb43-36"><a href="#cb43-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">-------------------------------</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb43-37"><a href="#cb43-37" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb43-38"><a href="#cb43-38" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb43-39"><a href="#cb43-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-40"><a href="#cb43-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Print confusion matrices for each group</span></span>
+<span id="cb43-41"><a href="#cb43-41" aria-hidden="true" tabindex="-1"></a><span class="fu">print_confusion_matrices</span>(CM.models.binary_ADHD_1, <span class="st">"models.binary_ADHD_1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 --- Confusion Matrices for models.binary_ADHD_1 ---
@@ -1237,7 +1068,7 @@ Prediction adhd no_adhd
 
 -------------------------------</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print_confusion_matrices</span>(CM.models.binary_ADHD_2, <span class="st">"models.binary_ADHD_2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print_confusion_matrices</span>(CM.models.binary_ADHD_2, <span class="st">"models.binary_ADHD_2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 --- Confusion Matrices for models.binary_ADHD_2 ---
@@ -1608,7 +1439,7 @@ Prediction adhd no_adhd
 
 -------------------------------</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print_confusion_matrices</span>(CM.models.binary_ADHD_3, <span class="st">"models.binary_ADHD_3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print_confusion_matrices</span>(CM.models.binary_ADHD_3, <span class="st">"models.binary_ADHD_3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 --- Confusion Matrices for models.binary_ADHD_3 ---
@@ -1979,80 +1810,80 @@ Prediction adhd no_adhd
 
 -------------------------------</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co">#confusion matrix for RF only</span></span>
-<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a><span class="co">#CM.models.binary_ADHD_3$Train$RF</span></span>
-<span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a><span class="co">#CM.models.binary_ADHD_3$Test$RF</span></span>
-<span id="cb91-4"><a href="#cb91-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb91-5"><a href="#cb91-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb91-6"><a href="#cb91-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb91-7"><a href="#cb91-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb91-8"><a href="#cb91-8" aria-hidden="true" tabindex="-1"></a><span class="co">#RF seems the winner (I do not think that Alex agreed here). </span></span>
-<span id="cb91-9"><a href="#cb91-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated helper function to compute Mean_Balanced_Accuracy using multiClassSummary</span></span>
-<span id="cb91-10"><a href="#cb91-10" aria-hidden="true" tabindex="-1"></a>calc_balacc <span class="ot">&lt;-</span> <span class="cf">function</span>(mod, truth, newdata) {</span>
-<span id="cb91-11"><a href="#cb91-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get predicted probabilities and predicted class labels</span></span>
-<span id="cb91-12"><a href="#cb91-12" aria-hidden="true" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata =</span> newdata, <span class="at">type =</span> <span class="st">"prob"</span>)</span>
-<span id="cb91-13"><a href="#cb91-13" aria-hidden="true" tabindex="-1"></a>  pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata =</span> newdata)</span>
-<span id="cb91-14"><a href="#cb91-14" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb91-15"><a href="#cb91-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Build a data frame with observed values, predictions, and probabilities.</span></span>
-<span id="cb91-16"><a href="#cb91-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The column names in 'prob' must match the levels in the response factor.</span></span>
-<span id="cb91-17"><a href="#cb91-17" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">obs =</span> truth,</span>
-<span id="cb91-18"><a href="#cb91-18" aria-hidden="true" tabindex="-1"></a>                   <span class="at">pred =</span> pred,</span>
-<span id="cb91-19"><a href="#cb91-19" aria-hidden="true" tabindex="-1"></a>                   prob)</span>
-<span id="cb91-20"><a href="#cb91-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb91-21"><a href="#cb91-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># multiClassSummary computes several metrics including Mean_Balanced_Accuracy.</span></span>
-<span id="cb91-22"><a href="#cb91-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note: Even in binary classification, it returns "Mean_Balanced_Accuracy".</span></span>
-<span id="cb91-23"><a href="#cb91-23" aria-hidden="true" tabindex="-1"></a>  metrics <span class="ot">&lt;-</span> <span class="fu">multiClassSummary</span>(df, <span class="at">lev =</span> <span class="fu">levels</span>(truth), <span class="at">model =</span> mod)</span>
-<span id="cb91-24"><a href="#cb91-24" aria-hidden="true" tabindex="-1"></a>  metrics[<span class="st">"Balanced_Accuracy"</span>]</span>
-<span id="cb91-25"><a href="#cb91-25" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb91-26"><a href="#cb91-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb91-27"><a href="#cb91-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated evaluation function that computes balanced accuracy on train and test sets</span></span>
-<span id="cb91-28"><a href="#cb91-28" aria-hidden="true" tabindex="-1"></a>evaluate_models_balacc <span class="ot">&lt;-</span> <span class="cf">function</span>(model_list, train_data, test_data, response_col) {</span>
-<span id="cb91-29"><a href="#cb91-29" aria-hidden="true" tabindex="-1"></a>  train_balacc <span class="ot">&lt;-</span> <span class="fu">sapply</span>(model_list, <span class="cf">function</span>(mod) </span>
-<span id="cb91-30"><a href="#cb91-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calc_balacc</span>(mod, <span class="at">truth =</span> train_data[[response_col]], <span class="at">newdata =</span> train_data))</span>
-<span id="cb91-31"><a href="#cb91-31" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb91-32"><a href="#cb91-32" aria-hidden="true" tabindex="-1"></a>  test_balacc <span class="ot">&lt;-</span> <span class="fu">sapply</span>(model_list, <span class="cf">function</span>(mod) </span>
-<span id="cb91-33"><a href="#cb91-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calc_balacc</span>(mod, <span class="at">truth =</span> test_data[[response_col]], <span class="at">newdata =</span> test_data))</span>
-<span id="cb91-34"><a href="#cb91-34" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb91-35"><a href="#cb91-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb91-36"><a href="#cb91-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">Model =</span> <span class="fu">names</span>(model_list),</span>
-<span id="cb91-37"><a href="#cb91-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">Train_BalAcc =</span> train_balacc,</span>
-<span id="cb91-38"><a href="#cb91-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">Test_BalAcc  =</span> test_balacc,</span>
-<span id="cb91-39"><a href="#cb91-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">Diff =</span> train_balacc <span class="sc">-</span> test_balacc,</span>
-<span id="cb91-40"><a href="#cb91-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">row.names =</span> <span class="cn">NULL</span></span>
-<span id="cb91-41"><a href="#cb91-41" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb91-42"><a href="#cb91-42" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb91-43"><a href="#cb91-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb91-44"><a href="#cb91-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage for group 1 and group 2 binary models</span></span>
-<span id="cb91-45"><a href="#cb91-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb91-46"><a href="#cb91-46" aria-hidden="true" tabindex="-1"></a>BI_results1 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
-<span id="cb91-47"><a href="#cb91-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_1,</span>
-<span id="cb91-48"><a href="#cb91-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
-<span id="cb91-49"><a href="#cb91-49" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
-<span id="cb91-50"><a href="#cb91-50" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
-<span id="cb91-51"><a href="#cb91-51" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb91-52"><a href="#cb91-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb91-53"><a href="#cb91-53" aria-hidden="true" tabindex="-1"></a>BI_results2 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
-<span id="cb91-54"><a href="#cb91-54" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_2,</span>
-<span id="cb91-55"><a href="#cb91-55" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
-<span id="cb91-56"><a href="#cb91-56" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
-<span id="cb91-57"><a href="#cb91-57" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
-<span id="cb91-58"><a href="#cb91-58" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb91-59"><a href="#cb91-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb91-60"><a href="#cb91-60" aria-hidden="true" tabindex="-1"></a>BI_results3 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
-<span id="cb91-61"><a href="#cb91-61" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_3,</span>
-<span id="cb91-62"><a href="#cb91-62" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
-<span id="cb91-63"><a href="#cb91-63" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
-<span id="cb91-64"><a href="#cb91-64" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
-<span id="cb91-65"><a href="#cb91-65" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb91-66"><a href="#cb91-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb91-67"><a href="#cb91-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the results from the two groups for comparison</span></span>
-<span id="cb91-68"><a href="#cb91-68" aria-hidden="true" tabindex="-1"></a>BI_results1<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"No L2"</span></span>
-<span id="cb91-69"><a href="#cb91-69" aria-hidden="true" tabindex="-1"></a>BI_results2<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"With L2"</span></span>
-<span id="cb91-70"><a href="#cb91-70" aria-hidden="true" tabindex="-1"></a>BI_results3<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"BAARS"</span></span>
-<span id="cb91-71"><a href="#cb91-71" aria-hidden="true" tabindex="-1"></a>BI_results_all <span class="ot">&lt;-</span> <span class="fu">rbind</span>(BI_results1, BI_results2, BI_results3)</span>
-<span id="cb91-72"><a href="#cb91-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb91-73"><a href="#cb91-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the combined balanced accuracy results</span></span>
-<span id="cb91-74"><a href="#cb91-74" aria-hidden="true" tabindex="-1"></a>BI_results_all</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">#confusion matrix for RF only</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co">#CM.models.binary_ADHD_3$Train$RF</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="co">#CM.models.binary_ADHD_3$Test$RF</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="co">#RF seems the winner (I do not think that Alex agreed here). </span></span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated helper function to compute Mean_Balanced_Accuracy using multiClassSummary</span></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>calc_balacc <span class="ot">&lt;-</span> <span class="cf">function</span>(mod, truth, newdata) {</span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get predicted probabilities and predicted class labels</span></span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata =</span> newdata, <span class="at">type =</span> <span class="st">"prob"</span>)</span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>  pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata =</span> newdata)</span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Build a data frame with observed values, predictions, and probabilities.</span></span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The column names in 'prob' must match the levels in the response factor.</span></span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">obs =</span> truth,</span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a>                   <span class="at">pred =</span> pred,</span>
+<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a>                   prob)</span>
+<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># multiClassSummary computes several metrics including Mean_Balanced_Accuracy.</span></span>
+<span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note: Even in binary classification, it returns "Mean_Balanced_Accuracy".</span></span>
+<span id="cb49-23"><a href="#cb49-23" aria-hidden="true" tabindex="-1"></a>  metrics <span class="ot">&lt;-</span> <span class="fu">multiClassSummary</span>(df, <span class="at">lev =</span> <span class="fu">levels</span>(truth), <span class="at">model =</span> mod)</span>
+<span id="cb49-24"><a href="#cb49-24" aria-hidden="true" tabindex="-1"></a>  metrics[<span class="st">"Balanced_Accuracy"</span>]</span>
+<span id="cb49-25"><a href="#cb49-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb49-26"><a href="#cb49-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-27"><a href="#cb49-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated evaluation function that computes balanced accuracy on train and test sets</span></span>
+<span id="cb49-28"><a href="#cb49-28" aria-hidden="true" tabindex="-1"></a>evaluate_models_balacc <span class="ot">&lt;-</span> <span class="cf">function</span>(model_list, train_data, test_data, response_col) {</span>
+<span id="cb49-29"><a href="#cb49-29" aria-hidden="true" tabindex="-1"></a>  train_balacc <span class="ot">&lt;-</span> <span class="fu">sapply</span>(model_list, <span class="cf">function</span>(mod) </span>
+<span id="cb49-30"><a href="#cb49-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calc_balacc</span>(mod, <span class="at">truth =</span> train_data[[response_col]], <span class="at">newdata =</span> train_data))</span>
+<span id="cb49-31"><a href="#cb49-31" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb49-32"><a href="#cb49-32" aria-hidden="true" tabindex="-1"></a>  test_balacc <span class="ot">&lt;-</span> <span class="fu">sapply</span>(model_list, <span class="cf">function</span>(mod) </span>
+<span id="cb49-33"><a href="#cb49-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calc_balacc</span>(mod, <span class="at">truth =</span> test_data[[response_col]], <span class="at">newdata =</span> test_data))</span>
+<span id="cb49-34"><a href="#cb49-34" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb49-35"><a href="#cb49-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb49-36"><a href="#cb49-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">Model =</span> <span class="fu">names</span>(model_list),</span>
+<span id="cb49-37"><a href="#cb49-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">Train_BalAcc =</span> train_balacc,</span>
+<span id="cb49-38"><a href="#cb49-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">Test_BalAcc  =</span> test_balacc,</span>
+<span id="cb49-39"><a href="#cb49-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">Diff =</span> train_balacc <span class="sc">-</span> test_balacc,</span>
+<span id="cb49-40"><a href="#cb49-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">row.names =</span> <span class="cn">NULL</span></span>
+<span id="cb49-41"><a href="#cb49-41" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb49-42"><a href="#cb49-42" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb49-43"><a href="#cb49-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-44"><a href="#cb49-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage for group 1 and group 2 binary models</span></span>
+<span id="cb49-45"><a href="#cb49-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-46"><a href="#cb49-46" aria-hidden="true" tabindex="-1"></a>BI_results1 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
+<span id="cb49-47"><a href="#cb49-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_1,</span>
+<span id="cb49-48"><a href="#cb49-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
+<span id="cb49-49"><a href="#cb49-49" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
+<span id="cb49-50"><a href="#cb49-50" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
+<span id="cb49-51"><a href="#cb49-51" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb49-52"><a href="#cb49-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-53"><a href="#cb49-53" aria-hidden="true" tabindex="-1"></a>BI_results2 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
+<span id="cb49-54"><a href="#cb49-54" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_2,</span>
+<span id="cb49-55"><a href="#cb49-55" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
+<span id="cb49-56"><a href="#cb49-56" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
+<span id="cb49-57"><a href="#cb49-57" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
+<span id="cb49-58"><a href="#cb49-58" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb49-59"><a href="#cb49-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-60"><a href="#cb49-60" aria-hidden="true" tabindex="-1"></a>BI_results3 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
+<span id="cb49-61"><a href="#cb49-61" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_3,</span>
+<span id="cb49-62"><a href="#cb49-62" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
+<span id="cb49-63"><a href="#cb49-63" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
+<span id="cb49-64"><a href="#cb49-64" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
+<span id="cb49-65"><a href="#cb49-65" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb49-66"><a href="#cb49-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-67"><a href="#cb49-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the results from the two groups for comparison</span></span>
+<span id="cb49-68"><a href="#cb49-68" aria-hidden="true" tabindex="-1"></a>BI_results1<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"No L2"</span></span>
+<span id="cb49-69"><a href="#cb49-69" aria-hidden="true" tabindex="-1"></a>BI_results2<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"With L2"</span></span>
+<span id="cb49-70"><a href="#cb49-70" aria-hidden="true" tabindex="-1"></a>BI_results3<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"BAARS"</span></span>
+<span id="cb49-71"><a href="#cb49-71" aria-hidden="true" tabindex="-1"></a>BI_results_all <span class="ot">&lt;-</span> <span class="fu">rbind</span>(BI_results1, BI_results2, BI_results3)</span>
+<span id="cb49-72"><a href="#cb49-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-73"><a href="#cb49-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the combined balanced accuracy results</span></span>
+<span id="cb49-74"><a href="#cb49-74" aria-hidden="true" tabindex="-1"></a>BI_results_all</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Model Train_BalAcc Test_BalAcc         Diff     Set
 1    Logit    0.6239837   0.7356902 -0.111706496   No L2
@@ -2074,60 +1905,60 @@ Prediction adhd no_adhd
 17      RF    1.0000000   0.7441077  0.255892256   BAARS
 18 XGBOOST    0.9545455   0.7979798  0.156565657   BAARS</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="do">### SHAP Values for RF</span></span>
-<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a character vector with the names of your selected predictors</span></span>
-<span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a>selected_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"L2"</span>, <span class="st">"SRT"</span>, <span class="st">"DM"</span>, <span class="st">"WM"</span>, <span class="st">"PHQ"</span>, <span class="st">"Sex"</span>, <span class="st">"Age"</span>, </span>
-<span id="cb93-6"><a href="#cb93-6" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"SpokenLanguages"</span>, <span class="st">"Education"</span>, <span class="st">"BAARS"</span>)</span>
-<span id="cb93-7"><a href="#cb93-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-8"><a href="#cb93-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Subset the training data for SHAP analysis</span></span>
-<span id="cb93-9"><a href="#cb93-9" aria-hidden="true" tabindex="-1"></a>BI_X_train <span class="ot">&lt;-</span> ProjectData[, selected_vars]</span>
-<span id="cb93-10"><a href="#cb93-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-11"><a href="#cb93-11" aria-hidden="true" tabindex="-1"></a><span class="co"># For binary classification, define a prediction wrapper that returns probabilities for the positive class.</span></span>
-<span id="cb93-12"><a href="#cb93-12" aria-hidden="true" tabindex="-1"></a>predict_prob_BI <span class="ot">&lt;-</span> <span class="cf">function</span>(model, newdata) {</span>
-<span id="cb93-13"><a href="#cb93-13" aria-hidden="true" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> newdata, <span class="at">type =</span> <span class="st">"prob"</span>)</span>
-<span id="cb93-14"><a href="#cb93-14" aria-hidden="true" tabindex="-1"></a>  prob[, <span class="dv">2</span>]</span>
-<span id="cb93-15"><a href="#cb93-15" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb93-16"><a href="#cb93-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-17"><a href="#cb93-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute SHAP values using fastshap for one of the QDR models</span></span>
-<span id="cb93-18"><a href="#cb93-18" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
-<span id="cb93-19"><a href="#cb93-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-20"><a href="#cb93-20" aria-hidden="true" tabindex="-1"></a>BI_shap_vals_RF <span class="ot">&lt;-</span> fastshap<span class="sc">::</span><span class="fu">explain</span>(</span>
-<span id="cb93-21"><a href="#cb93-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">object =</span> models.binary_ADHD_2<span class="sc">$</span>RF, </span>
-<span id="cb93-22"><a href="#cb93-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">X =</span> BI_X_train,</span>
-<span id="cb93-23"><a href="#cb93-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">pred_wrapper =</span> predict_prob_BI,</span>
-<span id="cb93-24"><a href="#cb93-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">nsim =</span> <span class="dv">50</span></span>
-<span id="cb93-25"><a href="#cb93-25" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb93-26"><a href="#cb93-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-27"><a href="#cb93-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Signed and Absolute Mean SHAP values for each predictor</span></span>
-<span id="cb93-28"><a href="#cb93-28" aria-hidden="true" tabindex="-1"></a>BI_signed_mean_RF <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(BI_shap_vals_RF)</span>
-<span id="cb93-29"><a href="#cb93-29" aria-hidden="true" tabindex="-1"></a>BI_abs_mean_RF    <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(<span class="fu">abs</span>(BI_shap_vals_RF))</span>
-<span id="cb93-30"><a href="#cb93-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-31"><a href="#cb93-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the SHAP means into a data frame for plotting.</span></span>
-<span id="cb93-32"><a href="#cb93-32" aria-hidden="true" tabindex="-1"></a>df_BI_shap_means <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb93-33"><a href="#cb93-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">names</span>(BI_signed_mean_RF),</span>
-<span id="cb93-34"><a href="#cb93-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">Signed   =</span> BI_signed_mean_RF,</span>
-<span id="cb93-35"><a href="#cb93-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">Absolute =</span> BI_abs_mean_RF</span>
-<span id="cb93-36"><a href="#cb93-36" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb93-37"><a href="#cb93-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-38"><a href="#cb93-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to long format for ggplot.</span></span>
-<span id="cb93-39"><a href="#cb93-39" aria-hidden="true" tabindex="-1"></a>df_BI_shap_long <span class="ot">&lt;-</span> df_BI_shap_means <span class="sc">%&gt;%</span></span>
-<span id="cb93-40"><a href="#cb93-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Signed, Absolute),</span>
-<span id="cb93-41"><a href="#cb93-41" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Metric"</span>,</span>
-<span id="cb93-42"><a href="#cb93-42" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Mean_SHAP"</span>)</span>
-<span id="cb93-43"><a href="#cb93-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-44"><a href="#cb93-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar plot of the mean SHAP values.</span></span>
-<span id="cb93-45"><a href="#cb93-45" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_BI_shap_long, <span class="fu">aes</span>(<span class="at">x =</span> Variable, <span class="at">y =</span> Mean_SHAP, <span class="at">fill =</span> Metric)) <span class="sc">+</span></span>
-<span id="cb93-46"><a href="#cb93-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Metric, <span class="at">scales =</span> <span class="st">"free"</span>) <span class="sc">+</span></span>
-<span id="cb93-47"><a href="#cb93-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb93-48"><a href="#cb93-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mean SHAP Values for RF Binary Model"</span>,</span>
-<span id="cb93-49"><a href="#cb93-49" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Variable"</span>,</span>
-<span id="cb93-50"><a href="#cb93-50" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Mean SHAP Value"</span>) <span class="sc">+</span></span>
-<span id="cb93-51"><a href="#cb93-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb93-52"><a href="#cb93-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb93-53"><a href="#cb93-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-54"><a href="#cb93-54" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="do">### SHAP Values for RF</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a character vector with the names of your selected predictors</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>selected_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"L2"</span>, <span class="st">"SRT"</span>, <span class="st">"DM"</span>, <span class="st">"WM"</span>, <span class="st">"PHQ"</span>, <span class="st">"Sex"</span>, <span class="st">"Age"</span>, </span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"SpokenLanguages"</span>, <span class="st">"Education"</span>, <span class="st">"BAARS"</span>)</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Subset the training data for SHAP analysis</span></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>BI_X_train <span class="ot">&lt;-</span> ProjectData[, selected_vars]</span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a><span class="co"># For binary classification, define a prediction wrapper that returns probabilities for the positive class.</span></span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>predict_prob_BI <span class="ot">&lt;-</span> <span class="cf">function</span>(model, newdata) {</span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> newdata, <span class="at">type =</span> <span class="st">"prob"</span>)</span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>  prob[, <span class="dv">2</span>]</span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute SHAP values using fastshap for one of the QDR models</span></span>
+<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
+<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a>BI_shap_vals_RF <span class="ot">&lt;-</span> fastshap<span class="sc">::</span><span class="fu">explain</span>(</span>
+<span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">object =</span> models.binary_ADHD_2<span class="sc">$</span>RF, </span>
+<span id="cb51-22"><a href="#cb51-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">X =</span> BI_X_train,</span>
+<span id="cb51-23"><a href="#cb51-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">pred_wrapper =</span> predict_prob_BI,</span>
+<span id="cb51-24"><a href="#cb51-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">nsim =</span> <span class="dv">50</span></span>
+<span id="cb51-25"><a href="#cb51-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb51-26"><a href="#cb51-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-27"><a href="#cb51-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Signed and Absolute Mean SHAP values for each predictor</span></span>
+<span id="cb51-28"><a href="#cb51-28" aria-hidden="true" tabindex="-1"></a>BI_signed_mean_RF <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(BI_shap_vals_RF)</span>
+<span id="cb51-29"><a href="#cb51-29" aria-hidden="true" tabindex="-1"></a>BI_abs_mean_RF    <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(<span class="fu">abs</span>(BI_shap_vals_RF))</span>
+<span id="cb51-30"><a href="#cb51-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-31"><a href="#cb51-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the SHAP means into a data frame for plotting.</span></span>
+<span id="cb51-32"><a href="#cb51-32" aria-hidden="true" tabindex="-1"></a>df_BI_shap_means <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb51-33"><a href="#cb51-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">names</span>(BI_signed_mean_RF),</span>
+<span id="cb51-34"><a href="#cb51-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">Signed   =</span> BI_signed_mean_RF,</span>
+<span id="cb51-35"><a href="#cb51-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">Absolute =</span> BI_abs_mean_RF</span>
+<span id="cb51-36"><a href="#cb51-36" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb51-37"><a href="#cb51-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-38"><a href="#cb51-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to long format for ggplot.</span></span>
+<span id="cb51-39"><a href="#cb51-39" aria-hidden="true" tabindex="-1"></a>df_BI_shap_long <span class="ot">&lt;-</span> df_BI_shap_means <span class="sc">%&gt;%</span></span>
+<span id="cb51-40"><a href="#cb51-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Signed, Absolute),</span>
+<span id="cb51-41"><a href="#cb51-41" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Metric"</span>,</span>
+<span id="cb51-42"><a href="#cb51-42" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Mean_SHAP"</span>)</span>
+<span id="cb51-43"><a href="#cb51-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-44"><a href="#cb51-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar plot of the mean SHAP values.</span></span>
+<span id="cb51-45"><a href="#cb51-45" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_BI_shap_long, <span class="fu">aes</span>(<span class="at">x =</span> Variable, <span class="at">y =</span> Mean_SHAP, <span class="at">fill =</span> Metric)) <span class="sc">+</span></span>
+<span id="cb51-46"><a href="#cb51-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Metric, <span class="at">scales =</span> <span class="st">"free"</span>) <span class="sc">+</span></span>
+<span id="cb51-47"><a href="#cb51-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb51-48"><a href="#cb51-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mean SHAP Values for RF Binary Model"</span>,</span>
+<span id="cb51-49"><a href="#cb51-49" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Variable"</span>,</span>
+<span id="cb51-50"><a href="#cb51-50" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Mean SHAP Value"</span>) <span class="sc">+</span></span>
+<span id="cb51-51"><a href="#cb51-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb51-52"><a href="#cb51-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb51-53"><a href="#cb51-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-54"><a href="#cb51-54" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
