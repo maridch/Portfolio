@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site This does not want to work\n\nx= 1+5\nx\n\n[1] 6"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "portfolio",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  }
+]
