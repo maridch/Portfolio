@@ -103,6 +103,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -150,8 +179,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#load-libraries" id="toc-load-libraries" class="nav-link active" data-scroll-target="#load-libraries">Load Libraries</a></li>
+  <li><a href="#check-out-individual-models" id="toc-check-out-individual-models" class="nav-link" data-scroll-target="#check-out-individual-models">Check out individual models</a></li>
+  <li><a href="#set-wd-and-load-data" id="toc-set-wd-and-load-data" class="nav-link" data-scroll-target="#set-wd-and-load-data">set WD and load data</a></li>
+  <li><a href="#of-data-will-go-into-training" id="toc-of-data-will-go-into-training" class="nav-link" data-scroll-target="#of-data-will-go-into-training">75% of data will go into training</a></li>
+  <li><a href="#create-training-and-test-datasets" id="toc-create-training-and-test-datasets" class="nav-link" data-scroll-target="#create-training-and-test-datasets">Create training and test datasets</a></li>
+  <li><a href="#setup-parallel-processing" id="toc-setup-parallel-processing" class="nav-link" data-scroll-target="#setup-parallel-processing">Setup parallel processing</a></li>
+  <li><a href="#train-binary-models-for-group-0-using-base-predictors" id="toc-train-binary-models-for-group-0-using-base-predictors" class="nav-link" data-scroll-target="#train-binary-models-for-group-0-using-base-predictors">Train binary models for group 0 (using base predictors)</a></li>
+  <li><a href="#train-binary-models-for-group-1-adding-language-info" id="toc-train-binary-models-for-group-1-adding-language-info" class="nav-link" data-scroll-target="#train-binary-models-for-group-1-adding-language-info">Train binary models for group 1 (adding language info)</a></li>
+  <li><a href="#train-binary-models-for-group-2-adding-baars-survey" id="toc-train-binary-models-for-group-2-adding-baars-survey" class="nav-link" data-scroll-target="#train-binary-models-for-group-2-adding-baars-survey">Train binary models for group 2 (adding BAARS survey)</a></li>
+  <li><a href="#stop-parallel-processing-when-finished" id="toc-stop-parallel-processing-when-finished" class="nav-link" data-scroll-target="#stop-parallel-processing-when-finished">Stop parallel processing when finished</a></li>
+  <li><a href="#compare-resampling-results-across-all-binary-models" id="toc-compare-resampling-results-across-all-binary-models" class="nav-link" data-scroll-target="#compare-resampling-results-across-all-binary-models">Compare resampling results across all binary models</a></li>
+  <li><a href="#helper-function-to-extract-confusion-matrices-for-a-given-model-list" id="toc-helper-function-to-extract-confusion-matrices-for-a-given-model-list" class="nav-link" data-scroll-target="#helper-function-to-extract-confusion-matrices-for-a-given-model-list">Helper function to extract confusion matrices for a given model list</a></li>
+  <li><a href="#extract-confusion-matrices-for-each-group" id="toc-extract-confusion-matrices-for-each-group" class="nav-link" data-scroll-target="#extract-confusion-matrices-for-each-group">Extract confusion matrices for each group</a></li>
+  <li><a href="#optionally-print-all-confusion-matrices-for-each-group-and-each-model" id="toc-optionally-print-all-confusion-matrices-for-each-group-and-each-model" class="nav-link" data-scroll-target="#optionally-print-all-confusion-matrices-for-each-group-and-each-model">Optionally, print all confusion matrices for each group and each model</a></li>
+  <li><a href="#print-confusion-matrices-for-each-group" id="toc-print-confusion-matrices-for-each-group" class="nav-link" data-scroll-target="#print-confusion-matrices-for-each-group">Print confusion matrices for each group</a></li>
+  <li><a href="#updated-evaluation-function-that-computes-balanced-accuracy-on-train-and-test-sets" id="toc-updated-evaluation-function-that-computes-balanced-accuracy-on-train-and-test-sets" class="nav-link" data-scroll-target="#updated-evaluation-function-that-computes-balanced-accuracy-on-train-and-test-sets">Updated evaluation function that computes balanced accuracy on train and test sets</a></li>
+  <li><a href="#example-usage-for-group-1-and-group-2-binary-models" id="toc-example-usage-for-group-1-and-group-2-binary-models" class="nav-link" data-scroll-target="#example-usage-for-group-1-and-group-2-binary-models">Example usage for group 1 and group 2 binary models</a></li>
+  <li><a href="#combine-the-results-from-the-two-groups-for-comparison" id="toc-combine-the-results-from-the-two-groups-for-comparison" class="nav-link" data-scroll-target="#combine-the-results-from-the-two-groups-for-comparison">Combine the results from the two groups for comparison</a></li>
+  <li><a href="#print-the-combined-balanced-accuracy-results" id="toc-print-the-combined-balanced-accuracy-results" class="nav-link" data-scroll-target="#print-the-combined-balanced-accuracy-results">Print the combined balanced accuracy results</a>
+  <ul class="collapse">
+  <li><a href="#shap-values-for-rf" id="toc-shap-values-for-rf" class="nav-link" data-scroll-target="#shap-values-for-rf">SHAP Values for RF</a></li>
+  </ul></li>
+  <li><a href="#create-a-character-vector-with-the-names-of-your-selected-predictors" id="toc-create-a-character-vector-with-the-names-of-your-selected-predictors" class="nav-link" data-scroll-target="#create-a-character-vector-with-the-names-of-your-selected-predictors">Create a character vector with the names of your selected predictors</a></li>
+  <li><a href="#subset-the-training-data-for-shap-analysis" id="toc-subset-the-training-data-for-shap-analysis" class="nav-link" data-scroll-target="#subset-the-training-data-for-shap-analysis">Subset the training data for SHAP analysis</a></li>
+  <li><a href="#for-binary-classification-define-a-prediction-wrapper-that-returns-probabilities-for-the-positive-class." id="toc-for-binary-classification-define-a-prediction-wrapper-that-returns-probabilities-for-the-positive-class." class="nav-link" data-scroll-target="#for-binary-classification-define-a-prediction-wrapper-that-returns-probabilities-for-the-positive-class.">For binary classification, define a prediction wrapper that returns probabilities for the positive class.</a></li>
+  <li><a href="#compute-shap-values-using-fastshap-for-one-of-the-qdr-models" id="toc-compute-shap-values-using-fastshap-for-one-of-the-qdr-models" class="nav-link" data-scroll-target="#compute-shap-values-using-fastshap-for-one-of-the-qdr-models">Compute SHAP values using fastshap for one of the QDR models</a></li>
+  <li><a href="#calculate-signed-and-absolute-mean-shap-values-for-each-predictor" id="toc-calculate-signed-and-absolute-mean-shap-values-for-each-predictor" class="nav-link" data-scroll-target="#calculate-signed-and-absolute-mean-shap-values-for-each-predictor">Calculate Signed and Absolute Mean SHAP values for each predictor</a></li>
+  <li><a href="#combine-the-shap-means-into-a-data-frame-for-plotting." id="toc-combine-the-shap-means-into-a-data-frame-for-plotting." class="nav-link" data-scroll-target="#combine-the-shap-means-into-a-data-frame-for-plotting.">Combine the SHAP means into a data frame for plotting.</a></li>
+  <li><a href="#convert-to-long-format-for-ggplot." id="toc-convert-to-long-format-for-ggplot." class="nav-link" data-scroll-target="#convert-to-long-format-for-ggplot.">Convert to long format for ggplot.</a></li>
+  <li><a href="#create-a-bar-plot-of-the-mean-shap-values." id="toc-create-a-bar-plot-of-the-mean-shap-values." class="nav-link" data-scroll-target="#create-a-bar-plot-of-the-mean-shap-values.">Create a bar plot of the mean SHAP values.</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/maridch/Portfolio/edit/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/maridch/Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -184,8 +248,153 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] 6</code></pre>
 </div>
 </div>
+<section id="load-libraries" class="level1">
+<h1>Load Libraries</h1>
+<p>library(readxl) library(caret) library(rpart) library(caretEnsemble) library(tidyverse) library(fastshap) library(readr) library(data.table) library(mltools) library(MLmetrics) library(conflicted) library(parallel) library(doParallel) conflicts_prefer(dplyr::filter)</p>
+</section>
+<section id="check-out-individual-models" class="level1">
+<h1>Check out individual models</h1>
+<p>get_best_result = function(caret_fit) { best = which(rownames(caret_fit<span class="math inline">\(results) == rownames(caret_fit\)</span>bestTune)) best_result = caret_fit$results[best, ] rownames(best_result) = NULL best_result }</p>
+</section>
+<section id="set-wd-and-load-data" class="level1">
+<h1>set WD and load data</h1>
+<p>library(here) ProjectData &lt;- read_excel(“DataScience_Data.xlsx”) names(ProjectData) summary(ProjectData)</p>
+<p>hist(ProjectData$BAARS) #39+ for diagnosis</p>
+<p>#Sample Size ProjectData %&gt;% summarise(n = n())</p>
+<section id="section" class="level88">
+<p class="heading"></p>
+<p>#Question 1: What factors best predict the ADHD diagnosis? ########################################################################################</p>
+<p>#Variables to keep ProjectData.K&lt;-ProjectData %&gt;% select(Participant, L2, SRT, DM, WM, BAARS, ADHD, PHQ, Sex, Age, SpokenLanguages, Education) summary(ProjectData.K)</p>
+<p>ProjectData.K<span class="math inline">\(Participant &lt;- as.factor(ProjectData.K\)</span>Participant)</p>
+<p>ProjectData.K<span class="math inline">\(ADHD[ProjectData.K\)</span>ADHD == 1] &lt;- “adhd” ProjectData.K<span class="math inline">\(ADHD[ProjectData.K\)</span>ADHD == 0] &lt;- “no_adhd” ProjectData.K<span class="math inline">\(ADHD &lt;- as.factor(ProjectData.K\)</span>ADHD)</p>
+<p>table(ProjectData.K$ADHD) ## Split<br>
+set.seed(666) # For reproducibility</p>
+</section>
+</section>
+<section id="of-data-will-go-into-training" class="level1">
+<h1>75% of data will go into training</h1>
+<p>train_idx &lt;- createDataPartition(ProjectData.K$ADHD, p = 0.75, list = FALSE)</p>
+</section>
+<section id="create-training-and-test-datasets" class="level1">
+<h1>Create training and test datasets</h1>
+<p>train_data_ADHD_Status &lt;- ProjectData.K[train_idx, ] test_data_ADHD_Status &lt;- ProjectData.K[-train_idx, ]</p>
+<p>table(train_data_ADHD_Status<span class="math inline">\(ADHD)
+table(test_data_ADHD_Status\)</span>ADHD) prop.table(table(train_data_ADHD_Status<span class="math inline">\(ADHD))
+prop.table(table(test_data_ADHD_Status\)</span>ADHD))</p>
+<section id="section-1" class="level62">
+<p class="heading"></p>
+<p>#########Set up all models ################################### ############################################################## # Set up cross-validation using ROC as the metric BI_cv_control &lt;- trainControl( method = “cv”, #trained on 9, validated on 1 number = 10, #split data into 10 folds # summaryFunction = prSummary, # Use caret’s prSummary for binary classification for AUC # summaryFunction = twoClassSummary, # Use caret’s twoClassSummary for binary classification for ROC metric # summaryFunction = defaultSummary, # Use caret’s defaultSummary for binary classification for accuracy summaryFunction = multiClassSummary, # multiClassSummary returns Mean_Balanced_Accuracy classProbs = TRUE, allowParallel = TRUE, savePredictions = “final” )</p>
+</section>
+</section>
+<section id="setup-parallel-processing" class="level1">
+<h1>Setup parallel processing</h1>
+<p>cl &lt;- makePSOCKcluster(detectCores()) registerDoParallel(cl)</p>
+</section>
+<section id="train-binary-models-for-group-0-using-base-predictors" class="level1">
+<h1>Train binary models for group 0 (using base predictors)</h1>
+<p>models.binary_ADHD_1 &lt;- caretList( ADHD ~ SRT+DM+WM+PHQ+Sex+Age+Education, data = train_data_ADHD_Status, trControl = BI_cv_control, #metric = “AUC”, metric = “Mean_Balanced_Accuracy”, tuneList = list( # Logistic regression for binary classification Logit = caretModelSpec( method = “glm”, preProcess = c(“center”, “scale”), family = “binomial” ), # Lasso using glmnet with family binomial Lasso = caretModelSpec( method = “glmnet”, preProcess = c(“center”, “scale”), tuneGrid = expand.grid(alpha = 1, lambda = seq(0.005, 0.1, 0.005)), family = “binomial” ), # Linear Discriminant Analysis LDA = caretModelSpec( method = “lda”, preProcess = c(“center”, “scale”) ), # Quadratic Discriminant Analysis QDA = caretModelSpec( method = “qda”, preProcess = c(“center”, “scale”) ), # Random Forest model RF = caretModelSpec( method = “rf”, preProcess = c(“center”, “scale”), tuneGrid = expand.grid(mtry = seq(1, 10, 1)), ntree = 1000, importance = TRUE ), # XGBoost model for classification XGBOOST = caretModelSpec( method = “xgbTree”, preProcess = c(“center”, “scale”), verbosity = 0, tuneGrid = expand.grid( nrounds = 20, max_depth = 3, eta = 0.3, gamma = seq(0.1, 0.3, 0.05), colsample_bytree = 1, min_child_weight = 1, subsample = seq(0.7, 0.8, 0.05) ) ) ) )</p>
+</section>
+<section id="train-binary-models-for-group-1-adding-language-info" class="level1">
+<h1>Train binary models for group 1 (adding language info)</h1>
+<p>models.binary_ADHD_2 &lt;- caretList( ADHD ~ SRT+DM+WM+PHQ+Sex+Age+Education+L2+SpokenLanguages, data = train_data_ADHD_Status, trControl = BI_cv_control, #metric = “AUC”, metric = “Mean_Balanced_Accuracy”, tuneList = list( # Logistic regression for binary classification Logit = caretModelSpec( method = “glm”, preProcess = c(“center”, “scale”), family = “binomial” ), # Lasso using glmnet with family binomial Lasso = caretModelSpec( method = “glmnet”, preProcess = c(“center”, “scale”), tuneGrid = expand.grid(alpha = 1, lambda = seq(0.005, 0.1, 0.005)), family = “binomial” ), # Linear Discriminant Analysis LDA = caretModelSpec( method = “lda”, preProcess = c(“center”, “scale”) ), # Quadratic Discriminant Analysis QDA = caretModelSpec( method = “qda”, preProcess = c(“center”, “scale”) ), # Random Forest model RF = caretModelSpec( method = “rf”, preProcess = c(“center”, “scale”), tuneGrid = expand.grid(mtry = seq(1, 10, 1)), ntree = 1000, importance = TRUE ), # XGBoost model for classification XGBOOST = caretModelSpec( method = “xgbTree”, preProcess = c(“center”, “scale”), verbosity = 0, tuneGrid = expand.grid( nrounds = 20, max_depth = 3, eta = 0.3, gamma = seq(0.1, 0.3, 0.05), colsample_bytree = 1, min_child_weight = 1, subsample = seq(0.7, 0.8, 0.05) ) ) ) )</p>
+</section>
+<section id="train-binary-models-for-group-2-adding-baars-survey" class="level1">
+<h1>Train binary models for group 2 (adding BAARS survey)</h1>
+<p>models.binary_ADHD_3 &lt;- caretList( ADHD ~ SRT+DM+WM+PHQ+Sex+Age+Education+L2+SpokenLanguages+BAARS, data = train_data_ADHD_Status, trControl = BI_cv_control, #metric = “AUC”, metric = “Mean_Balanced_Accuracy”, tuneList = list( # Logistic regression for binary classification Logit = caretModelSpec( method = “glm”, preProcess = c(“center”, “scale”), family = “binomial” ), # Lasso using glmnet with family binomial Lasso = caretModelSpec( method = “glmnet”, preProcess = c(“center”, “scale”), tuneGrid = expand.grid(alpha = 1, lambda = seq(0.005, 0.1, 0.005)), family = “binomial” ), # Linear Discriminant Analysis LDA = caretModelSpec( method = “lda”, preProcess = c(“center”, “scale”) ), # Quadratic Discriminant Analysis QDA = caretModelSpec( method = “qda”, preProcess = c(“center”, “scale”) ), # Random Forest model RF = caretModelSpec( method = “rf”, preProcess = c(“center”, “scale”), tuneGrid = expand.grid(mtry = seq(1, 10, 1)), ntree = 1000, importance = TRUE ), # XGBoost model for classification XGBOOST = caretModelSpec( method = “xgbTree”, preProcess = c(“center”, “scale”), verbosity = 0, tuneGrid = expand.grid( nrounds = 20, max_depth = 3, eta = 0.3, gamma = seq(0.1, 0.3, 0.05), colsample_bytree = 1, min_child_weight = 1, subsample = seq(0.7, 0.8, 0.05) ) ) ) )</p>
+</section>
+<section id="stop-parallel-processing-when-finished" class="level1">
+<h1>Stop parallel processing when finished</h1>
+<p>stopCluster(cl)</p>
+</section>
+<section id="compare-resampling-results-across-all-binary-models" class="level1">
+<h1>Compare resampling results across all binary models</h1>
+<p>results.binary.ADHD_1 &lt;- resamples(models.binary_ADHD_1) results.binary.ADHD_2 &lt;- resamples(models.binary_ADHD_2) results.binary.ADHD_3 &lt;- resamples(models.binary_ADHD_3) bwplot(results.binary.ADHD_1, scales = list(x = list(relation = “free”), y = list(relation = “free”))) bwplot(results.binary.ADHD_2, scales = list(x = list(relation = “free”), y = list(relation = “free”))) bwplot(results.binary.ADHD_3, scales = list(x = list(relation = “free”), y = list(relation = “free”)))</p>
+</section>
+<section id="helper-function-to-extract-confusion-matrices-for-a-given-model-list" class="level1">
+<h1>Helper function to extract confusion matrices for a given model list</h1>
+<p>extract_CM &lt;- function(model_list, train_data, test_data, response_col) { # Loop over models in the list and compute confusion matrices cm_train &lt;- lapply(model_list, function(mod) { confusionMatrix( predict(mod, newdata = train_data), reference = train_data[[response_col]] ) })</p>
+<p>cm_test &lt;- lapply(model_list, function(mod) { confusionMatrix( predict(mod, newdata = test_data), reference = test_data[[response_col]] ) })</p>
+<p># Return a list containing both training and testing confusion matrices list(Train = cm_train, Test = cm_test) }</p>
+</section>
+<section id="extract-confusion-matrices-for-each-group" class="level1">
+<h1>Extract confusion matrices for each group</h1>
+<p>CM.models.binary_ADHD_1 &lt;- extract_CM(models.binary_ADHD_1, train_data_ADHD_Status, test_data_ADHD_Status, “ADHD”) CM.models.binary_ADHD_2 &lt;- extract_CM(models.binary_ADHD_2, train_data_ADHD_Status, test_data_ADHD_Status, “ADHD”) CM.models.binary_ADHD_3 &lt;- extract_CM(models.binary_ADHD_3, train_data_ADHD_Status, test_data_ADHD_Status, “ADHD”)</p>
+</section>
+<section id="optionally-print-all-confusion-matrices-for-each-group-and-each-model" class="level1">
+<h1>Optionally, print all confusion matrices for each group and each model</h1>
+<p>print_confusion_matrices &lt;- function(cm_list, group_name) { cat(“— Confusion Matrices for”, group_name, “—”) for(model_name in names(cm_list<span class="math inline">\(Train)) {
+    cat("\nModel:", model_name, "\n")
+    cat("Training Data:\n")
+    print(cm_list\)</span>Train[[model_name]]) cat(“Data:”) print(cm_list$Test[[model_name]]) cat(“——————————-”) } }</p>
+</section>
+<section id="print-confusion-matrices-for-each-group" class="level1">
+<h1>Print confusion matrices for each group</h1>
+<p>print_confusion_matrices(CM.models.binary_ADHD_1, “models.binary_ADHD_1”) print_confusion_matrices(CM.models.binary_ADHD_2, “models.binary_ADHD_2”) print_confusion_matrices(CM.models.binary_ADHD_3, “models.binary_ADHD_3”)</p>
+<p>#confusion matrix for RF only #CM.models.binary_ADHD_3<span class="math inline">\(Train\)</span>RF #CM.models.binary_ADHD_3<span class="math inline">\(Test\)</span>RF</p>
+<p>#RF seems the winner (I do not think that Alex agreed here). # Updated helper function to compute Mean_Balanced_Accuracy using multiClassSummary calc_balacc &lt;- function(mod, truth, newdata) { # Get predicted probabilities and predicted class labels prob &lt;- predict(mod, newdata = newdata, type = “prob”) pred &lt;- predict(mod, newdata = newdata)</p>
+<p># Build a data frame with observed values, predictions, and probabilities. # The column names in ‘prob’ must match the levels in the response factor. df &lt;- data.frame(obs = truth, pred = pred, prob)</p>
+<p># multiClassSummary computes several metrics including Mean_Balanced_Accuracy. # Note: Even in binary classification, it returns “Mean_Balanced_Accuracy”. metrics &lt;- multiClassSummary(df, lev = levels(truth), model = mod) metrics[“Balanced_Accuracy”] }</p>
+</section>
+<section id="updated-evaluation-function-that-computes-balanced-accuracy-on-train-and-test-sets" class="level1">
+<h1>Updated evaluation function that computes balanced accuracy on train and test sets</h1>
+<p>evaluate_models_balacc &lt;- function(model_list, train_data, test_data, response_col) { train_balacc &lt;- sapply(model_list, function(mod) calc_balacc(mod, truth = train_data[[response_col]], newdata = train_data))</p>
+<p>test_balacc &lt;- sapply(model_list, function(mod) calc_balacc(mod, truth = test_data[[response_col]], newdata = test_data))</p>
+<p>data.frame( Model = names(model_list), Train_BalAcc = train_balacc, Test_BalAcc = test_balacc, Diff = train_balacc - test_balacc, row.names = NULL ) }</p>
+</section>
+<section id="example-usage-for-group-1-and-group-2-binary-models" class="level1">
+<h1>Example usage for group 1 and group 2 binary models</h1>
+<p>BI_results1 &lt;- evaluate_models_balacc( model_list = models.binary_ADHD_1, train_data = train_data_ADHD_Status, test_data = test_data_ADHD_Status, response_col = “ADHD” )</p>
+<p>BI_results2 &lt;- evaluate_models_balacc( model_list = models.binary_ADHD_2, train_data = train_data_ADHD_Status, test_data = test_data_ADHD_Status, response_col = “ADHD” )</p>
+<p>BI_results3 &lt;- evaluate_models_balacc( model_list = models.binary_ADHD_3, train_data = train_data_ADHD_Status, test_data = test_data_ADHD_Status, response_col = “ADHD” )</p>
+</section>
+<section id="combine-the-results-from-the-two-groups-for-comparison" class="level1">
+<h1>Combine the results from the two groups for comparison</h1>
+<p>BI_results1<span class="math inline">\(Set &lt;- "No L2"
+BI_results2\)</span>Set &lt;- “With L2” BI_results3$Set &lt;- “BAARS” BI_results_all &lt;- rbind(BI_results1, BI_results2, BI_results3)</p>
+</section>
+<section id="print-the-combined-balanced-accuracy-results" class="level1">
+<h1>Print the combined balanced accuracy results</h1>
+<p>BI_results_all</p>
+<section id="shap-values-for-rf" class="level3">
+<h3 class="anchored" data-anchor-id="shap-values-for-rf">SHAP Values for RF</h3>
+</section>
+</section>
+<section id="create-a-character-vector-with-the-names-of-your-selected-predictors" class="level1">
+<h1>Create a character vector with the names of your selected predictors</h1>
+<p>selected_vars &lt;- c(“L2”, “SRT”, “DM”, “WM”, “PHQ”, “Sex”, “Age”, “SpokenLanguages”, “Education”, “BAARS”)</p>
+</section>
+<section id="subset-the-training-data-for-shap-analysis" class="level1">
+<h1>Subset the training data for SHAP analysis</h1>
+<p>BI_X_train &lt;- ProjectData[, selected_vars]</p>
+</section>
+<section id="for-binary-classification-define-a-prediction-wrapper-that-returns-probabilities-for-the-positive-class." class="level1">
+<h1>For binary classification, define a prediction wrapper that returns probabilities for the positive class.</h1>
+<p>predict_prob_BI &lt;- function(model, newdata) { prob &lt;- predict(model, newdata = newdata, type = “prob”) prob[, 2] }</p>
+</section>
+<section id="compute-shap-values-using-fastshap-for-one-of-the-qdr-models" class="level1">
+<h1>Compute SHAP values using fastshap for one of the QDR models</h1>
+<p>set.seed(123) # For reproducibility</p>
+<p>BI_shap_vals_RF &lt;- fastshap::explain( object = models.binary_ADHD_2$RF, X = BI_X_train, pred_wrapper = predict_prob_BI, nsim = 50 )</p>
+</section>
+<section id="calculate-signed-and-absolute-mean-shap-values-for-each-predictor" class="level1">
+<h1>Calculate Signed and Absolute Mean SHAP values for each predictor</h1>
+<p>BI_signed_mean_RF &lt;- colMeans(BI_shap_vals_RF) BI_abs_mean_RF &lt;- colMeans(abs(BI_shap_vals_RF))</p>
+</section>
+<section id="combine-the-shap-means-into-a-data-frame-for-plotting." class="level1">
+<h1>Combine the SHAP means into a data frame for plotting.</h1>
+<p>df_BI_shap_means &lt;- data.frame( Variable = names(BI_signed_mean_RF), Signed = BI_signed_mean_RF, Absolute = BI_abs_mean_RF )</p>
+</section>
+<section id="convert-to-long-format-for-ggplot." class="level1">
+<h1>Convert to long format for ggplot.</h1>
+<p>df_BI_shap_long &lt;- df_BI_shap_means %&gt;% pivot_longer(cols = c(Signed, Absolute), names_to = “Metric”, values_to = “Mean_SHAP”)</p>
+</section>
+<section id="create-a-bar-plot-of-the-mean-shap-values." class="level1">
+<h1>Create a bar plot of the mean SHAP values.</h1>
+<p>Shap_Means_BI &lt;- ggplot(df_BI_shap_long, aes(x = Variable, y = Mean_SHAP, fill = Metric)) + facet_wrap(~ Metric, scales = “free”) + geom_bar(stat = “identity”, position = “dodge”) + labs(title = “Mean SHAP Values for RF Binary Model”, x = “Variable”, y = “Mean SHAP Value”) + coord_flip() + theme_minimal()</p>
+<p>Shap_Means_BI</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -592,4 +801,4 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/maridch/Portfolio/edit/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/maridch/Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/maridch/Portfolio/edit/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/maridch/Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
