@@ -7,7 +7,7 @@ name: Quarto Publish
 
 jobs:
   build-deploy:
-    runs-on: r-base
+    runs-on: posit/r-base:noble
     permissions:
       contents: write
     steps:
