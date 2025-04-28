@@ -4,7 +4,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site This does not want to work\n\nx= 1+5\nx\n\n[1] 6"
+    "text": "About this site This does not want to work\n\nx= 1+5+2\nx\n\n[1] 8"
   },
   {
     "objectID": "index.html",
