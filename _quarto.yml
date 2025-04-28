@@ -15,9 +15,7 @@ website:
         menu:
           - href: about.qmd
             text: Overview
-
-
-
+            
 format:
   html:
     theme:
