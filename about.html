@@ -373,7 +373,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>cl <span class="ot">&lt;-</span> <span class="fu">makePSOCKcluster</span>(<span class="fu">detectCores</span>())</span>
 <span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="fu">registerDoParallel</span>(cl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Train models to see which fits the data better The first set of models includes only control variables: memory learning scores, age, sex, and education</p>
+<p>Train models to see which fits the data better I am running the following models: <strong>Linear model</strong>, which captures purely linear relationship. <strong>Lasso</strong>, which sets the range of parameters where we are getting rid of the coefficients that are not important. <strong>LDA</strong> <strong>QDA</strong> <strong>Random Forest (RF)</strong> is an ensemble learning technique, which automatically captures both non liner relationships and interactions. RF creates many decision trees using a bootstrapping approach, drawing random samples of the data, and selecting a random subset of features at each split. <strong>eXtreme Gradient Boosting (XGBoost)</strong></p>
+<p>The first set of models includes only control variables: memory learning scores, age, sex, and education</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>models.binary_ADHD_1 <span class="ot">&lt;-</span> <span class="fu">caretList</span>(</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  ADHD <span class="sc">~</span> SRT<span class="sc">+</span>DM<span class="sc">+</span>WM<span class="sc">+</span>PHQ<span class="sc">+</span>Sex<span class="sc">+</span>Age<span class="sc">+</span>Education,</span>
@@ -865,7 +866,7 @@ Model 3 - Train 0.937
 Model 3 - Test  0.643</code></pre>
 </div>
 </div>
-<p>Step 3: Computing SHAP Values for RF to understand what predictors are the most influential In order to determine what independent variables could best predict the ADHD diagnoses, we are going to check the absolute SHAP values</p>
+<p><strong><em>Step 3: Computing SHAP Values for RF to understand what predictors are the most influential</em></strong> In order to determine what independent variables could best predict the ADHD diagnoses, we are going to check the absolute SHAP values</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a character vector with the names of the selected predictors</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>selected_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"L2"</span>, <span class="st">"SRT"</span>, <span class="st">"DM"</span>, <span class="st">"WM"</span>, <span class="st">"PHQ"</span>, <span class="st">"Sex"</span>, <span class="st">"Age"</span>, </span>
