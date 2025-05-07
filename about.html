@@ -189,9 +189,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The current project focuses on the factors that can contribute to the prediction of ADHD diagnosis in college students by utilizing different data science techniques. Particularly, it aims to answer the following research question: What factors do best predict the ADHD diagnosis?<br>
+<p>The current project focuses on the factors that can contribute to the prediction of the ADHD diagnosis in college students by utilizing different data science techniques. Particularly, it aims to answer the following research question: What factors do best predict the ADHD diagnosis?<br>
 </p>
-<p>The data set consists of the following variables:<br>
+<p>The data set (<em>N</em>=153) consists of the following variables:<br>
 <strong>DV</strong>: <em>ADHD</em> (self-reported clinical ADHD diagnoses, coded as 1- if participants reported being diagnosed with ADHD and 0- if participants did not report being diagnosed with ADHD)<br>
 <strong>IVs</strong>:<br>
 Control variables: <em>Sex</em> (coded as 0 for males, and 1 for females), <em>Age</em>, <em>Education</em> (number of years of formal education), <em>PHQ</em> (scores from the PHQ-9 survey, which measures levels of depression).<br>
@@ -327,10 +327,10 @@ Language variables: <em>L2</em> (a second language learning score obtained on th
 <ul>
 <li><strong>Logistic Linear model (Logit)</strong>, which captures purely linear relationship, and acts a baseline model for comparison with other models.</li>
 <li><strong>Lasso</strong>, which sets the range of parameters where we are getting rid of the coefficients that are not important.</li>
-<li><strong>Linear Discriminant Analysis (LDA)</strong> is a classification technique that separates data into groups. This model assumes equal variance in groups.</li>
-<li><strong>Quadratic Discriminant Analysis (QDA)</strong> is a classification technique similar to LDA that also accounts for non linear relationships and does not assume equal variance in groups.</li>
-<li><strong>Random Forest (RF)</strong> is an ensemble learning technique, which automatically captures both non liner relationships and interactions. RF creates many decision trees using a bootstrapping approach, drawing random samples of the data, and selecting a random subset of features at each split.</li>
-<li><strong>eXtreme Gradient Boosting (XGBoost)</strong> is another ensemble learning technique, which automatically captures non linear relationships and complex interactions. However, XGBoost builds trees sequentially: each new tree focuses on correcting the errors made by the previous ones.</li>
+<li><strong>Linear Discriminant Analysis (LDA)</strong>, which is a classification technique that separates data into groups. This model assumes equal variance in groups.</li>
+<li><strong>Quadratic Discriminant Analysis (QDA)</strong>, which is a classification technique similar to LDA that also accounts for non linear relationships and does not assume equal variance in groups.</li>
+<li><strong>Random Forest (RF)</strong>, which is an ensemble learning technique, which automatically captures both non liner relationships and interactions. RF creates many decision trees using a bootstrapping approach, drawing random samples of the data, and selecting a random subset of features at each split.</li>
+<li><strong>eXtreme Gradient Boosting (XGBoost)</strong>, which is another ensemble learning technique, which automatically captures non linear relationships and complex interactions. However, XGBoost builds trees sequentially: each new tree focuses on correcting the errors made by the previous ones.</li>
 </ul>
 <p>Besides, I want to follow the hierarchical modeling approach by designing three sets of models with progressively added predictors. The first set of models has only control and memory-related variables. The second set of models also include the language related variables to see if they improve the predictive performance. The third set of models also has the scores obtained from the BAARS-IV survey.</p>
 <div class="cell">
