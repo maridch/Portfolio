@@ -156,6 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#this-project-aims-to-answer-the-following-research-question-what-factors-best-predict-the-adhd-diagnosis" id="toc-this-project-aims-to-answer-the-following-research-question-what-factors-best-predict-the-adhd-diagnosis" class="nav-link active" data-scroll-target="#this-project-aims-to-answer-the-following-research-question-what-factors-best-predict-the-adhd-diagnosis">This project aims to answer the following research question: What factors best predict the ADHD diagnosis?</a></li>
+  <li><a href="#step-1-loadings-libraries-and-preparing-data-sets" id="toc-step-1-loadings-libraries-and-preparing-data-sets" class="nav-link" data-scroll-target="#step-1-loadings-libraries-and-preparing-data-sets">Step 1: Loadings libraries and preparing data sets</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/maridch/Portfolio/edit/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/maridch/Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -183,7 +184,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="this-project-aims-to-answer-the-following-research-question-what-factors-best-predict-the-adhd-diagnosis" class="level3">
 <h3 class="anchored" data-anchor-id="this-project-aims-to-answer-the-following-research-question-what-factors-best-predict-the-adhd-diagnosis">This project aims to answer the following research question: What factors best predict the ADHD diagnosis?</h3>
-<p><strong><em>Step 1: Loadings libraries and preparing data sets</em></strong></p>
+</section>
+<section id="step-1-loadings-libraries-and-preparing-data-sets" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-loadings-libraries-and-preparing-data-sets">Step 1: Loadings libraries and preparing data sets</h2>
 <p>Load Libraries</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
@@ -373,7 +376,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>cl <span class="ot">&lt;-</span> <span class="fu">makePSOCKcluster</span>(<span class="fu">detectCores</span>())</span>
 <span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="fu">registerDoParallel</span>(cl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Train models to see which fits the data better I am running the following models: <strong>Linear model</strong>, which captures purely linear relationship. <strong>Lasso</strong>, which sets the range of parameters where we are getting rid of the coefficients that are not important. <strong>LDA</strong> <strong>QDA</strong> <strong>Random Forest (RF)</strong> is an ensemble learning technique, which automatically captures both non liner relationships and interactions. RF creates many decision trees using a bootstrapping approach, drawing random samples of the data, and selecting a random subset of features at each split. <strong>eXtreme Gradient Boosting (XGBoost)</strong></p>
+<p>Train models to see which fits the data better I am running the following models: <strong>Logistic Linear model (Logit)</strong>, which captures purely linear relationship. <strong>Lasso</strong>, which sets the range of parameters where we are getting rid of the coefficients that are not important. <strong>Linear Discriminant Analysis (LDA)</strong> is a clustering technique that separates data into groups. This model assumes equal variance in groups <strong>Quadratic Discriminant Analysis (QDA)</strong> <strong>Random Forest (RF)</strong> is an ensemble learning technique, which automatically captures both non liner relationships and interactions. RF creates many decision trees using a bootstrapping approach, drawing random samples of the data, and selecting a random subset of features at each split. <strong>eXtreme Gradient Boosting (XGBoost)</strong> is another ensemble learning technique, which automatically captures non linear relationships and complex interactions. However, XGBoost builds trees sequentially: each new tree focuses on correcting the errors made by the previous ones.</p>
 <p>The first set of models includes only control variables: memory learning scores, age, sex, and education</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>models.binary_ADHD_1 <span class="ot">&lt;-</span> <span class="fu">caretList</span>(</span>
