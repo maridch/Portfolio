@@ -291,209 +291,221 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  o</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">as.data.frame</span>(<span class="fu">sapply</span>(ProjectData, fixed_summary) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)), <span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">as.data.frame</span>(<span class="fu">t</span>(<span class="fu">sapply</span>(ProjectData, fixed_summary)) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)), <span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 5%">
-<col style="width: 8%">
-<col style="width: 5%">
-<col style="width: 4%">
-<col style="width: 3%">
-<col style="width: 4%">
-<col style="width: 6%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 3%">
-<col style="width: 4%">
-<col style="width: 2%">
-<col style="width: 4%">
+<col style="width: 23%">
 <col style="width: 11%">
-<col style="width: 6%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 7%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
-<th style="text-align: right;">Participant</th>
-<th style="text-align: right;">Complex</th>
-<th style="text-align: right;">Simple</th>
-<th style="text-align: right;">L2</th>
-<th style="text-align: right;">SRT</th>
-<th style="text-align: right;">Declearn</th>
-<th style="text-align: right;">MLAT</th>
-<th style="text-align: right;">DM</th>
-<th style="text-align: right;">Ospan</th>
-<th style="text-align: right;">Rspan</th>
-<th style="text-align: right;">Sspan</th>
-<th style="text-align: right;">WM</th>
-<th style="text-align: right;">BAARS</th>
-<th style="text-align: right;">ADHD</th>
-<th style="text-align: right;">PHQ</th>
-<th style="text-align: right;">Sex</th>
-<th style="text-align: right;">Age</th>
-<th style="text-align: right;">SpokenLanguages</th>
-<th style="text-align: right;">Education</th>
+<th style="text-align: right;">Min.</th>
+<th style="text-align: right;">1st Qu.</th>
+<th style="text-align: right;">Median</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">3rd Qu.</th>
+<th style="text-align: right;">Max.</th>
+<th style="text-align: right;">NA’s</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Min.</td>
+<td style="text-align: left;">Participant</td>
 <td style="text-align: right;">4201.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.17</td>
-<td style="text-align: right;">0.22</td>
-<td style="text-align: right;">-0.20</td>
-<td style="text-align: right;">-0.14</td>
-<td style="text-align: right;">2.00</td>
-<td style="text-align: right;">-2.49</td>
-<td style="text-align: right;">3.00</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">15.00</td>
-<td style="text-align: right;">18.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">18.00</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">12.00</td>
+<td style="text-align: right;">4317.00</td>
+<td style="text-align: right;">4401.00</td>
+<td style="text-align: right;">4407.17</td>
+<td style="text-align: right;">4503.00</td>
+<td style="text-align: right;">4603.00</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">1st Qu.</td>
-<td style="text-align: right;">4317.00</td>
+<td style="text-align: left;">Complex</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">0.33</td>
+<td style="text-align: right;">0.36</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Simple</td>
 <td style="text-align: right;">0.17</td>
 <td style="text-align: right;">0.58</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.71</td>
+<td style="text-align: right;">0.92</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">L2</td>
+<td style="text-align: right;">0.22</td>
 <td style="text-align: right;">0.50</td>
+<td style="text-align: right;">0.61</td>
+<td style="text-align: right;">0.59</td>
+<td style="text-align: right;">0.67</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SRT</td>
+<td style="text-align: right;">-0.20</td>
 <td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.09</td>
+<td style="text-align: right;">0.09</td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: right;">0.37</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Declearn</td>
+<td style="text-align: right;">-0.14</td>
 <td style="text-align: right;">1.04</td>
+<td style="text-align: right;">1.40</td>
+<td style="text-align: right;">1.31</td>
+<td style="text-align: right;">1.68</td>
+<td style="text-align: right;">2.85</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MLAT</td>
+<td style="text-align: right;">2.00</td>
 <td style="text-align: right;">13.00</td>
+<td style="text-align: right;">17.00</td>
+<td style="text-align: right;">16.61</td>
+<td style="text-align: right;">20.00</td>
+<td style="text-align: right;">24.00</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DM</td>
+<td style="text-align: right;">-2.49</td>
 <td style="text-align: right;">-0.48</td>
+<td style="text-align: right;">0.09</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.52</td>
+<td style="text-align: right;">1.49</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ospan</td>
+<td style="text-align: right;">3.00</td>
 <td style="text-align: right;">19.00</td>
+<td style="text-align: right;">24.00</td>
+<td style="text-align: right;">22.33</td>
+<td style="text-align: right;">28.00</td>
+<td style="text-align: right;">30.00</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rspan</td>
+<td style="text-align: right;">1.00</td>
 <td style="text-align: right;">19.00</td>
+<td style="text-align: right;">23.00</td>
+<td style="text-align: right;">21.65</td>
+<td style="text-align: right;">27.00</td>
+<td style="text-align: right;">30.00</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sspan</td>
+<td style="text-align: right;">0.00</td>
 <td style="text-align: right;">12.00</td>
+<td style="text-align: right;">16.00</td>
+<td style="text-align: right;">14.88</td>
+<td style="text-align: right;">19.00</td>
+<td style="text-align: right;">24.00</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WM</td>
+<td style="text-align: right;">15.00</td>
 <td style="text-align: right;">55.00</td>
+<td style="text-align: right;">64.00</td>
+<td style="text-align: right;">61.97</td>
+<td style="text-align: right;">72.00</td>
+<td style="text-align: right;">84.00</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BAARS</td>
+<td style="text-align: right;">18.00</td>
 <td style="text-align: right;">29.00</td>
+<td style="text-align: right;">35.00</td>
+<td style="text-align: right;">36.75</td>
+<td style="text-align: right;">45.00</td>
+<td style="text-align: right;">68.00</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ADHD</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.29</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PHQ</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">6.00</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">18.00</td>
-<td style="text-align: right;">2.00</td>
-<td style="text-align: right;">13.00</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Median</td>
-<td style="text-align: right;">4401.00</td>
-<td style="text-align: right;">0.33</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.61</td>
-<td style="text-align: right;">0.09</td>
-<td style="text-align: right;">1.40</td>
-<td style="text-align: right;">17.00</td>
-<td style="text-align: right;">0.09</td>
-<td style="text-align: right;">24.00</td>
-<td style="text-align: right;">23.00</td>
-<td style="text-align: right;">16.00</td>
-<td style="text-align: right;">64.00</td>
-<td style="text-align: right;">35.00</td>
-<td style="text-align: right;">0.00</td>
 <td style="text-align: right;">9.00</td>
-<td style="text-align: right;">1.0</td>
-<td style="text-align: right;">19.00</td>
-<td style="text-align: right;">2.00</td>
-<td style="text-align: right;">13.50</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Mean</td>
-<td style="text-align: right;">4407.17</td>
-<td style="text-align: right;">0.36</td>
-<td style="text-align: right;">0.71</td>
-<td style="text-align: right;">0.59</td>
-<td style="text-align: right;">0.09</td>
-<td style="text-align: right;">1.31</td>
-<td style="text-align: right;">16.61</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">22.33</td>
-<td style="text-align: right;">21.65</td>
-<td style="text-align: right;">14.88</td>
-<td style="text-align: right;">61.97</td>
-<td style="text-align: right;">36.75</td>
-<td style="text-align: right;">0.29</td>
 <td style="text-align: right;">9.78</td>
-<td style="text-align: right;">0.7</td>
-<td style="text-align: right;">20.08</td>
-<td style="text-align: right;">2.33</td>
-<td style="text-align: right;">14.25</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">3rd Qu.</td>
-<td style="text-align: right;">4503.00</td>
-<td style="text-align: right;">0.50</td>
-<td style="text-align: right;">0.92</td>
-<td style="text-align: right;">0.67</td>
-<td style="text-align: right;">0.13</td>
-<td style="text-align: right;">1.68</td>
-<td style="text-align: right;">20.00</td>
-<td style="text-align: right;">0.52</td>
-<td style="text-align: right;">28.00</td>
-<td style="text-align: right;">27.00</td>
-<td style="text-align: right;">19.00</td>
-<td style="text-align: right;">72.00</td>
-<td style="text-align: right;">45.00</td>
-<td style="text-align: right;">1.00</td>
 <td style="text-align: right;">14.00</td>
-<td style="text-align: right;">1.0</td>
-<td style="text-align: right;">20.00</td>
-<td style="text-align: right;">3.00</td>
-<td style="text-align: right;">15.00</td>
+<td style="text-align: right;">27.00</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Max.</td>
-<td style="text-align: right;">4603.00</td>
+<td style="text-align: left;">Sex</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
 <td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.70</td>
 <td style="text-align: right;">1.00</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">0.37</td>
-<td style="text-align: right;">2.85</td>
-<td style="text-align: right;">24.00</td>
-<td style="text-align: right;">1.49</td>
-<td style="text-align: right;">30.00</td>
-<td style="text-align: right;">30.00</td>
-<td style="text-align: right;">24.00</td>
-<td style="text-align: right;">84.00</td>
-<td style="text-align: right;">68.00</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">27.00</td>
-<td style="text-align: right;">2.0</td>
-<td style="text-align: right;">38.00</td>
-<td style="text-align: right;">5.00</td>
-<td style="text-align: right;">19.00</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">NA’s</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.00</td>
+<td style="text-align: left;">Age</td>
+<td style="text-align: right;">18.00</td>
+<td style="text-align: right;">18.00</td>
+<td style="text-align: right;">19.00</td>
+<td style="text-align: right;">20.08</td>
+<td style="text-align: right;">20.00</td>
+<td style="text-align: right;">38.00</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SpokenLanguages</td>
 <td style="text-align: right;">1.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">2.33</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">5.00</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Education</td>
+<td style="text-align: right;">12.00</td>
+<td style="text-align: right;">13.00</td>
+<td style="text-align: right;">13.50</td>
+<td style="text-align: right;">14.25</td>
+<td style="text-align: right;">15.00</td>
+<td style="text-align: right;">19.00</td>
+<td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
@@ -610,13 +622,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="fu">registerDoParallel</span>(cl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Training models to see which fits the data better.</p>
-<p>I am running the following models in parallel:<br>
-<strong>Logistic Linear model (Logit)</strong>, which captures purely linear relationship, and acts a baseline model for comparison with other models.<br>
-<strong>Lasso</strong>, which sets the range of parameters where we are getting rid of the coefficients that are not important.<br>
-<strong>Linear Discriminant Analysis (LDA)</strong> is a classification technique that separates data into groups. This model assumes equal variance in groups.<br>
-<strong>Quadratic Discriminant Analysis (QDA)</strong> is a classification technique similar to LDA that also accounts for non linear relationships and does not assume equal variance in groups.<br>
-<strong>Random Forest (RF)</strong> is an ensemble learning technique, which automatically captures both non liner relationships and interactions. RF creates many decision trees using a bootstrapping approach, drawing random samples of the data, and selecting a random subset of features at each split.<br>
-<strong>eXtreme Gradient Boosting (XGBoost)</strong> is another ensemble learning technique, which automatically captures non linear relationships and complex interactions. However, XGBoost builds trees sequentially: each new tree focuses on correcting the errors made by the previous ones.</p>
+<p>I am running the following models in parallel:</p>
+<ul>
+<li><strong>Logistic Linear model (Logit)</strong>, which captures purely linear relationship, and acts a baseline model for comparison with other models.</li>
+<li><strong>Lasso</strong>, which sets the range of parameters where we are getting rid of the coefficients that are not important.</li>
+<li><strong>Linear Discriminant Analysis (LDA)</strong> is a classification technique that separates data into groups. This model assumes equal variance in groups.</li>
+<li><strong>Quadratic Discriminant Analysis (QDA)</strong> is a classification technique similar to LDA that also accounts for non linear relationships and does not assume equal variance in groups.</li>
+<li><strong>Random Forest (RF)</strong> is an ensemble learning technique, which automatically captures both non liner relationships and interactions. RF creates many decision trees using a bootstrapping approach, drawing random samples of the data, and selecting a random subset of features at each split.</li>
+<li><strong>eXtreme Gradient Boosting (XGBoost)</strong> is another ensemble learning technique, which automatically captures non linear relationships and complex interactions. However, XGBoost builds trees sequentially: each new tree focuses on correcting the errors made by the previous ones.</li>
+</ul>
 <p>Besides, I want to follow the hierarchical modeling approach by designing three sets of models with progressively added predictors. The first set of models has only control and memory-related variables. The second set of models also include the language related variables to see if they improve the predictive performance. The third set of models also has the scores obtained from the BAARS-IV survey.</p>
 <p><strong>First Model Set</strong> The first set of models includes only control and memory-related variables: memory learning scores, age, sex, and education.</p>
 <div class="cell">
