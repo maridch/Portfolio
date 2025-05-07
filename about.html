@@ -233,11 +233,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  Max.   : 0.3700   Max.   : 2.850   Max.   :24.00   Max.   : 1.485000  
                                                                        
      Ospan           Rspan           Sspan             WM       
- Min.   : 3.00   Min.   : 1.00   Min.   : 0.00   Min.   : 9.00  
- 1st Qu.:19.00   1st Qu.:19.00   1st Qu.:12.00   1st Qu.:51.00  
- Median :24.00   Median :23.00   Median :16.00   Median :63.00  
- Mean   :22.33   Mean   :21.65   Mean   :14.88   Mean   :58.71  
- 3rd Qu.:28.00   3rd Qu.:27.00   3rd Qu.:19.00   3rd Qu.:69.00  
+ Min.   : 3.00   Min.   : 1.00   Min.   : 0.00   Min.   :15.00  
+ 1st Qu.:19.00   1st Qu.:19.00   1st Qu.:12.00   1st Qu.:55.00  
+ Median :24.00   Median :23.00   Median :16.00   Median :64.00  
+ Mean   :22.33   Mean   :21.65   Mean   :14.88   Mean   :61.97  
+ 3rd Qu.:28.00   3rd Qu.:27.00   3rd Qu.:19.00   3rd Qu.:72.00  
  Max.   :30.00   Max.   :30.00   Max.   :24.00   Max.   :84.00  
  NA's   :1                                                      
      BAARS            ADHD             PHQ              Sex        
@@ -292,11 +292,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  3rd Qu.:4503   3rd Qu.:0.6700   3rd Qu.: 0.1300   3rd Qu.: 0.519000  
  Max.   :4603   Max.   :1.0000   Max.   : 0.3700   Max.   : 1.485000  
        WM            BAARS            ADHD             PHQ        
- Min.   : 9.00   Min.   :18.00   Min.   :0.0000   Min.   : 0.000  
- 1st Qu.:51.00   1st Qu.:29.00   1st Qu.:0.0000   1st Qu.: 6.000  
- Median :63.00   Median :35.00   Median :0.0000   Median : 9.000  
- Mean   :58.71   Mean   :36.75   Mean   :0.2876   Mean   : 9.778  
- 3rd Qu.:69.00   3rd Qu.:45.00   3rd Qu.:1.0000   3rd Qu.:14.000  
+ Min.   :15.00   Min.   :18.00   Min.   :0.0000   Min.   : 0.000  
+ 1st Qu.:55.00   1st Qu.:29.00   1st Qu.:0.0000   1st Qu.: 6.000  
+ Median :64.00   Median :35.00   Median :0.0000   Median : 9.000  
+ Mean   :61.97   Mean   :36.75   Mean   :0.2876   Mean   : 9.778  
+ 3rd Qu.:72.00   3rd Qu.:45.00   3rd Qu.:1.0000   3rd Qu.:14.000  
  Max.   :84.00   Max.   :68.00   Max.   :1.0000   Max.   :27.000  
       Sex              Age        SpokenLanguages   Education    
  Min.   :0.0000   Min.   :18.00   Min.   :1.000   Min.   :12.00  
@@ -637,67 +637,6 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd      11       7
-   no_adhd   22      75
-                                          
-               Accuracy : 0.7478          
-                 95% CI : (0.6583, 0.8242)
-    No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 0.23754         
-                                          
-                  Kappa : 0.2869          
-                                          
- Mcnemar's Test P-Value : 0.00933         
-                                          
-            Sensitivity : 0.33333         
-            Specificity : 0.91463         
-         Pos Pred Value : 0.61111         
-         Neg Pred Value : 0.77320         
-             Prevalence : 0.28696         
-         Detection Rate : 0.09565         
-   Detection Prevalence : 0.15652         
-      Balanced Accuracy : 0.62398         
-                                          
-       'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       6       2
-   no_adhd    5      25
-                                          
-               Accuracy : 0.8158          
-                 95% CI : (0.6567, 0.9226)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.1020          
-                                          
-                  Kappa : 0.5128          
-                                          
- Mcnemar's Test P-Value : 0.4497          
-                                          
-            Sensitivity : 0.5455          
-            Specificity : 0.9259          
-         Pos Pred Value : 0.7500          
-         Neg Pred Value : 0.8333          
-             Prevalence : 0.2895          
-         Detection Rate : 0.1579          
-   Detection Prevalence : 0.2105          
-      Balanced Accuracy : 0.7357          
-                                          
-       'Positive' Class : adhd            
-                                          
-
--------------------------------
-
-Model: Lasso 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
    adhd       9       2
    no_adhd   24      80
                                           
@@ -718,6 +657,67 @@ Prediction adhd no_adhd
          Detection Rate : 0.07826         
    Detection Prevalence : 0.09565         
       Balanced Accuracy : 0.62417         
+                                          
+       'Positive' Class : adhd            
+                                          
+
+Testing Data:
+Confusion Matrix and Statistics
+
+          Reference
+Prediction adhd no_adhd
+   adhd       4       1
+   no_adhd    7      26
+                                          
+               Accuracy : 0.7895          
+                 95% CI : (0.6268, 0.9045)
+    No Information Rate : 0.7105          
+    P-Value [Acc &gt; NIR] : 0.1870          
+                                          
+                  Kappa : 0.3896          
+                                          
+ Mcnemar's Test P-Value : 0.0771          
+                                          
+            Sensitivity : 0.3636          
+            Specificity : 0.9630          
+         Pos Pred Value : 0.8000          
+         Neg Pred Value : 0.7879          
+             Prevalence : 0.2895          
+         Detection Rate : 0.1053          
+   Detection Prevalence : 0.1316          
+      Balanced Accuracy : 0.6633          
+                                          
+       'Positive' Class : adhd            
+                                          
+
+-------------------------------
+
+Model: Lasso 
+Training Data:
+Confusion Matrix and Statistics
+
+          Reference
+Prediction adhd no_adhd
+   adhd       7       2
+   no_adhd   26      80
+                                          
+               Accuracy : 0.7565          
+                 95% CI : (0.6677, 0.8317)
+    No Information Rate : 0.713           
+    P-Value [Acc &gt; NIR] : 0.1773          
+                                          
+                  Kappa : 0.2398          
+                                          
+ Mcnemar's Test P-Value : 1.383e-05       
+                                          
+            Sensitivity : 0.21212         
+            Specificity : 0.97561         
+         Pos Pred Value : 0.77778         
+         Neg Pred Value : 0.75472         
+             Prevalence : 0.28696         
+         Detection Rate : 0.06087         
+   Detection Prevalence : 0.07826         
+      Balanced Accuracy : 0.59387         
                                           
        'Positive' Class : adhd            
                                           
@@ -759,26 +759,87 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd      12       6
-   no_adhd   21      76
+   adhd      10       2
+   no_adhd   23      80
+                                         
+               Accuracy : 0.7826         
+                 95% CI : (0.696, 0.8541)
+    No Information Rate : 0.713          
+    P-Value [Acc &gt; NIR] : 0.0582         
+                                         
+                  Kappa : 0.3441         
+                                         
+ Mcnemar's Test P-Value : 6.334e-05      
+                                         
+            Sensitivity : 0.30303        
+            Specificity : 0.97561        
+         Pos Pred Value : 0.83333        
+         Neg Pred Value : 0.77670        
+             Prevalence : 0.28696        
+         Detection Rate : 0.08696        
+   Detection Prevalence : 0.10435        
+      Balanced Accuracy : 0.63932        
+                                         
+       'Positive' Class : adhd           
+                                         
+
+Testing Data:
+Confusion Matrix and Statistics
+
+          Reference
+Prediction adhd no_adhd
+   adhd       4       1
+   no_adhd    7      26
                                           
-               Accuracy : 0.7652          
-                 95% CI : (0.6771, 0.8392)
-    No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 0.127394        
+               Accuracy : 0.7895          
+                 95% CI : (0.6268, 0.9045)
+    No Information Rate : 0.7105          
+    P-Value [Acc &gt; NIR] : 0.1870          
                                           
-                  Kappa : 0.3361          
+                  Kappa : 0.3896          
                                           
- Mcnemar's Test P-Value : 0.007054        
+ Mcnemar's Test P-Value : 0.0771          
                                           
             Sensitivity : 0.3636          
-            Specificity : 0.9268          
-         Pos Pred Value : 0.6667          
-         Neg Pred Value : 0.7835          
+            Specificity : 0.9630          
+         Pos Pred Value : 0.8000          
+         Neg Pred Value : 0.7879          
+             Prevalence : 0.2895          
+         Detection Rate : 0.1053          
+   Detection Prevalence : 0.1316          
+      Balanced Accuracy : 0.6633          
+                                          
+       'Positive' Class : adhd            
+                                          
+
+-------------------------------
+
+Model: QDA 
+Training Data:
+Confusion Matrix and Statistics
+
+          Reference
+Prediction adhd no_adhd
+   adhd      16       4
+   no_adhd   17      78
+                                          
+               Accuracy : 0.8174          
+                 95% CI : (0.7345, 0.8833)
+    No Information Rate : 0.713           
+    P-Value [Acc &gt; NIR] : 0.007019        
+                                          
+                  Kappa : 0.4942          
+                                          
+ Mcnemar's Test P-Value : 0.008829        
+                                          
+            Sensitivity : 0.4848          
+            Specificity : 0.9512          
+         Pos Pred Value : 0.8000          
+         Neg Pred Value : 0.8211          
              Prevalence : 0.2870          
-         Detection Rate : 0.1043          
-   Detection Prevalence : 0.1565          
-      Balanced Accuracy : 0.6452          
+         Detection Rate : 0.1391          
+   Detection Prevalence : 0.1739          
+      Balanced Accuracy : 0.7180          
                                           
        'Positive' Class : adhd            
                                           
@@ -811,67 +872,6 @@ Prediction adhd no_adhd
                                           
        'Positive' Class : adhd            
                                           
-
--------------------------------
-
-Model: QDA 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd      18       6
-   no_adhd   15      76
-                                          
-               Accuracy : 0.8174          
-                 95% CI : (0.7345, 0.8833)
-    No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 0.007019        
-                                          
-                  Kappa : 0.5142          
-                                          
- Mcnemar's Test P-Value : 0.080856        
-                                          
-            Sensitivity : 0.5455          
-            Specificity : 0.9268          
-         Pos Pred Value : 0.7500          
-         Neg Pred Value : 0.8352          
-             Prevalence : 0.2870          
-         Detection Rate : 0.1565          
-   Detection Prevalence : 0.2087          
-      Balanced Accuracy : 0.7361          
-                                          
-       'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       5       4
-   no_adhd    6      23
-                                        
-               Accuracy : 0.7368        
-                 95% CI : (0.569, 0.866)
-    No Information Rate : 0.7105        
-    P-Value [Acc &gt; NIR] : 0.4389        
-                                        
-                  Kappa : 0.3238        
-                                        
- Mcnemar's Test P-Value : 0.7518        
-                                        
-            Sensitivity : 0.4545        
-            Specificity : 0.8519        
-         Pos Pred Value : 0.5556        
-         Neg Pred Value : 0.7931        
-             Prevalence : 0.2895        
-         Detection Rate : 0.1316        
-   Detection Prevalence : 0.2368        
-      Balanced Accuracy : 0.6532        
-                                        
-       'Positive' Class : adhd          
-                                        
 
 -------------------------------
 
@@ -910,26 +910,26 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd       2       0
-   no_adhd    9      27
+   adhd       4       1
+   no_adhd    7      26
                                           
-               Accuracy : 0.7632          
-                 95% CI : (0.5976, 0.8856)
+               Accuracy : 0.7895          
+                 95% CI : (0.6268, 0.9045)
     No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.302491        
+    P-Value [Acc &gt; NIR] : 0.1870          
                                           
-                  Kappa : 0.24            
+                  Kappa : 0.3896          
                                           
- Mcnemar's Test P-Value : 0.007661        
+ Mcnemar's Test P-Value : 0.0771          
                                           
-            Sensitivity : 0.18182         
-            Specificity : 1.00000         
-         Pos Pred Value : 1.00000         
-         Neg Pred Value : 0.75000         
-             Prevalence : 0.28947         
-         Detection Rate : 0.05263         
-   Detection Prevalence : 0.05263         
-      Balanced Accuracy : 0.59091         
+            Sensitivity : 0.3636          
+            Specificity : 0.9630          
+         Pos Pred Value : 0.8000          
+         Neg Pred Value : 0.7879          
+             Prevalence : 0.2895          
+         Detection Rate : 0.1053          
+   Detection Prevalence : 0.1316          
+      Balanced Accuracy : 0.6633          
                                           
        'Positive' Class : adhd            
                                           
@@ -942,26 +942,26 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd      27       1
-   no_adhd    6      81
+   adhd      23       0
+   no_adhd   10      82
                                           
-               Accuracy : 0.9391          
-                 95% CI : (0.8786, 0.9752)
+               Accuracy : 0.913           
+                 95% CI : (0.8459, 0.9575)
     No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 1.138e-09       
+    P-Value [Acc &gt; NIR] : 1.379e-07       
                                           
-                  Kappa : 0.8442          
+                  Kappa : 0.7664          
                                           
- Mcnemar's Test P-Value : 0.1306          
+ Mcnemar's Test P-Value : 0.004427        
                                           
-            Sensitivity : 0.8182          
-            Specificity : 0.9878          
-         Pos Pred Value : 0.9643          
-         Neg Pred Value : 0.9310          
+            Sensitivity : 0.6970          
+            Specificity : 1.0000          
+         Pos Pred Value : 1.0000          
+         Neg Pred Value : 0.8913          
              Prevalence : 0.2870          
-         Detection Rate : 0.2348          
-   Detection Prevalence : 0.2435          
-      Balanced Accuracy : 0.9030          
+         Detection Rate : 0.2000          
+   Detection Prevalence : 0.2000          
+      Balanced Accuracy : 0.8485          
                                           
        'Positive' Class : adhd            
                                           
@@ -971,29 +971,29 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd       4       8
-   no_adhd    7      19
-                                          
-               Accuracy : 0.6053          
-                 95% CI : (0.4339, 0.7596)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.9428          
-                                          
-                  Kappa : 0.0656          
-                                          
- Mcnemar's Test P-Value : 1.0000          
-                                          
-            Sensitivity : 0.3636          
-            Specificity : 0.7037          
-         Pos Pred Value : 0.3333          
-         Neg Pred Value : 0.7308          
-             Prevalence : 0.2895          
-         Detection Rate : 0.1053          
-   Detection Prevalence : 0.3158          
-      Balanced Accuracy : 0.5337          
-                                          
-       'Positive' Class : adhd            
-                                          
+   adhd       8       7
+   no_adhd    3      20
+                                        
+               Accuracy : 0.7368        
+                 95% CI : (0.569, 0.866)
+    No Information Rate : 0.7105        
+    P-Value [Acc &gt; NIR] : 0.4389        
+                                        
+                  Kappa : 0.4225        
+                                        
+ Mcnemar's Test P-Value : 0.3428        
+                                        
+            Sensitivity : 0.7273        
+            Specificity : 0.7407        
+         Pos Pred Value : 0.5333        
+         Neg Pred Value : 0.8696        
+             Prevalence : 0.2895        
+         Detection Rate : 0.2105        
+   Detection Prevalence : 0.3947        
+      Balanced Accuracy : 0.7340        
+                                        
+       'Positive' Class : adhd          
+                                        
 
 -------------------------------</code></pre>
 </div>
@@ -1008,26 +1008,26 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd      11       7
-   no_adhd   22      75
+   adhd      10       5
+   no_adhd   23      77
                                           
-               Accuracy : 0.7478          
-                 95% CI : (0.6583, 0.8242)
+               Accuracy : 0.7565          
+                 95% CI : (0.6677, 0.8317)
     No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 0.23754         
+    P-Value [Acc &gt; NIR] : 0.177296        
                                           
-                  Kappa : 0.2869          
+                  Kappa : 0.2892          
                                           
- Mcnemar's Test P-Value : 0.00933         
+ Mcnemar's Test P-Value : 0.001315        
                                           
-            Sensitivity : 0.33333         
-            Specificity : 0.91463         
-         Pos Pred Value : 0.61111         
-         Neg Pred Value : 0.77320         
+            Sensitivity : 0.30303         
+            Specificity : 0.93902         
+         Pos Pred Value : 0.66667         
+         Neg Pred Value : 0.77000         
              Prevalence : 0.28696         
-         Detection Rate : 0.09565         
-   Detection Prevalence : 0.15652         
-      Balanced Accuracy : 0.62398         
+         Detection Rate : 0.08696         
+   Detection Prevalence : 0.13043         
+      Balanced Accuracy : 0.62103         
                                           
        'Positive' Class : adhd            
                                           
@@ -1037,26 +1037,26 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd       6       2
-   no_adhd    5      25
+   adhd       6       1
+   no_adhd    5      26
                                           
-               Accuracy : 0.8158          
-                 95% CI : (0.6567, 0.9226)
+               Accuracy : 0.8421          
+                 95% CI : (0.6875, 0.9398)
     No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.1020          
+    P-Value [Acc &gt; NIR] : 0.0481          
                                           
-                  Kappa : 0.5128          
+                  Kappa : 0.5698          
                                           
- Mcnemar's Test P-Value : 0.4497          
+ Mcnemar's Test P-Value : 0.2207          
                                           
             Sensitivity : 0.5455          
-            Specificity : 0.9259          
-         Pos Pred Value : 0.7500          
-         Neg Pred Value : 0.8333          
+            Specificity : 0.9630          
+         Pos Pred Value : 0.8571          
+         Neg Pred Value : 0.8387          
              Prevalence : 0.2895          
          Detection Rate : 0.1579          
-   Detection Prevalence : 0.2105          
-      Balanced Accuracy : 0.7357          
+   Detection Prevalence : 0.1842          
+      Balanced Accuracy : 0.7542          
                                           
        'Positive' Class : adhd            
                                           
@@ -1069,26 +1069,26 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd       8       2
-   no_adhd   25      80
+   adhd       2       0
+   no_adhd   31      82
                                           
-               Accuracy : 0.7652          
-                 95% CI : (0.6771, 0.8392)
+               Accuracy : 0.7304          
+                 95% CI : (0.6397, 0.8089)
     No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 0.1274          
+    P-Value [Acc &gt; NIR] : 0.3837          
                                           
-                  Kappa : 0.2754          
+                  Kappa : 0.0843          
                                           
- Mcnemar's Test P-Value : 2.297e-05       
+ Mcnemar's Test P-Value : 7.118e-08       
                                           
-            Sensitivity : 0.24242         
-            Specificity : 0.97561         
-         Pos Pred Value : 0.80000         
-         Neg Pred Value : 0.76190         
+            Sensitivity : 0.06061         
+            Specificity : 1.00000         
+         Pos Pred Value : 1.00000         
+         Neg Pred Value : 0.72566         
              Prevalence : 0.28696         
-         Detection Rate : 0.06957         
-   Detection Prevalence : 0.08696         
-      Balanced Accuracy : 0.60902         
+         Detection Rate : 0.01739         
+   Detection Prevalence : 0.01739         
+      Balanced Accuracy : 0.53030         
                                           
        'Positive' Class : adhd            
                                           
@@ -1098,29 +1098,29 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd       3       0
-   no_adhd    8      27
-                                          
-               Accuracy : 0.7895          
-                 95% CI : (0.6268, 0.9045)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.18701         
-                                          
-                  Kappa : 0.3476          
-                                          
- Mcnemar's Test P-Value : 0.01333         
-                                          
-            Sensitivity : 0.27273         
-            Specificity : 1.00000         
-         Pos Pred Value : 1.00000         
-         Neg Pred Value : 0.77143         
-             Prevalence : 0.28947         
-         Detection Rate : 0.07895         
-   Detection Prevalence : 0.07895         
-      Balanced Accuracy : 0.63636         
-                                          
-       'Positive' Class : adhd            
-                                          
+   adhd       1       0
+   no_adhd   10      27
+                                        
+               Accuracy : 0.7368        
+                 95% CI : (0.569, 0.866)
+    No Information Rate : 0.7105        
+    P-Value [Acc &gt; NIR] : 0.438935      
+                                        
+                  Kappa : 0.1244        
+                                        
+ Mcnemar's Test P-Value : 0.004427      
+                                        
+            Sensitivity : 0.09091       
+            Specificity : 1.00000       
+         Pos Pred Value : 1.00000       
+         Neg Pred Value : 0.72973       
+             Prevalence : 0.28947       
+         Detection Rate : 0.02632       
+   Detection Prevalence : 0.02632       
+      Balanced Accuracy : 0.54545       
+                                        
+       'Positive' Class : adhd          
+                                        
 
 -------------------------------
 
@@ -1130,26 +1130,26 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd      11       4
-   no_adhd   22      78
+   adhd      11       5
+   no_adhd   22      77
                                           
-               Accuracy : 0.7739          
-                 95% CI : (0.6865, 0.8467)
+               Accuracy : 0.7652          
+                 95% CI : (0.6771, 0.8392)
     No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 0.0879394       
+    P-Value [Acc &gt; NIR] : 0.127394        
                                           
-                  Kappa : 0.34            
+                  Kappa : 0.3219          
                                           
- Mcnemar's Test P-Value : 0.0008561       
+ Mcnemar's Test P-Value : 0.002076        
                                           
             Sensitivity : 0.33333         
-            Specificity : 0.95122         
-         Pos Pred Value : 0.73333         
-         Neg Pred Value : 0.78000         
+            Specificity : 0.93902         
+         Pos Pred Value : 0.68750         
+         Neg Pred Value : 0.77778         
              Prevalence : 0.28696         
          Detection Rate : 0.09565         
-   Detection Prevalence : 0.13043         
-      Balanced Accuracy : 0.64228         
+   Detection Prevalence : 0.13913         
+      Balanced Accuracy : 0.63618         
                                           
        'Positive' Class : adhd            
                                           
@@ -1159,26 +1159,26 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd       6       2
-   no_adhd    5      25
+   adhd       6       1
+   no_adhd    5      26
                                           
-               Accuracy : 0.8158          
-                 95% CI : (0.6567, 0.9226)
+               Accuracy : 0.8421          
+                 95% CI : (0.6875, 0.9398)
     No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.1020          
+    P-Value [Acc &gt; NIR] : 0.0481          
                                           
-                  Kappa : 0.5128          
+                  Kappa : 0.5698          
                                           
- Mcnemar's Test P-Value : 0.4497          
+ Mcnemar's Test P-Value : 0.2207          
                                           
             Sensitivity : 0.5455          
-            Specificity : 0.9259          
-         Pos Pred Value : 0.7500          
-         Neg Pred Value : 0.8333          
+            Specificity : 0.9630          
+         Pos Pred Value : 0.8571          
+         Neg Pred Value : 0.8387          
              Prevalence : 0.2895          
          Detection Rate : 0.1579          
-   Detection Prevalence : 0.2105          
-      Balanced Accuracy : 0.7357          
+   Detection Prevalence : 0.1842          
+      Balanced Accuracy : 0.7542          
                                           
        'Positive' Class : adhd            
                                           
@@ -1191,55 +1191,55 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd      20       5
-   no_adhd   13      77
-                                         
-               Accuracy : 0.8435         
-                 95% CI : (0.764, 0.9045)
-    No Information Rate : 0.713          
-    P-Value [Acc &gt; NIR] : 0.0008276      
-                                         
-                  Kappa : 0.5876         
-                                         
- Mcnemar's Test P-Value : 0.0989602      
-                                         
-            Sensitivity : 0.6061         
-            Specificity : 0.9390         
-         Pos Pred Value : 0.8000         
-         Neg Pred Value : 0.8556         
-             Prevalence : 0.2870         
-         Detection Rate : 0.1739         
-   Detection Prevalence : 0.2174         
-      Balanced Accuracy : 0.7725         
-                                         
-       'Positive' Class : adhd           
-                                         
+   adhd      18       5
+   no_adhd   15      77
+                                          
+               Accuracy : 0.8261          
+                 95% CI : (0.7443, 0.8904)
+    No Information Rate : 0.713           
+    P-Value [Acc &gt; NIR] : 0.003642        
+                                          
+                  Kappa : 0.5327          
+                                          
+ Mcnemar's Test P-Value : 0.044171        
+                                          
+            Sensitivity : 0.5455          
+            Specificity : 0.9390          
+         Pos Pred Value : 0.7826          
+         Neg Pred Value : 0.8370          
+             Prevalence : 0.2870          
+         Detection Rate : 0.1565          
+   Detection Prevalence : 0.2000          
+      Balanced Accuracy : 0.7422          
+                                          
+       'Positive' Class : adhd            
+                                          
 
 Testing Data:
 Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd       5       3
-   no_adhd    6      24
+   adhd       5       2
+   no_adhd    6      25
                                           
-               Accuracy : 0.7632          
-                 95% CI : (0.5976, 0.8856)
+               Accuracy : 0.7895          
+                 95% CI : (0.6268, 0.9045)
     No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.3025          
+    P-Value [Acc &gt; NIR] : 0.1870          
                                           
-                  Kappa : 0.3736          
+                  Kappa : 0.4264          
                                           
- Mcnemar's Test P-Value : 0.5050          
+ Mcnemar's Test P-Value : 0.2888          
                                           
             Sensitivity : 0.4545          
-            Specificity : 0.8889          
-         Pos Pred Value : 0.6250          
-         Neg Pred Value : 0.8000          
+            Specificity : 0.9259          
+         Pos Pred Value : 0.7143          
+         Neg Pred Value : 0.8065          
              Prevalence : 0.2895          
          Detection Rate : 0.1316          
-   Detection Prevalence : 0.2105          
-      Balanced Accuracy : 0.6717          
+   Detection Prevalence : 0.1842          
+      Balanced Accuracy : 0.6902          
                                           
        'Positive' Class : adhd            
                                           
@@ -1313,26 +1313,26 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd      26       3
-   no_adhd    7      79
+   adhd      24       1
+   no_adhd    9      81
                                           
                Accuracy : 0.913           
                  95% CI : (0.8459, 0.9575)
     No Information Rate : 0.713           
     P-Value [Acc &gt; NIR] : 1.379e-07       
                                           
-                  Kappa : 0.7795          
+                  Kappa : 0.7709          
                                           
- Mcnemar's Test P-Value : 0.3428          
+ Mcnemar's Test P-Value : 0.02686         
                                           
-            Sensitivity : 0.7879          
-            Specificity : 0.9634          
-         Pos Pred Value : 0.8966          
-         Neg Pred Value : 0.9186          
+            Sensitivity : 0.7273          
+            Specificity : 0.9878          
+         Pos Pred Value : 0.9600          
+         Neg Pred Value : 0.9000          
              Prevalence : 0.2870          
-         Detection Rate : 0.2261          
-   Detection Prevalence : 0.2522          
-      Balanced Accuracy : 0.8756          
+         Detection Rate : 0.2087          
+   Detection Prevalence : 0.2174          
+      Balanced Accuracy : 0.8575          
                                           
        'Positive' Class : adhd            
                                           
@@ -1342,29 +1342,29 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd       5       6
-   no_adhd    6      21
-                                         
-               Accuracy : 0.6842         
-                 95% CI : (0.5135, 0.825)
-    No Information Rate : 0.7105         
-    P-Value [Acc &gt; NIR] : 0.7101         
-                                         
-                  Kappa : 0.2323         
-                                         
- Mcnemar's Test P-Value : 1.0000         
-                                         
-            Sensitivity : 0.4545         
-            Specificity : 0.7778         
-         Pos Pred Value : 0.4545         
-         Neg Pred Value : 0.7778         
-             Prevalence : 0.2895         
-         Detection Rate : 0.1316         
-   Detection Prevalence : 0.2895         
-      Balanced Accuracy : 0.6162         
-                                         
-       'Positive' Class : adhd           
-                                         
+   adhd       8       6
+   no_adhd    3      21
+                                          
+               Accuracy : 0.7632          
+                 95% CI : (0.5976, 0.8856)
+    No Information Rate : 0.7105          
+    P-Value [Acc &gt; NIR] : 0.3025          
+                                          
+                  Kappa : 0.4673          
+                                          
+ Mcnemar's Test P-Value : 0.5050          
+                                          
+            Sensitivity : 0.7273          
+            Specificity : 0.7778          
+         Pos Pred Value : 0.5714          
+         Neg Pred Value : 0.8750          
+             Prevalence : 0.2895          
+         Detection Rate : 0.2105          
+   Detection Prevalence : 0.3684          
+      Balanced Accuracy : 0.7525          
+                                          
+       'Positive' Class : adhd            
+                                          
 
 -------------------------------</code></pre>
 </div>
@@ -1379,26 +1379,87 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd      21       4
-   no_adhd   12      78
+   adhd      23       5
+   no_adhd   10      77
+                                         
+               Accuracy : 0.8696         
+                 95% CI : (0.794, 0.9251)
+    No Information Rate : 0.713          
+    P-Value [Acc &gt; NIR] : 5.606e-05      
+                                         
+                  Kappa : 0.6662         
+                                         
+ Mcnemar's Test P-Value : 0.3017         
+                                         
+            Sensitivity : 0.6970         
+            Specificity : 0.9390         
+         Pos Pred Value : 0.8214         
+         Neg Pred Value : 0.8851         
+             Prevalence : 0.2870         
+         Detection Rate : 0.2000         
+   Detection Prevalence : 0.2435         
+      Balanced Accuracy : 0.8180         
+                                         
+       'Positive' Class : adhd           
+                                         
+
+Testing Data:
+Confusion Matrix and Statistics
+
+          Reference
+Prediction adhd no_adhd
+   adhd       8       7
+   no_adhd    3      20
+                                        
+               Accuracy : 0.7368        
+                 95% CI : (0.569, 0.866)
+    No Information Rate : 0.7105        
+    P-Value [Acc &gt; NIR] : 0.4389        
+                                        
+                  Kappa : 0.4225        
+                                        
+ Mcnemar's Test P-Value : 0.3428        
+                                        
+            Sensitivity : 0.7273        
+            Specificity : 0.7407        
+         Pos Pred Value : 0.5333        
+         Neg Pred Value : 0.8696        
+             Prevalence : 0.2895        
+         Detection Rate : 0.2105        
+   Detection Prevalence : 0.3947        
+      Balanced Accuracy : 0.7340        
+                                        
+       'Positive' Class : adhd          
+                                        
+
+-------------------------------
+
+Model: Lasso 
+Training Data:
+Confusion Matrix and Statistics
+
+          Reference
+Prediction adhd no_adhd
+   adhd      19       2
+   no_adhd   14      80
                                           
                Accuracy : 0.8609          
                  95% CI : (0.7839, 0.9183)
     No Information Rate : 0.713           
     P-Value [Acc &gt; NIR] : 0.0001471       
                                           
-                  Kappa : 0.6335          
+                  Kappa : 0.6186          
                                           
- Mcnemar's Test P-Value : 0.0801183       
+ Mcnemar's Test P-Value : 0.0059595       
                                           
-            Sensitivity : 0.6364          
-            Specificity : 0.9512          
-         Pos Pred Value : 0.8400          
-         Neg Pred Value : 0.8667          
+            Sensitivity : 0.5758          
+            Specificity : 0.9756          
+         Pos Pred Value : 0.9048          
+         Neg Pred Value : 0.8511          
              Prevalence : 0.2870          
-         Detection Rate : 0.1826          
-   Detection Prevalence : 0.2174          
-      Balanced Accuracy : 0.7938          
+         Detection Rate : 0.1652          
+   Detection Prevalence : 0.1826          
+      Balanced Accuracy : 0.7757          
                                           
        'Positive' Class : adhd            
                                           
@@ -1434,93 +1495,32 @@ Prediction adhd no_adhd
 
 -------------------------------
 
-Model: Lasso 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd      18       5
-   no_adhd   15      77
-                                          
-               Accuracy : 0.8261          
-                 95% CI : (0.7443, 0.8904)
-    No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 0.003642        
-                                          
-                  Kappa : 0.5327          
-                                          
- Mcnemar's Test P-Value : 0.044171        
-                                          
-            Sensitivity : 0.5455          
-            Specificity : 0.9390          
-         Pos Pred Value : 0.7826          
-         Neg Pred Value : 0.8370          
-             Prevalence : 0.2870          
-         Detection Rate : 0.1565          
-   Detection Prevalence : 0.2000          
-      Balanced Accuracy : 0.7422          
-                                          
-       'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       9       5
-   no_adhd    2      22
-                                          
-               Accuracy : 0.8158          
-                 95% CI : (0.6567, 0.9226)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.1020          
-                                          
-                  Kappa : 0.5857          
-                                          
- Mcnemar's Test P-Value : 0.4497          
-                                          
-            Sensitivity : 0.8182          
-            Specificity : 0.8148          
-         Pos Pred Value : 0.6429          
-         Neg Pred Value : 0.9167          
-             Prevalence : 0.2895          
-         Detection Rate : 0.2368          
-   Detection Prevalence : 0.3684          
-      Balanced Accuracy : 0.8165          
-                                          
-       'Positive' Class : adhd            
-                                          
-
--------------------------------
-
 Model: LDA 
 Training Data:
 Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd      20       3
-   no_adhd   13      79
+   adhd      19       2
+   no_adhd   14      80
                                           
                Accuracy : 0.8609          
                  95% CI : (0.7839, 0.9183)
     No Information Rate : 0.713           
     P-Value [Acc &gt; NIR] : 0.0001471       
                                           
-                  Kappa : 0.6262          
+                  Kappa : 0.6186          
                                           
- Mcnemar's Test P-Value : 0.0244489       
+ Mcnemar's Test P-Value : 0.0059595       
                                           
-            Sensitivity : 0.6061          
-            Specificity : 0.9634          
-         Pos Pred Value : 0.8696          
-         Neg Pred Value : 0.8587          
+            Sensitivity : 0.5758          
+            Specificity : 0.9756          
+         Pos Pred Value : 0.9048          
+         Neg Pred Value : 0.8511          
              Prevalence : 0.2870          
-         Detection Rate : 0.1739          
-   Detection Prevalence : 0.2000          
-      Balanced Accuracy : 0.7847          
+         Detection Rate : 0.1652          
+   Detection Prevalence : 0.1826          
+      Balanced Accuracy : 0.7757          
                                           
        'Positive' Class : adhd            
                                           
@@ -1530,26 +1530,26 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd       8       5
-   no_adhd    3      22
+   adhd       8       6
+   no_adhd    3      21
                                           
-               Accuracy : 0.7895          
-                 95% CI : (0.6268, 0.9045)
+               Accuracy : 0.7632          
+                 95% CI : (0.5976, 0.8856)
     No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.1870          
+    P-Value [Acc &gt; NIR] : 0.3025          
                                           
-                  Kappa : 0.5144          
+                  Kappa : 0.4673          
                                           
- Mcnemar's Test P-Value : 0.7237          
+ Mcnemar's Test P-Value : 0.5050          
                                           
             Sensitivity : 0.7273          
-            Specificity : 0.8148          
-         Pos Pred Value : 0.6154          
-         Neg Pred Value : 0.8800          
+            Specificity : 0.7778          
+         Pos Pred Value : 0.5714          
+         Neg Pred Value : 0.8750          
              Prevalence : 0.2895          
          Detection Rate : 0.2105          
-   Detection Prevalence : 0.3421          
-      Balanced Accuracy : 0.7710          
+   Detection Prevalence : 0.3684          
+      Balanced Accuracy : 0.7525          
                                           
        'Positive' Class : adhd            
                                           
@@ -1562,26 +1562,26 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd      24       5
-   no_adhd    9      77
+   adhd      26       4
+   no_adhd    7      78
                                           
-               Accuracy : 0.8783          
-                 95% CI : (0.8042, 0.9318)
+               Accuracy : 0.9043          
+                 95% CI : (0.8353, 0.9513)
     No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 1.988e-05       
+    P-Value [Acc &gt; NIR] : 5.474e-07       
                                           
-                  Kappa : 0.6913          
+                  Kappa : 0.7597          
                                           
- Mcnemar's Test P-Value : 0.4227          
+ Mcnemar's Test P-Value : 0.5465          
                                           
-            Sensitivity : 0.7273          
-            Specificity : 0.9390          
-         Pos Pred Value : 0.8276          
-         Neg Pred Value : 0.8953          
+            Sensitivity : 0.7879          
+            Specificity : 0.9512          
+         Pos Pred Value : 0.8667          
+         Neg Pred Value : 0.9176          
              Prevalence : 0.2870          
-         Detection Rate : 0.2087          
-   Detection Prevalence : 0.2522          
-      Balanced Accuracy : 0.8331          
+         Detection Rate : 0.2261          
+   Detection Prevalence : 0.2609          
+      Balanced Accuracy : 0.8695          
                                           
        'Positive' Class : adhd            
                                           
@@ -1591,29 +1591,29 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd       7       6
-   no_adhd    4      21
-                                        
-               Accuracy : 0.7368        
-                 95% CI : (0.569, 0.866)
-    No Information Rate : 0.7105        
-    P-Value [Acc &gt; NIR] : 0.4389        
-                                        
-                  Kappa : 0.393         
-                                        
- Mcnemar's Test P-Value : 0.7518        
-                                        
-            Sensitivity : 0.6364        
-            Specificity : 0.7778        
-         Pos Pred Value : 0.5385        
-         Neg Pred Value : 0.8400        
-             Prevalence : 0.2895        
-         Detection Rate : 0.1842        
-   Detection Prevalence : 0.3421        
-      Balanced Accuracy : 0.7071        
-                                        
-       'Positive' Class : adhd          
-                                        
+   adhd       7       3
+   no_adhd    4      24
+                                          
+               Accuracy : 0.8158          
+                 95% CI : (0.6567, 0.9226)
+    No Information Rate : 0.7105          
+    P-Value [Acc &gt; NIR] : 0.102           
+                                          
+                  Kappa : 0.5398          
+                                          
+ Mcnemar's Test P-Value : 1.000           
+                                          
+            Sensitivity : 0.6364          
+            Specificity : 0.8889          
+         Pos Pred Value : 0.7000          
+         Neg Pred Value : 0.8571          
+             Prevalence : 0.2895          
+         Detection Rate : 0.1842          
+   Detection Prevalence : 0.2632          
+      Balanced Accuracy : 0.7626          
+                                          
+       'Positive' Class : adhd            
+                                          
 
 -------------------------------
 
@@ -1652,26 +1652,26 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd       7       4
-   no_adhd    4      23
+   adhd       7       5
+   no_adhd    4      22
                                           
-               Accuracy : 0.7895          
-                 95% CI : (0.6268, 0.9045)
+               Accuracy : 0.7632          
+                 95% CI : (0.5976, 0.8856)
     No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.187           
+    P-Value [Acc &gt; NIR] : 0.3025          
                                           
-                  Kappa : 0.4882          
+                  Kappa : 0.4393          
                                           
- Mcnemar's Test P-Value : 1.000           
+ Mcnemar's Test P-Value : 1.0000          
                                           
             Sensitivity : 0.6364          
-            Specificity : 0.8519          
-         Pos Pred Value : 0.6364          
-         Neg Pred Value : 0.8519          
+            Specificity : 0.8148          
+         Pos Pred Value : 0.5833          
+         Neg Pred Value : 0.8462          
              Prevalence : 0.2895          
          Detection Rate : 0.1842          
-   Detection Prevalence : 0.2895          
-      Balanced Accuracy : 0.7441          
+   Detection Prevalence : 0.3158          
+      Balanced Accuracy : 0.7256          
                                           
        'Positive' Class : adhd            
                                           
@@ -1684,26 +1684,26 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd      30       0
-   no_adhd    3      82
+   adhd      30       1
+   no_adhd    3      81
                                           
-               Accuracy : 0.9739          
-                 95% CI : (0.9257, 0.9946)
+               Accuracy : 0.9652          
+                 95% CI : (0.9133, 0.9904)
     No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 2.208e-13       
+    P-Value [Acc &gt; NIR] : 2.548e-12       
                                           
-                  Kappa : 0.9345          
+                  Kappa : 0.9134          
                                           
- Mcnemar's Test P-Value : 0.2482          
+ Mcnemar's Test P-Value : 0.6171          
                                           
             Sensitivity : 0.9091          
-            Specificity : 1.0000          
-         Pos Pred Value : 1.0000          
-         Neg Pred Value : 0.9647          
+            Specificity : 0.9878          
+         Pos Pred Value : 0.9677          
+         Neg Pred Value : 0.9643          
              Prevalence : 0.2870          
          Detection Rate : 0.2609          
-   Detection Prevalence : 0.2609          
-      Balanced Accuracy : 0.9545          
+   Detection Prevalence : 0.2696          
+      Balanced Accuracy : 0.9484          
                                           
        'Positive' Class : adhd            
                                           
@@ -1713,29 +1713,29 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
-   adhd       9       6
-   no_adhd    2      21
-                                          
-               Accuracy : 0.7895          
-                 95% CI : (0.6268, 0.9045)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.1870          
-                                          
-                  Kappa : 0.538           
-                                          
- Mcnemar's Test P-Value : 0.2888          
-                                          
-            Sensitivity : 0.8182          
-            Specificity : 0.7778          
-         Pos Pred Value : 0.6000          
-         Neg Pred Value : 0.9130          
-             Prevalence : 0.2895          
-         Detection Rate : 0.2368          
-   Detection Prevalence : 0.3947          
-      Balanced Accuracy : 0.7980          
-                                          
-       'Positive' Class : adhd            
-                                          
+   adhd       9       8
+   no_adhd    2      19
+                                        
+               Accuracy : 0.7368        
+                 95% CI : (0.569, 0.866)
+    No Information Rate : 0.7105        
+    P-Value [Acc &gt; NIR] : 0.4389        
+                                        
+                  Kappa : 0.4493        
+                                        
+ Mcnemar's Test P-Value : 0.1138        
+                                        
+            Sensitivity : 0.8182        
+            Specificity : 0.7037        
+         Pos Pred Value : 0.5294        
+         Neg Pred Value : 0.9048        
+             Prevalence : 0.2895        
+         Detection Rate : 0.2368        
+   Detection Prevalence : 0.4474        
+      Balanced Accuracy : 0.7609        
+                                        
+       'Positive' Class : adhd          
+                                        
 
 -------------------------------</code></pre>
 </div>
@@ -1814,25 +1814,25 @@ Prediction adhd no_adhd
 <span id="cb34-73"><a href="#cb34-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the combined balanced accuracy results</span></span>
 <span id="cb34-74"><a href="#cb34-74" aria-hidden="true" tabindex="-1"></a>BI_results_all</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>     Model Train_BalAcc Test_BalAcc         Diff     Set
-1    Logit    0.6239837   0.7356902 -0.111706496   No L2
-2    Lasso    0.6241685   0.6178451  0.006323397   No L2
-3      LDA    0.6452328   0.6902357 -0.045002874   No L2
-4      QDA    0.7361419   0.6531987  0.082943254   No L2
-5       RF    0.9848485   0.5909091  0.393939394   No L2
-6  XGBOOST    0.9029933   0.5336700  0.369323314   No L2
-7    Logit    0.6239837   0.7356902 -0.111706496 With L2
-8    Lasso    0.6090170   0.6363636 -0.027346637 With L2
-9      LDA    0.6422764   0.7356902 -0.093413813 With L2
-10     QDA    0.7725425   0.6717172  0.100825326 With L2
-11      RF    1.0000000   0.5269360  0.473063973 With L2
-12 XGBOOST    0.8756467   0.6161616  0.259485095 With L2
-13   Logit    0.7937916   0.7525253  0.041266322   BAARS
-14   Lasso    0.7422395   0.8164983 -0.074258849   BAARS
-15     LDA    0.7847376   0.7710438  0.013693849   BAARS
-16     QDA    0.8331486   0.7070707  0.126077852   BAARS
-17      RF    1.0000000   0.7441077  0.255892256   BAARS
-18 XGBOOST    0.9545455   0.7979798  0.156565657   BAARS</code></pre>
+<pre><code>     Model Train_BalAcc Test_BalAcc        Diff     Set
+1    Logit    0.6241685   0.6632997 -0.03913115   No L2
+2    Lasso    0.5938655   0.6178451 -0.02397963   No L2
+3      LDA    0.6393200   0.6632997 -0.02397963   No L2
+4      QDA    0.7180340   0.6902357  0.02779831   No L2
+5       RF    0.9848485   0.6632997  0.32154882   No L2
+6  XGBOOST    0.8484848   0.7340067  0.11447811   No L2
+7    Logit    0.6210273   0.7542088 -0.13318141 With L2
+8    Lasso    0.5303030   0.5454545 -0.01515152 With L2
+9      LDA    0.6361789   0.7542088 -0.11802989 With L2
+10     QDA    0.7422395   0.6902357  0.05200378 With L2
+11      RF    1.0000000   0.5269360  0.47306397 With L2
+12 XGBOOST    0.8575388   0.7525253  0.10501355 With L2
+13   Logit    0.8179970   0.7340067  0.08399031   BAARS
+14   Lasso    0.7756837   0.7525253  0.02315841   BAARS
+15     LDA    0.7756837   0.7525253  0.02315841   BAARS
+16     QDA    0.8695492   0.7626263  0.10692289   BAARS
+17      RF    1.0000000   0.7255892  0.27441077   BAARS
+18 XGBOOST    0.9484479   0.7609428  0.18750513   BAARS</code></pre>
 </div>
 </div>
 <p>Step 3: Computing SHAP Values for RF to understand what predictors are the most influential</p>
