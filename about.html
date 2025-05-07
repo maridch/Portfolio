@@ -613,332 +613,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_3 <span class="ot">&lt;-</span> <span class="fu">extract_CM</span>(models.binary_ADHD_3, train_data_ADHD_Status, test_data_ADHD_Status, <span class="st">"ADHD"</span>)</span>
 <span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Optionally, print all confusion matrices for each group and each model</span></span>
-<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>print_confusion_matrices <span class="ot">&lt;-</span> <span class="cf">function</span>(cm_list, group_name) {</span>
-<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">--- Confusion Matrices for"</span>, group_name, <span class="st">"---</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(model_name <span class="cf">in</span> <span class="fu">names</span>(cm_list<span class="sc">$</span>Train)) {</span>
-<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Model:"</span>, model_name, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Training Data:</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(cm_list<span class="sc">$</span>Train[[model_name]])</span>
-<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Testing Data:</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(cm_list<span class="sc">$</span>Test[[model_name]])</span>
-<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">-------------------------------</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a><span class="co">#print_confusion_matrices &lt;- function(cm_list, group_name) {</span></span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a><span class="co">#  cat("\n--- Confusion Matrices for", group_name, "---\n")</span></span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a><span class="co">#  for(model_name in names(cm_list$Train)) {</span></span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a><span class="co">#    cat("\nModel:", model_name, "\n")</span></span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a><span class="co">#    cat("Training Data:\n")</span></span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a><span class="co">#    print(cm_list$Train[[model_name]])</span></span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a><span class="co">#    cat("\nTesting Data:\n")</span></span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a><span class="co">#    print(cm_list$Test[[model_name]])</span></span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a><span class="co">#    cat("\n-------------------------------\n")</span></span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a><span class="co">#  }</span></span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a><span class="co">#}</span></span>
 <span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Print confusion matrices for each group</span></span>
-<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a><span class="fu">print_confusion_matrices</span>(CM.models.binary_ADHD_1, <span class="st">"models.binary_ADHD_1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a><span class="co">#print_confusion_matrices(CM.models.binary_ADHD_1, "models.binary_ADHD_1")</span></span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a><span class="co">#print_confusion_matrices(CM.models.binary_ADHD_2, "models.binary_ADHD_2")</span></span>
+<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a><span class="co">#print_confusion_matrices(CM.models.binary_ADHD_3, "models.binary_ADHD_3")</span></span>
+<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a><span class="co">#confusion matrix for XGBOOST only</span></span>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_1<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
---- Confusion Matrices for models.binary_ADHD_1 ---
-
-Model: Logit 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       9       2
-   no_adhd   24      80
-                                          
-               Accuracy : 0.7739          
-                 95% CI : (0.6865, 0.8467)
-    No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 0.08794         
-                                          
-                  Kappa : 0.3101          
-                                          
- Mcnemar's Test P-Value : 3.814e-05       
-                                          
-            Sensitivity : 0.27273         
-            Specificity : 0.97561         
-         Pos Pred Value : 0.81818         
-         Neg Pred Value : 0.76923         
-             Prevalence : 0.28696         
-         Detection Rate : 0.07826         
-   Detection Prevalence : 0.09565         
-      Balanced Accuracy : 0.62417         
-                                          
-       'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       4       1
-   no_adhd    7      26
-                                          
-               Accuracy : 0.7895          
-                 95% CI : (0.6268, 0.9045)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.1870          
-                                          
-                  Kappa : 0.3896          
-                                          
- Mcnemar's Test P-Value : 0.0771          
-                                          
-            Sensitivity : 0.3636          
-            Specificity : 0.9630          
-         Pos Pred Value : 0.8000          
-         Neg Pred Value : 0.7879          
-             Prevalence : 0.2895          
-         Detection Rate : 0.1053          
-   Detection Prevalence : 0.1316          
-      Balanced Accuracy : 0.6633          
-                                          
-       'Positive' Class : adhd            
-                                          
-
--------------------------------
-
-Model: Lasso 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       7       2
-   no_adhd   26      80
-                                          
-               Accuracy : 0.7565          
-                 95% CI : (0.6677, 0.8317)
-    No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 0.1773          
-                                          
-                  Kappa : 0.2398          
-                                          
- Mcnemar's Test P-Value : 1.383e-05       
-                                          
-            Sensitivity : 0.21212         
-            Specificity : 0.97561         
-         Pos Pred Value : 0.77778         
-         Neg Pred Value : 0.75472         
-             Prevalence : 0.28696         
-         Detection Rate : 0.06087         
-   Detection Prevalence : 0.07826         
-      Balanced Accuracy : 0.59387         
-                                          
-       'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       3       1
-   no_adhd    8      26
-                                          
-               Accuracy : 0.7632          
-                 95% CI : (0.5976, 0.8856)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.3025          
-                                          
-                  Kappa : 0.2905          
-                                          
- Mcnemar's Test P-Value : 0.0455          
-                                          
-            Sensitivity : 0.27273         
-            Specificity : 0.96296         
-         Pos Pred Value : 0.75000         
-         Neg Pred Value : 0.76471         
-             Prevalence : 0.28947         
-         Detection Rate : 0.07895         
-   Detection Prevalence : 0.10526         
-      Balanced Accuracy : 0.61785         
-                                          
-       'Positive' Class : adhd            
-                                          
-
--------------------------------
-
-Model: LDA 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd      10       2
-   no_adhd   23      80
-                                         
-               Accuracy : 0.7826         
-                 95% CI : (0.696, 0.8541)
-    No Information Rate : 0.713          
-    P-Value [Acc &gt; NIR] : 0.0582         
-                                         
-                  Kappa : 0.3441         
-                                         
- Mcnemar's Test P-Value : 6.334e-05      
-                                         
-            Sensitivity : 0.30303        
-            Specificity : 0.97561        
-         Pos Pred Value : 0.83333        
-         Neg Pred Value : 0.77670        
-             Prevalence : 0.28696        
-         Detection Rate : 0.08696        
-   Detection Prevalence : 0.10435        
-      Balanced Accuracy : 0.63932        
-                                         
-       'Positive' Class : adhd           
-                                         
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       4       1
-   no_adhd    7      26
-                                          
-               Accuracy : 0.7895          
-                 95% CI : (0.6268, 0.9045)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.1870          
-                                          
-                  Kappa : 0.3896          
-                                          
- Mcnemar's Test P-Value : 0.0771          
-                                          
-            Sensitivity : 0.3636          
-            Specificity : 0.9630          
-         Pos Pred Value : 0.8000          
-         Neg Pred Value : 0.7879          
-             Prevalence : 0.2895          
-         Detection Rate : 0.1053          
-   Detection Prevalence : 0.1316          
-      Balanced Accuracy : 0.6633          
-                                          
-       'Positive' Class : adhd            
-                                          
-
--------------------------------
-
-Model: QDA 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd      16       4
-   no_adhd   17      78
-                                          
-               Accuracy : 0.8174          
-                 95% CI : (0.7345, 0.8833)
-    No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 0.007019        
-                                          
-                  Kappa : 0.4942          
-                                          
- Mcnemar's Test P-Value : 0.008829        
-                                          
-            Sensitivity : 0.4848          
-            Specificity : 0.9512          
-         Pos Pred Value : 0.8000          
-         Neg Pred Value : 0.8211          
-             Prevalence : 0.2870          
-         Detection Rate : 0.1391          
-   Detection Prevalence : 0.1739          
-      Balanced Accuracy : 0.7180          
-                                          
-       'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       5       2
-   no_adhd    6      25
-                                          
-               Accuracy : 0.7895          
-                 95% CI : (0.6268, 0.9045)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.1870          
-                                          
-                  Kappa : 0.4264          
-                                          
- Mcnemar's Test P-Value : 0.2888          
-                                          
-            Sensitivity : 0.4545          
-            Specificity : 0.9259          
-         Pos Pred Value : 0.7143          
-         Neg Pred Value : 0.8065          
-             Prevalence : 0.2895          
-         Detection Rate : 0.1316          
-   Detection Prevalence : 0.1842          
-      Balanced Accuracy : 0.6902          
-                                          
-       'Positive' Class : adhd            
-                                          
-
--------------------------------
-
-Model: RF 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd      32       0
-   no_adhd    1      82
-                                          
-               Accuracy : 0.9913          
-                 95% CI : (0.9525, 0.9998)
-    No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 6.068e-16       
-                                          
-                  Kappa : 0.9786          
-                                          
- Mcnemar's Test P-Value : 1               
-                                          
-            Sensitivity : 0.9697          
-            Specificity : 1.0000          
-         Pos Pred Value : 1.0000          
-         Neg Pred Value : 0.9880          
-             Prevalence : 0.2870          
-         Detection Rate : 0.2783          
-   Detection Prevalence : 0.2783          
-      Balanced Accuracy : 0.9848          
-                                          
-       'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       4       1
-   no_adhd    7      26
-                                          
-               Accuracy : 0.7895          
-                 95% CI : (0.6268, 0.9045)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.1870          
-                                          
-                  Kappa : 0.3896          
-                                          
- Mcnemar's Test P-Value : 0.0771          
-                                          
-            Sensitivity : 0.3636          
-            Specificity : 0.9630          
-         Pos Pred Value : 0.8000          
-         Neg Pred Value : 0.7879          
-             Prevalence : 0.2895          
-         Detection Rate : 0.1053          
-   Detection Prevalence : 0.1316          
-      Balanced Accuracy : 0.6633          
-                                          
-       'Positive' Class : adhd            
-                                          
-
--------------------------------
-
-Model: XGBOOST 
-Training Data:
-Confusion Matrix and Statistics
+<pre><code>Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
@@ -964,10 +659,11 @@ Prediction adhd no_adhd
       Balanced Accuracy : 0.8485          
                                           
        'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
+                                          </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_1<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
@@ -993,323 +689,11 @@ Prediction adhd no_adhd
       Balanced Accuracy : 0.7340        
                                         
        'Positive' Class : adhd          
-                                        
-
--------------------------------</code></pre>
+                                        </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print_confusion_matrices</span>(CM.models.binary_ADHD_2, <span class="st">"models.binary_ADHD_2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_2<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
---- Confusion Matrices for models.binary_ADHD_2 ---
-
-Model: Logit 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd      10       5
-   no_adhd   23      77
-                                          
-               Accuracy : 0.7565          
-                 95% CI : (0.6677, 0.8317)
-    No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 0.177296        
-                                          
-                  Kappa : 0.2892          
-                                          
- Mcnemar's Test P-Value : 0.001315        
-                                          
-            Sensitivity : 0.30303         
-            Specificity : 0.93902         
-         Pos Pred Value : 0.66667         
-         Neg Pred Value : 0.77000         
-             Prevalence : 0.28696         
-         Detection Rate : 0.08696         
-   Detection Prevalence : 0.13043         
-      Balanced Accuracy : 0.62103         
-                                          
-       'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       6       1
-   no_adhd    5      26
-                                          
-               Accuracy : 0.8421          
-                 95% CI : (0.6875, 0.9398)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.0481          
-                                          
-                  Kappa : 0.5698          
-                                          
- Mcnemar's Test P-Value : 0.2207          
-                                          
-            Sensitivity : 0.5455          
-            Specificity : 0.9630          
-         Pos Pred Value : 0.8571          
-         Neg Pred Value : 0.8387          
-             Prevalence : 0.2895          
-         Detection Rate : 0.1579          
-   Detection Prevalence : 0.1842          
-      Balanced Accuracy : 0.7542          
-                                          
-       'Positive' Class : adhd            
-                                          
-
--------------------------------
-
-Model: Lasso 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       2       0
-   no_adhd   31      82
-                                          
-               Accuracy : 0.7304          
-                 95% CI : (0.6397, 0.8089)
-    No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 0.3837          
-                                          
-                  Kappa : 0.0843          
-                                          
- Mcnemar's Test P-Value : 7.118e-08       
-                                          
-            Sensitivity : 0.06061         
-            Specificity : 1.00000         
-         Pos Pred Value : 1.00000         
-         Neg Pred Value : 0.72566         
-             Prevalence : 0.28696         
-         Detection Rate : 0.01739         
-   Detection Prevalence : 0.01739         
-      Balanced Accuracy : 0.53030         
-                                          
-       'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       1       0
-   no_adhd   10      27
-                                        
-               Accuracy : 0.7368        
-                 95% CI : (0.569, 0.866)
-    No Information Rate : 0.7105        
-    P-Value [Acc &gt; NIR] : 0.438935      
-                                        
-                  Kappa : 0.1244        
-                                        
- Mcnemar's Test P-Value : 0.004427      
-                                        
-            Sensitivity : 0.09091       
-            Specificity : 1.00000       
-         Pos Pred Value : 1.00000       
-         Neg Pred Value : 0.72973       
-             Prevalence : 0.28947       
-         Detection Rate : 0.02632       
-   Detection Prevalence : 0.02632       
-      Balanced Accuracy : 0.54545       
-                                        
-       'Positive' Class : adhd          
-                                        
-
--------------------------------
-
-Model: LDA 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd      11       5
-   no_adhd   22      77
-                                          
-               Accuracy : 0.7652          
-                 95% CI : (0.6771, 0.8392)
-    No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 0.127394        
-                                          
-                  Kappa : 0.3219          
-                                          
- Mcnemar's Test P-Value : 0.002076        
-                                          
-            Sensitivity : 0.33333         
-            Specificity : 0.93902         
-         Pos Pred Value : 0.68750         
-         Neg Pred Value : 0.77778         
-             Prevalence : 0.28696         
-         Detection Rate : 0.09565         
-   Detection Prevalence : 0.13913         
-      Balanced Accuracy : 0.63618         
-                                          
-       'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       6       1
-   no_adhd    5      26
-                                          
-               Accuracy : 0.8421          
-                 95% CI : (0.6875, 0.9398)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.0481          
-                                          
-                  Kappa : 0.5698          
-                                          
- Mcnemar's Test P-Value : 0.2207          
-                                          
-            Sensitivity : 0.5455          
-            Specificity : 0.9630          
-         Pos Pred Value : 0.8571          
-         Neg Pred Value : 0.8387          
-             Prevalence : 0.2895          
-         Detection Rate : 0.1579          
-   Detection Prevalence : 0.1842          
-      Balanced Accuracy : 0.7542          
-                                          
-       'Positive' Class : adhd            
-                                          
-
--------------------------------
-
-Model: QDA 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd      18       5
-   no_adhd   15      77
-                                          
-               Accuracy : 0.8261          
-                 95% CI : (0.7443, 0.8904)
-    No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 0.003642        
-                                          
-                  Kappa : 0.5327          
-                                          
- Mcnemar's Test P-Value : 0.044171        
-                                          
-            Sensitivity : 0.5455          
-            Specificity : 0.9390          
-         Pos Pred Value : 0.7826          
-         Neg Pred Value : 0.8370          
-             Prevalence : 0.2870          
-         Detection Rate : 0.1565          
-   Detection Prevalence : 0.2000          
-      Balanced Accuracy : 0.7422          
-                                          
-       'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       5       2
-   no_adhd    6      25
-                                          
-               Accuracy : 0.7895          
-                 95% CI : (0.6268, 0.9045)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.1870          
-                                          
-                  Kappa : 0.4264          
-                                          
- Mcnemar's Test P-Value : 0.2888          
-                                          
-            Sensitivity : 0.4545          
-            Specificity : 0.9259          
-         Pos Pred Value : 0.7143          
-         Neg Pred Value : 0.8065          
-             Prevalence : 0.2895          
-         Detection Rate : 0.1316          
-   Detection Prevalence : 0.1842          
-      Balanced Accuracy : 0.6902          
-                                          
-       'Positive' Class : adhd            
-                                          
-
--------------------------------
-
-Model: RF 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd      33       0
-   no_adhd    0      82
-                                     
-               Accuracy : 1          
-                 95% CI : (0.9684, 1)
-    No Information Rate : 0.713      
-    P-Value [Acc &gt; NIR] : &lt; 2.2e-16  
-                                     
-                  Kappa : 1          
-                                     
- Mcnemar's Test P-Value : NA         
-                                     
-            Sensitivity : 1.000      
-            Specificity : 1.000      
-         Pos Pred Value : 1.000      
-         Neg Pred Value : 1.000      
-             Prevalence : 0.287      
-         Detection Rate : 0.287      
-   Detection Prevalence : 0.287      
-      Balanced Accuracy : 1.000      
-                                     
-       'Positive' Class : adhd       
-                                     
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       1       1
-   no_adhd   10      26
-                                         
-               Accuracy : 0.7105         
-                 95% CI : (0.541, 0.8458)
-    No Information Rate : 0.7105         
-    P-Value [Acc &gt; NIR] : 0.58043        
-                                         
-                  Kappa : 0.0711         
-                                         
- Mcnemar's Test P-Value : 0.01586        
-                                         
-            Sensitivity : 0.09091        
-            Specificity : 0.96296        
-         Pos Pred Value : 0.50000        
-         Neg Pred Value : 0.72222        
-             Prevalence : 0.28947        
-         Detection Rate : 0.02632        
-   Detection Prevalence : 0.05263        
-      Balanced Accuracy : 0.52694        
-                                         
-       'Positive' Class : adhd           
-                                         
-
--------------------------------
-
-Model: XGBOOST 
-Training Data:
-Confusion Matrix and Statistics
+<pre><code>Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
@@ -1335,137 +719,11 @@ Prediction adhd no_adhd
       Balanced Accuracy : 0.8575          
                                           
        'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       8       6
-   no_adhd    3      21
-                                          
-               Accuracy : 0.7632          
-                 95% CI : (0.5976, 0.8856)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.3025          
-                                          
-                  Kappa : 0.4673          
-                                          
- Mcnemar's Test P-Value : 0.5050          
-                                          
-            Sensitivity : 0.7273          
-            Specificity : 0.7778          
-         Pos Pred Value : 0.5714          
-         Neg Pred Value : 0.8750          
-             Prevalence : 0.2895          
-         Detection Rate : 0.2105          
-   Detection Prevalence : 0.3684          
-      Balanced Accuracy : 0.7525          
-                                          
-       'Positive' Class : adhd            
-                                          
-
--------------------------------</code></pre>
+                                          </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print_confusion_matrices</span>(CM.models.binary_ADHD_3, <span class="st">"models.binary_ADHD_3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_2<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
---- Confusion Matrices for models.binary_ADHD_3 ---
-
-Model: Logit 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd      23       5
-   no_adhd   10      77
-                                         
-               Accuracy : 0.8696         
-                 95% CI : (0.794, 0.9251)
-    No Information Rate : 0.713          
-    P-Value [Acc &gt; NIR] : 5.606e-05      
-                                         
-                  Kappa : 0.6662         
-                                         
- Mcnemar's Test P-Value : 0.3017         
-                                         
-            Sensitivity : 0.6970         
-            Specificity : 0.9390         
-         Pos Pred Value : 0.8214         
-         Neg Pred Value : 0.8851         
-             Prevalence : 0.2870         
-         Detection Rate : 0.2000         
-   Detection Prevalence : 0.2435         
-      Balanced Accuracy : 0.8180         
-                                         
-       'Positive' Class : adhd           
-                                         
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       8       7
-   no_adhd    3      20
-                                        
-               Accuracy : 0.7368        
-                 95% CI : (0.569, 0.866)
-    No Information Rate : 0.7105        
-    P-Value [Acc &gt; NIR] : 0.4389        
-                                        
-                  Kappa : 0.4225        
-                                        
- Mcnemar's Test P-Value : 0.3428        
-                                        
-            Sensitivity : 0.7273        
-            Specificity : 0.7407        
-         Pos Pred Value : 0.5333        
-         Neg Pred Value : 0.8696        
-             Prevalence : 0.2895        
-         Detection Rate : 0.2105        
-   Detection Prevalence : 0.3947        
-      Balanced Accuracy : 0.7340        
-                                        
-       'Positive' Class : adhd          
-                                        
-
--------------------------------
-
-Model: Lasso 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd      19       2
-   no_adhd   14      80
-                                          
-               Accuracy : 0.8609          
-                 95% CI : (0.7839, 0.9183)
-    No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 0.0001471       
-                                          
-                  Kappa : 0.6186          
-                                          
- Mcnemar's Test P-Value : 0.0059595       
-                                          
-            Sensitivity : 0.5758          
-            Specificity : 0.9756          
-         Pos Pred Value : 0.9048          
-         Neg Pred Value : 0.8511          
-             Prevalence : 0.2870          
-         Detection Rate : 0.1652          
-   Detection Prevalence : 0.1826          
-      Balanced Accuracy : 0.7757          
-                                          
-       'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
+<pre><code>Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
@@ -1491,196 +749,11 @@ Prediction adhd no_adhd
       Balanced Accuracy : 0.7525          
                                           
        'Positive' Class : adhd            
-                                          
-
--------------------------------
-
-Model: LDA 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd      19       2
-   no_adhd   14      80
-                                          
-               Accuracy : 0.8609          
-                 95% CI : (0.7839, 0.9183)
-    No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 0.0001471       
-                                          
-                  Kappa : 0.6186          
-                                          
- Mcnemar's Test P-Value : 0.0059595       
-                                          
-            Sensitivity : 0.5758          
-            Specificity : 0.9756          
-         Pos Pred Value : 0.9048          
-         Neg Pred Value : 0.8511          
-             Prevalence : 0.2870          
-         Detection Rate : 0.1652          
-   Detection Prevalence : 0.1826          
-      Balanced Accuracy : 0.7757          
-                                          
-       'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       8       6
-   no_adhd    3      21
-                                          
-               Accuracy : 0.7632          
-                 95% CI : (0.5976, 0.8856)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.3025          
-                                          
-                  Kappa : 0.4673          
-                                          
- Mcnemar's Test P-Value : 0.5050          
-                                          
-            Sensitivity : 0.7273          
-            Specificity : 0.7778          
-         Pos Pred Value : 0.5714          
-         Neg Pred Value : 0.8750          
-             Prevalence : 0.2895          
-         Detection Rate : 0.2105          
-   Detection Prevalence : 0.3684          
-      Balanced Accuracy : 0.7525          
-                                          
-       'Positive' Class : adhd            
-                                          
-
--------------------------------
-
-Model: QDA 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd      26       4
-   no_adhd    7      78
-                                          
-               Accuracy : 0.9043          
-                 95% CI : (0.8353, 0.9513)
-    No Information Rate : 0.713           
-    P-Value [Acc &gt; NIR] : 5.474e-07       
-                                          
-                  Kappa : 0.7597          
-                                          
- Mcnemar's Test P-Value : 0.5465          
-                                          
-            Sensitivity : 0.7879          
-            Specificity : 0.9512          
-         Pos Pred Value : 0.8667          
-         Neg Pred Value : 0.9176          
-             Prevalence : 0.2870          
-         Detection Rate : 0.2261          
-   Detection Prevalence : 0.2609          
-      Balanced Accuracy : 0.8695          
-                                          
-       'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       7       3
-   no_adhd    4      24
-                                          
-               Accuracy : 0.8158          
-                 95% CI : (0.6567, 0.9226)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.102           
-                                          
-                  Kappa : 0.5398          
-                                          
- Mcnemar's Test P-Value : 1.000           
-                                          
-            Sensitivity : 0.6364          
-            Specificity : 0.8889          
-         Pos Pred Value : 0.7000          
-         Neg Pred Value : 0.8571          
-             Prevalence : 0.2895          
-         Detection Rate : 0.1842          
-   Detection Prevalence : 0.2632          
-      Balanced Accuracy : 0.7626          
-                                          
-       'Positive' Class : adhd            
-                                          
-
--------------------------------
-
-Model: RF 
-Training Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd      33       0
-   no_adhd    0      82
-                                     
-               Accuracy : 1          
-                 95% CI : (0.9684, 1)
-    No Information Rate : 0.713      
-    P-Value [Acc &gt; NIR] : &lt; 2.2e-16  
-                                     
-                  Kappa : 1          
-                                     
- Mcnemar's Test P-Value : NA         
-                                     
-            Sensitivity : 1.000      
-            Specificity : 1.000      
-         Pos Pred Value : 1.000      
-         Neg Pred Value : 1.000      
-             Prevalence : 0.287      
-         Detection Rate : 0.287      
-   Detection Prevalence : 0.287      
-      Balanced Accuracy : 1.000      
-                                     
-       'Positive' Class : adhd       
-                                     
-
-Testing Data:
-Confusion Matrix and Statistics
-
-          Reference
-Prediction adhd no_adhd
-   adhd       7       5
-   no_adhd    4      22
-                                          
-               Accuracy : 0.7632          
-                 95% CI : (0.5976, 0.8856)
-    No Information Rate : 0.7105          
-    P-Value [Acc &gt; NIR] : 0.3025          
-                                          
-                  Kappa : 0.4393          
-                                          
- Mcnemar's Test P-Value : 1.0000          
-                                          
-            Sensitivity : 0.6364          
-            Specificity : 0.8148          
-         Pos Pred Value : 0.5833          
-         Neg Pred Value : 0.8462          
-             Prevalence : 0.2895          
-         Detection Rate : 0.1842          
-   Detection Prevalence : 0.3158          
-      Balanced Accuracy : 0.7256          
-                                          
-       'Positive' Class : adhd            
-                                          
-
--------------------------------
-
-Model: XGBOOST 
-Training Data:
-Confusion Matrix and Statistics
+                                          </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_3<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
@@ -1706,10 +779,11 @@ Prediction adhd no_adhd
       Balanced Accuracy : 0.9484          
                                           
        'Positive' Class : adhd            
-                                          
-
-Testing Data:
-Confusion Matrix and Statistics
+                                          </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_3<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Confusion Matrix and Statistics
 
           Reference
 Prediction adhd no_adhd
@@ -1735,84 +809,75 @@ Prediction adhd no_adhd
       Balanced Accuracy : 0.7609        
                                         
        'Positive' Class : adhd          
-                                        
-
--------------------------------</code></pre>
+                                        </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#confusion matrix for RF only</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co">#CM.models.binary_ADHD_3$Train$RF</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co">#CM.models.binary_ADHD_3$Test$RF</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="co">#RF seems the winner (I do not think that Alex agreed here). </span></span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated helper function to compute Mean_Balanced_Accuracy using multiClassSummary</span></span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>calc_balacc <span class="ot">&lt;-</span> <span class="cf">function</span>(mod, truth, newdata) {</span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get predicted probabilities and predicted class labels</span></span>
-<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata =</span> newdata, <span class="at">type =</span> <span class="st">"prob"</span>)</span>
-<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>  pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata =</span> newdata)</span>
-<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Build a data frame with observed values, predictions, and probabilities.</span></span>
-<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The column names in 'prob' must match the levels in the response factor.</span></span>
-<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">obs =</span> truth,</span>
-<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>                   <span class="at">pred =</span> pred,</span>
-<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a>                   prob)</span>
-<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># multiClassSummary computes several metrics including Mean_Balanced_Accuracy.</span></span>
-<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note: Even in binary classification, it returns "Mean_Balanced_Accuracy".</span></span>
-<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>  metrics <span class="ot">&lt;-</span> <span class="fu">multiClassSummary</span>(df, <span class="at">lev =</span> <span class="fu">levels</span>(truth), <span class="at">model =</span> mod)</span>
-<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a>  metrics[<span class="st">"Balanced_Accuracy"</span>]</span>
-<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated evaluation function that computes balanced accuracy on train and test sets</span></span>
-<span id="cb34-28"><a href="#cb34-28" aria-hidden="true" tabindex="-1"></a>evaluate_models_balacc <span class="ot">&lt;-</span> <span class="cf">function</span>(model_list, train_data, test_data, response_col) {</span>
-<span id="cb34-29"><a href="#cb34-29" aria-hidden="true" tabindex="-1"></a>  train_balacc <span class="ot">&lt;-</span> <span class="fu">sapply</span>(model_list, <span class="cf">function</span>(mod) </span>
-<span id="cb34-30"><a href="#cb34-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calc_balacc</span>(mod, <span class="at">truth =</span> train_data[[response_col]], <span class="at">newdata =</span> train_data))</span>
-<span id="cb34-31"><a href="#cb34-31" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb34-32"><a href="#cb34-32" aria-hidden="true" tabindex="-1"></a>  test_balacc <span class="ot">&lt;-</span> <span class="fu">sapply</span>(model_list, <span class="cf">function</span>(mod) </span>
-<span id="cb34-33"><a href="#cb34-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calc_balacc</span>(mod, <span class="at">truth =</span> test_data[[response_col]], <span class="at">newdata =</span> test_data))</span>
-<span id="cb34-34"><a href="#cb34-34" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb34-35"><a href="#cb34-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb34-36"><a href="#cb34-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">Model =</span> <span class="fu">names</span>(model_list),</span>
-<span id="cb34-37"><a href="#cb34-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">Train_BalAcc =</span> train_balacc,</span>
-<span id="cb34-38"><a href="#cb34-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">Test_BalAcc  =</span> test_balacc,</span>
-<span id="cb34-39"><a href="#cb34-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">Diff =</span> train_balacc <span class="sc">-</span> test_balacc,</span>
-<span id="cb34-40"><a href="#cb34-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">row.names =</span> <span class="cn">NULL</span></span>
-<span id="cb34-41"><a href="#cb34-41" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb34-42"><a href="#cb34-42" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb34-43"><a href="#cb34-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-44"><a href="#cb34-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage for group 1 and group 2 binary models</span></span>
-<span id="cb34-45"><a href="#cb34-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-46"><a href="#cb34-46" aria-hidden="true" tabindex="-1"></a>BI_results1 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
-<span id="cb34-47"><a href="#cb34-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_1,</span>
-<span id="cb34-48"><a href="#cb34-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
-<span id="cb34-49"><a href="#cb34-49" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
-<span id="cb34-50"><a href="#cb34-50" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
-<span id="cb34-51"><a href="#cb34-51" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb34-52"><a href="#cb34-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-53"><a href="#cb34-53" aria-hidden="true" tabindex="-1"></a>BI_results2 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
-<span id="cb34-54"><a href="#cb34-54" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_2,</span>
-<span id="cb34-55"><a href="#cb34-55" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
-<span id="cb34-56"><a href="#cb34-56" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
-<span id="cb34-57"><a href="#cb34-57" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
-<span id="cb34-58"><a href="#cb34-58" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb34-59"><a href="#cb34-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-60"><a href="#cb34-60" aria-hidden="true" tabindex="-1"></a>BI_results3 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
-<span id="cb34-61"><a href="#cb34-61" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_3,</span>
-<span id="cb34-62"><a href="#cb34-62" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
-<span id="cb34-63"><a href="#cb34-63" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
-<span id="cb34-64"><a href="#cb34-64" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
-<span id="cb34-65"><a href="#cb34-65" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb34-66"><a href="#cb34-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-67"><a href="#cb34-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the results from the two groups for comparison</span></span>
-<span id="cb34-68"><a href="#cb34-68" aria-hidden="true" tabindex="-1"></a>BI_results1<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"No L2"</span></span>
-<span id="cb34-69"><a href="#cb34-69" aria-hidden="true" tabindex="-1"></a>BI_results2<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"With L2"</span></span>
-<span id="cb34-70"><a href="#cb34-70" aria-hidden="true" tabindex="-1"></a>BI_results3<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"BAARS"</span></span>
-<span id="cb34-71"><a href="#cb34-71" aria-hidden="true" tabindex="-1"></a>BI_results_all <span class="ot">&lt;-</span> <span class="fu">rbind</span>(BI_results1, BI_results2, BI_results3)</span>
-<span id="cb34-72"><a href="#cb34-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-73"><a href="#cb34-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the combined balanced accuracy results</span></span>
-<span id="cb34-74"><a href="#cb34-74" aria-hidden="true" tabindex="-1"></a>BI_results_all</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#RF seems the winner (I do not think that Alex agreed here). </span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated helper function to compute Mean_Balanced_Accuracy using multiClassSummary</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>calc_balacc <span class="ot">&lt;-</span> <span class="cf">function</span>(mod, truth, newdata) {</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get predicted probabilities and predicted class labels</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata =</span> newdata, <span class="at">type =</span> <span class="st">"prob"</span>)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata =</span> newdata)</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Build a data frame with observed values, predictions, and probabilities.</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The column names in 'prob' must match the levels in the response factor.</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">obs =</span> truth,</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">pred =</span> pred,</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>                   prob)</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># multiClassSummary computes several metrics including Mean_Balanced_Accuracy.</span></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note: Even in binary classification, it returns "Mean_Balanced_Accuracy".</span></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>  metrics <span class="ot">&lt;-</span> <span class="fu">multiClassSummary</span>(df, <span class="at">lev =</span> <span class="fu">levels</span>(truth), <span class="at">model =</span> mod)</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>  metrics[<span class="st">"Balanced_Accuracy"</span>]</span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated evaluation function that computes balanced accuracy on train and test sets</span></span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>evaluate_models_balacc <span class="ot">&lt;-</span> <span class="cf">function</span>(model_list, train_data, test_data, response_col) {</span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>  train_balacc <span class="ot">&lt;-</span> <span class="fu">sapply</span>(model_list, <span class="cf">function</span>(mod) </span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calc_balacc</span>(mod, <span class="at">truth =</span> train_data[[response_col]], <span class="at">newdata =</span> train_data))</span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>  test_balacc <span class="ot">&lt;-</span> <span class="fu">sapply</span>(model_list, <span class="cf">function</span>(mod) </span>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calc_balacc</span>(mod, <span class="at">truth =</span> test_data[[response_col]], <span class="at">newdata =</span> test_data))</span>
+<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">Model =</span> <span class="fu">names</span>(model_list),</span>
+<span id="cb40-30"><a href="#cb40-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">Train_BalAcc =</span> train_balacc,</span>
+<span id="cb40-31"><a href="#cb40-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">Test_BalAcc  =</span> test_balacc,</span>
+<span id="cb40-32"><a href="#cb40-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">Diff =</span> train_balacc <span class="sc">-</span> test_balacc,</span>
+<span id="cb40-33"><a href="#cb40-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">row.names =</span> <span class="cn">NULL</span></span>
+<span id="cb40-34"><a href="#cb40-34" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb40-35"><a href="#cb40-35" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb40-36"><a href="#cb40-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-37"><a href="#cb40-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage for group 1 and group 2 binary models</span></span>
+<span id="cb40-38"><a href="#cb40-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-39"><a href="#cb40-39" aria-hidden="true" tabindex="-1"></a>BI_results1 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
+<span id="cb40-40"><a href="#cb40-40" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_1,</span>
+<span id="cb40-41"><a href="#cb40-41" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
+<span id="cb40-42"><a href="#cb40-42" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
+<span id="cb40-43"><a href="#cb40-43" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
+<span id="cb40-44"><a href="#cb40-44" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-45"><a href="#cb40-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-46"><a href="#cb40-46" aria-hidden="true" tabindex="-1"></a>BI_results2 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
+<span id="cb40-47"><a href="#cb40-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_2,</span>
+<span id="cb40-48"><a href="#cb40-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
+<span id="cb40-49"><a href="#cb40-49" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
+<span id="cb40-50"><a href="#cb40-50" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
+<span id="cb40-51"><a href="#cb40-51" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-52"><a href="#cb40-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-53"><a href="#cb40-53" aria-hidden="true" tabindex="-1"></a>BI_results3 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
+<span id="cb40-54"><a href="#cb40-54" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_3,</span>
+<span id="cb40-55"><a href="#cb40-55" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
+<span id="cb40-56"><a href="#cb40-56" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
+<span id="cb40-57"><a href="#cb40-57" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
+<span id="cb40-58"><a href="#cb40-58" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-59"><a href="#cb40-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-60"><a href="#cb40-60" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the results from the two groups for comparison</span></span>
+<span id="cb40-61"><a href="#cb40-61" aria-hidden="true" tabindex="-1"></a>BI_results1<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"No L2"</span></span>
+<span id="cb40-62"><a href="#cb40-62" aria-hidden="true" tabindex="-1"></a>BI_results2<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"With L2"</span></span>
+<span id="cb40-63"><a href="#cb40-63" aria-hidden="true" tabindex="-1"></a>BI_results3<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"BAARS"</span></span>
+<span id="cb40-64"><a href="#cb40-64" aria-hidden="true" tabindex="-1"></a>BI_results_all <span class="ot">&lt;-</span> <span class="fu">rbind</span>(BI_results1, BI_results2, BI_results3)</span>
+<span id="cb40-65"><a href="#cb40-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-66"><a href="#cb40-66" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the combined balanced accuracy results</span></span>
+<span id="cb40-67"><a href="#cb40-67" aria-hidden="true" tabindex="-1"></a>BI_results_all</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Model Train_BalAcc Test_BalAcc        Diff     Set
 1    Logit    0.6241685   0.6632997 -0.03913115   No L2
@@ -1837,51 +902,51 @@ Prediction adhd no_adhd
 </div>
 <p>Step 3: Computing SHAP Values for RF to understand what predictors are the most influential</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a character vector with the names of the selected predictors</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>selected_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"L2"</span>, <span class="st">"SRT"</span>, <span class="st">"DM"</span>, <span class="st">"WM"</span>, <span class="st">"PHQ"</span>, <span class="st">"Sex"</span>, <span class="st">"Age"</span>, </span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"SpokenLanguages"</span>, <span class="st">"Education"</span>)</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Subset the training data for SHAP analysis</span></span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>BI_X_train <span class="ot">&lt;-</span> ProjectData[, selected_vars]</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="co"># For binary classification, define a prediction wrapper that returns probabilities for the positive class.</span></span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>predict_prob_BI <span class="ot">&lt;-</span> <span class="cf">function</span>(model, newdata) {</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> newdata, <span class="at">type =</span> <span class="st">"prob"</span>)</span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>  prob[, <span class="dv">2</span>]</span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute SHAP values using fastshap for one of the QDR models</span></span>
-<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
-<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>BI_shap_vals_RF <span class="ot">&lt;-</span> fastshap<span class="sc">::</span><span class="fu">explain</span>(</span>
-<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">object =</span> models.binary_ADHD_2<span class="sc">$</span>RF, </span>
-<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">X =</span> BI_X_train,</span>
-<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">pred_wrapper =</span> predict_prob_BI,</span>
-<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">nsim =</span> <span class="dv">50</span></span>
-<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate absolute SHAP values for each predictor</span></span>
-<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a>BI_abs_mean_RF <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(<span class="fu">abs</span>(BI_shap_vals_RF))</span>
-<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame for absolute SHAP values for plotting</span></span>
-<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a>df_BI_shap_abs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">names</span>(BI_abs_mean_RF),</span>
-<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">Mean_SHAP =</span> BI_abs_mean_RF</span>
-<span id="cb36-30"><a href="#cb36-30" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb36-31"><a href="#cb36-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-32"><a href="#cb36-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Order variables by importance </span></span>
-<span id="cb36-33"><a href="#cb36-33" aria-hidden="true" tabindex="-1"></a>df_BI_shap_abs <span class="ot">&lt;-</span> df_BI_shap_abs <span class="sc">%&gt;%</span></span>
-<span id="cb36-34"><a href="#cb36-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Mean_SHAP))</span>
-<span id="cb36-35"><a href="#cb36-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-36"><a href="#cb36-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar plot of the absolute mean SHAP values</span></span>
-<span id="cb36-37"><a href="#cb36-37" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_BI_shap_abs, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Variable, Mean_SHAP), <span class="at">y =</span> Mean_SHAP)) <span class="sc">+</span></span>
-<span id="cb36-38"><a href="#cb36-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"#F8766D"</span>) <span class="sc">+</span></span>
-<span id="cb36-39"><a href="#cb36-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Absolute Mean SHAP Values for RF Binary Model"</span>,</span>
-<span id="cb36-40"><a href="#cb36-40" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Variable"</span>,</span>
-<span id="cb36-41"><a href="#cb36-41" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Absolute Mean SHAP Value"</span>) <span class="sc">+</span></span>
-<span id="cb36-42"><a href="#cb36-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb36-43"><a href="#cb36-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb36-44"><a href="#cb36-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-45"><a href="#cb36-45" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a character vector with the names of the selected predictors</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>selected_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"L2"</span>, <span class="st">"SRT"</span>, <span class="st">"DM"</span>, <span class="st">"WM"</span>, <span class="st">"PHQ"</span>, <span class="st">"Sex"</span>, <span class="st">"Age"</span>, </span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"SpokenLanguages"</span>, <span class="st">"Education"</span>)</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Subset the training data for SHAP analysis</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>BI_X_train <span class="ot">&lt;-</span> ProjectData[, selected_vars]</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="co"># For binary classification, define a prediction wrapper that returns probabilities for the positive class.</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>predict_prob_BI <span class="ot">&lt;-</span> <span class="cf">function</span>(model, newdata) {</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> newdata, <span class="at">type =</span> <span class="st">"prob"</span>)</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>  prob[, <span class="dv">2</span>]</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute SHAP values using fastshap for one of the QDR models</span></span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>BI_shap_vals_RF <span class="ot">&lt;-</span> fastshap<span class="sc">::</span><span class="fu">explain</span>(</span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">object =</span> models.binary_ADHD_2<span class="sc">$</span>RF, </span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">X =</span> BI_X_train,</span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">pred_wrapper =</span> predict_prob_BI,</span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">nsim =</span> <span class="dv">50</span></span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate absolute SHAP values for each predictor</span></span>
+<span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a>BI_abs_mean_RF <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(<span class="fu">abs</span>(BI_shap_vals_RF))</span>
+<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-26"><a href="#cb42-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame for absolute SHAP values for plotting</span></span>
+<span id="cb42-27"><a href="#cb42-27" aria-hidden="true" tabindex="-1"></a>df_BI_shap_abs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb42-28"><a href="#cb42-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">names</span>(BI_abs_mean_RF),</span>
+<span id="cb42-29"><a href="#cb42-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">Mean_SHAP =</span> BI_abs_mean_RF</span>
+<span id="cb42-30"><a href="#cb42-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb42-31"><a href="#cb42-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-32"><a href="#cb42-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Order variables by importance </span></span>
+<span id="cb42-33"><a href="#cb42-33" aria-hidden="true" tabindex="-1"></a>df_BI_shap_abs <span class="ot">&lt;-</span> df_BI_shap_abs <span class="sc">%&gt;%</span></span>
+<span id="cb42-34"><a href="#cb42-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Mean_SHAP))</span>
+<span id="cb42-35"><a href="#cb42-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-36"><a href="#cb42-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar plot of the absolute mean SHAP values</span></span>
+<span id="cb42-37"><a href="#cb42-37" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_BI_shap_abs, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Variable, Mean_SHAP), <span class="at">y =</span> Mean_SHAP)) <span class="sc">+</span></span>
+<span id="cb42-38"><a href="#cb42-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"#F8766D"</span>) <span class="sc">+</span></span>
+<span id="cb42-39"><a href="#cb42-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Absolute Mean SHAP Values for RF Binary Model"</span>,</span>
+<span id="cb42-40"><a href="#cb42-40" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Variable"</span>,</span>
+<span id="cb42-41"><a href="#cb42-41" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Absolute Mean SHAP Value"</span>) <span class="sc">+</span></span>
+<span id="cb42-42"><a href="#cb42-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb42-43"><a href="#cb42-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb42-44"><a href="#cb42-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-45"><a href="#cb42-45" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
