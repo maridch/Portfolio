@@ -158,7 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#step-1-loading-libraries-and-preparing-data-sets" id="toc-step-1-loading-libraries-and-preparing-data-sets" class="nav-link active" data-scroll-target="#step-1-loading-libraries-and-preparing-data-sets">Step 1: Loading libraries and preparing data sets</a></li>
   <li><a href="#step-2-set-up-all-models" id="toc-step-2-set-up-all-models" class="nav-link" data-scroll-target="#step-2-set-up-all-models">Step 2: Set up all models</a></li>
   <li><a href="#step-3-resampling-results-from-all-models-and-creating-the-metrics" id="toc-step-3-resampling-results-from-all-models-and-creating-the-metrics" class="nav-link" data-scroll-target="#step-3-resampling-results-from-all-models-and-creating-the-metrics">Step 3: Resampling results from all models and creating the metrics</a></li>
-  <li><a href="#step-4-computing-shap-values-for-rf-to-understand-what-predictors-are-the-most-influential" id="toc-step-4-computing-shap-values-for-rf-to-understand-what-predictors-are-the-most-influential" class="nav-link" data-scroll-target="#step-4-computing-shap-values-for-rf-to-understand-what-predictors-are-the-most-influential">Step 4: Computing SHAP Values for RF to understand what predictors are the most influential</a></li>
+  <li><a href="#step-4-computing-shap-values-for-xgboost-model-2" id="toc-step-4-computing-shap-values-for-xgboost-model-2" class="nav-link" data-scroll-target="#step-4-computing-shap-values-for-xgboost-model-2">Step 4: Computing SHAP Values for XGBOOST, Model 2</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/maridch/Portfolio/edit/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/maridch/Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -809,7 +809,8 @@ Prediction adhd no_adhd
                                         </code></pre>
 </div>
 </div>
-<p>Importantly, I focus on the sensitivity and specificity because it is important to see how well the model can identify if the person has/does not have ADHD rather than looking at the overall performance of the model. I am also including a comparative table only with these parameters to easily identify what model to keep.</p>
+<p>Importantly, I focus on the sensitivity and specificity because it is important to see how well the model can identify if the person has/does not have ADHD rather than looking at the performance of the model overall. I am also including a comparative table with the parameters to easier compare and identify what model to keep.</p>
+<p>While Model 3 seems to have the highest sensitivity (0.818) and balanced accuracy (0.761) on the test set, it also has a larger decrease in specificity and greater divergence between the training and testing performance. In contrast, Model 2 shows lower sensitivity (0.727), but has a smaller gap between training and test results. Therefore, I chose to proceed with Model 2, as it appears to be the most stable and generalizable model across all sets.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -858,9 +859,9 @@ Model 3 - Test     0.737             0.761       0.818       0.704</code></pre>
 </div>
 </div>
 </section>
-<section id="step-4-computing-shap-values-for-rf-to-understand-what-predictors-are-the-most-influential" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-computing-shap-values-for-rf-to-understand-what-predictors-are-the-most-influential">Step 4: Computing SHAP Values for RF to understand what predictors are the most influential</h2>
-<p>In order to determine what independent variables could best predict the ADHD diagnoses, we are going to check the absolute SHAP values</p>
+<section id="step-4-computing-shap-values-for-xgboost-model-2" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-computing-shap-values-for-xgboost-model-2">Step 4: Computing SHAP Values for XGBOOST, Model 2</h2>
+<p>In order to determine which variables best predict ADHD diagnoses, we focus on the absolute SHAP values. Unlike mean SHAP values, absolute values do not indicate the direction (i.e., whether a variable increases or decreases the prediction), but they do reflect the magnitude of each predictor’s contribution. This is especially important to note given our small sample size, where mean SHAP values can be unstable and may even flip direction of the prediction. In contrast, absolute SHAP values provide a more reliable indication of which predictors are most influential.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a character vector with the names of the selected predictors</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>selected_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"L2"</span>, <span class="st">"SRT"</span>, <span class="st">"DM"</span>, <span class="st">"WM"</span>, <span class="st">"PHQ"</span>, <span class="st">"Sex"</span>, <span class="st">"Age"</span>, </span>
@@ -915,6 +916,7 @@ Model 3 - Test     0.737             0.761       0.818       0.704</code></pre>
 </div>
 </div>
 </div>
+<p>Based on the graph above, the variables that contribute to the model prediction the most are declarative memory learning ability (DM), age, procedural memory learning ability (SRT), and working memory (WM). However, the absolute SHAP values are relatively small, thus, we could assume that no single variable is highly dominant on its own. Instead, these predictors seem to better contribute when taken all together, which could suggest that the ADHD diagnosis is better captured by a combination of cognitive and demographic factors rather than just one particular predictor alone. ```</p>
 
 
 </section>
