@@ -598,6 +598,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>Based on the graphs, it looks like almost all the models improved performance in the third set, particularly with respect to balanced accuracy. We also see an increase in sensitivity for RF. However, not all the models seem to be stable across all three sets, e.g., Lasso shows zero sensitivity in the second set, but better sensitivity in the first or the third ones. Therefore, my approach is to prioritize model stability and compare performance across sets using the most stable technique. Whereas QDA and XGBOOST seem to be the most stable model, I will stick to the latter one because it has a better ability to analyze complex relationships in the data.</p>
+<p>So, now, we will create confusion matrices to look at the performance of XGBOOST across all three models on both training and testing sets.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Helper function to extract confusion matrices for a given model list</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>extract_CM <span class="ot">&lt;-</span> <span class="cf">function</span>(model_list, train_data, test_data, response_col) {</span>
@@ -625,26 +627,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_2 <span class="ot">&lt;-</span> <span class="fu">extract_CM</span>(models.binary_ADHD_2, train_data_ADHD_Status, test_data_ADHD_Status, <span class="st">"ADHD"</span>)</span>
 <span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_3 <span class="ot">&lt;-</span> <span class="fu">extract_CM</span>(models.binary_ADHD_3, train_data_ADHD_Status, test_data_ADHD_Status, <span class="st">"ADHD"</span>)</span>
 <span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Optionally, print all confusion matrices for each group and each model</span></span>
-<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a><span class="co">#print_confusion_matrices &lt;- function(cm_list, group_name) {</span></span>
-<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a><span class="co">#  cat("\n--- Confusion Matrices for", group_name, "---\n")</span></span>
-<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a><span class="co">#  for(model_name in names(cm_list$Train)) {</span></span>
-<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a><span class="co">#    cat("\nModel:", model_name, "\n")</span></span>
-<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a><span class="co">#    cat("Training Data:\n")</span></span>
-<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a><span class="co">#    print(cm_list$Train[[model_name]])</span></span>
-<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a><span class="co">#    cat("\nTesting Data:\n")</span></span>
-<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a><span class="co">#    print(cm_list$Test[[model_name]])</span></span>
-<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a><span class="co">#    cat("\n-------------------------------\n")</span></span>
-<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a><span class="co">#  }</span></span>
-<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a><span class="co">#}</span></span>
-<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Print confusion matrices for each group</span></span>
-<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a><span class="co">#print_confusion_matrices(CM.models.binary_ADHD_1, "models.binary_ADHD_1")</span></span>
-<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a><span class="co">#print_confusion_matrices(CM.models.binary_ADHD_2, "models.binary_ADHD_2")</span></span>
-<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a><span class="co">#print_confusion_matrices(CM.models.binary_ADHD_3, "models.binary_ADHD_3")</span></span>
-<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a><span class="co">#confusion matrix for XGBOOST only</span></span>
-<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_1<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a><span class="co">#confusion matrix for XGBOOST only</span></span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_1<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Confusion Matrix and Statistics
 
@@ -825,6 +809,7 @@ Prediction adhd no_adhd
                                         </code></pre>
 </div>
 </div>
+<p>Importantly, I focus on the sensitivity and specificity because it is important to see how well the model can identify if the person has/does not have ADHD rather than looking at the overall performance of the model. I am also including a comparative table only with these parameters to easily identify what model to keep.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -834,51 +819,42 @@ Prediction adhd no_adhd
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Accuracy =</span> cm_obj<span class="sc">$</span>overall[<span class="st">"Accuracy"</span>],</span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Balanced_Accuracy =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Balanced Accuracy"</span>],</span>
 <span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Sensitivity =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Sensitivity"</span>],</span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Specificity =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Specificity"</span>],</span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Precision =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Pos Pred Value"</span>],</span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">F1 =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"F1"</span>]</span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Label for rows</span></span>
-<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>model_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Model 1 - Train"</span>, <span class="st">"Model 1 - Test"</span>,</span>
-<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Model 2 - Train"</span>, <span class="st">"Model 2 - Test"</span>,</span>
-<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Model 3 - Train"</span>, <span class="st">"Model 3 - Test"</span></span>
-<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine metrics from each confusion matrix</span></span>
-<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>xgb_metrics_table <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
-<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_1<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST),</span>
-<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_1<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST),</span>
-<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_2<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST),</span>
-<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_2<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST),</span>
-<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_3<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST),</span>
-<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_3<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST)</span>
-<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-30"><a href="#cb40-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and clean up</span></span>
-<span id="cb40-31"><a href="#cb40-31" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(xgb_metrics_table) <span class="ot">&lt;-</span> model_labels</span>
-<span id="cb40-32"><a href="#cb40-32" aria-hidden="true" tabindex="-1"></a>xgb_metrics_table <span class="ot">&lt;-</span> <span class="fu">round</span>(xgb_metrics_table, <span class="dv">3</span>)</span>
-<span id="cb40-33"><a href="#cb40-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-34"><a href="#cb40-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Print final table</span></span>
-<span id="cb40-35"><a href="#cb40-35" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(xgb_metrics_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Specificity =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Specificity"</span>]</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Label for rows</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>model_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Model 1 - Train"</span>, <span class="st">"Model 1 - Test"</span>,</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Model 2 - Train"</span>, <span class="st">"Model 2 - Test"</span>,</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Model 3 - Train"</span>, <span class="st">"Model 3 - Test"</span></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine metrics from each confusion matrix</span></span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>xgb_metrics_table <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_1<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST),</span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_1<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST),</span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_2<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST),</span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_2<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST),</span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_3<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST),</span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_3<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST)</span>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and clean up</span></span>
+<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(xgb_metrics_table) <span class="ot">&lt;-</span> model_labels</span>
+<span id="cb40-30"><a href="#cb40-30" aria-hidden="true" tabindex="-1"></a>xgb_metrics_table <span class="ot">&lt;-</span> <span class="fu">round</span>(xgb_metrics_table, <span class="dv">3</span>)</span>
+<span id="cb40-31"><a href="#cb40-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-32"><a href="#cb40-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Print final table</span></span>
+<span id="cb40-33"><a href="#cb40-33" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(xgb_metrics_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>                Accuracy Balanced_Accuracy Sensitivity Specificity Precision
-Model 1 - Train    0.913             0.848       0.697       1.000     1.000
-Model 1 - Test     0.737             0.734       0.727       0.741     0.533
-Model 2 - Train    0.913             0.858       0.727       0.988     0.960
-Model 2 - Test     0.763             0.753       0.727       0.778     0.571
-Model 3 - Train    0.965             0.948       0.909       0.988     0.968
-Model 3 - Test     0.737             0.761       0.818       0.704     0.529
-                   F1
-Model 1 - Train 0.821
-Model 1 - Test  0.615
-Model 2 - Train 0.828
-Model 2 - Test  0.640
-Model 3 - Train 0.937
-Model 3 - Test  0.643</code></pre>
+<pre><code>                Accuracy Balanced_Accuracy Sensitivity Specificity
+Model 1 - Train    0.913             0.848       0.697       1.000
+Model 1 - Test     0.737             0.734       0.727       0.741
+Model 2 - Train    0.913             0.858       0.727       0.988
+Model 2 - Test     0.763             0.753       0.727       0.778
+Model 3 - Train    0.965             0.948       0.909       0.988
+Model 3 - Test     0.737             0.761       0.818       0.704</code></pre>
 </div>
 </div>
 </section>
