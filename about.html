@@ -631,114 +631,253 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a><span class="co">#print_confusion_matrices(CM.models.binary_ADHD_3, "models.binary_ADHD_3")</span></span>
 <span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a><span class="co">#confusion matrix for XGBOOST only</span></span>
-<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a><span class="co">#CM.models.binary_ADHD_1$Train$XGBOOST</span></span>
-<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a><span class="co">#CM.models.binary_ADHD_1$Test$XGBOOST</span></span>
-<span id="cb28-48"><a href="#cb28-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-49"><a href="#cb28-49" aria-hidden="true" tabindex="-1"></a><span class="co">#CM.models.binary_ADHD_2$Train$XGBOOST</span></span>
-<span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a><span class="co">#CM.models.binary_ADHD_2$Test$XGBOOST</span></span>
-<span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a><span class="co">#CM.models.binary_ADHD_3$Train$XGBOOST</span></span>
-<span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a><span class="co">#CM.models.binary_ADHD_3$Test$XGBOOST</span></span>
-<span id="cb28-54"><a href="#cb28-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-55"><a href="#cb28-55" aria-hidden="true" tabindex="-1"></a><span class="do">##############</span></span>
-<span id="cb28-56"><a href="#cb28-56" aria-hidden="true" tabindex="-1"></a>extract_metrics <span class="ot">&lt;-</span> <span class="cf">function</span>(cm_obj) {</span>
-<span id="cb28-57"><a href="#cb28-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb28-58"><a href="#cb28-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">Accuracy =</span> cm_obj<span class="sc">$</span>overall[<span class="st">"Accuracy"</span>],</span>
-<span id="cb28-59"><a href="#cb28-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">Sensitivity =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Sensitivity"</span>],</span>
-<span id="cb28-60"><a href="#cb28-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">Specificity =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Specificity"</span>],</span>
-<span id="cb28-61"><a href="#cb28-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">Precision =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Pos Pred Value"</span>],</span>
-<span id="cb28-62"><a href="#cb28-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">F1 =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"F1"</span>]</span>
-<span id="cb28-63"><a href="#cb28-63" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb28-64"><a href="#cb28-64" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb28-65"><a href="#cb28-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-66"><a href="#cb28-66" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the table</span></span>
-<span id="cb28-67"><a href="#cb28-67" aria-hidden="true" tabindex="-1"></a>xgb_metrics_table <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
-<span id="cb28-68"><a href="#cb28-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(<span class="at">Model =</span> <span class="st">"Model 1 - Train"</span>, <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_1<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST)),</span>
-<span id="cb28-69"><a href="#cb28-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(<span class="at">Model =</span> <span class="st">"Model 1 - Test"</span>,  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_1<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST)),</span>
-<span id="cb28-70"><a href="#cb28-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(<span class="at">Model =</span> <span class="st">"Model 2 - Train"</span>, <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_2<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST)),</span>
-<span id="cb28-71"><a href="#cb28-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(<span class="at">Model =</span> <span class="st">"Model 2 - Test"</span>,  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_2<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST)),</span>
-<span id="cb28-72"><a href="#cb28-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(<span class="at">Model =</span> <span class="st">"Model 3 - Train"</span>, <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_3<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST)),</span>
-<span id="cb28-73"><a href="#cb28-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(<span class="at">Model =</span> <span class="st">"Model 3 - Test"</span>,  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_3<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST))</span>
-<span id="cb28-74"><a href="#cb28-74" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb28-75"><a href="#cb28-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-76"><a href="#cb28-76" aria-hidden="true" tabindex="-1"></a><span class="co"># View or export</span></span>
-<span id="cb28-77"><a href="#cb28-77" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(xgb_metrics_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_1<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                    Model  Accuracy Sensitivity Specificity Precision        F1
-Accuracy  Model 1 - Train 0.9130435   0.6969697   1.0000000 1.0000000 0.8214286
-Accuracy1  Model 1 - Test 0.7368421   0.7272727   0.7407407 0.5333333 0.6153846
-Accuracy2 Model 2 - Train 0.9130435   0.7272727   0.9878049 0.9600000 0.8275862
-Accuracy3  Model 2 - Test 0.7631579   0.7272727   0.7777778 0.5714286 0.6400000
-Accuracy4 Model 3 - Train 0.9652174   0.9090909   0.9878049 0.9677419 0.9375000
-Accuracy5  Model 3 - Test 0.7368421   0.8181818   0.7037037 0.5294118 0.6428571</code></pre>
+<pre><code>Confusion Matrix and Statistics
+
+          Reference
+Prediction adhd no_adhd
+   adhd      23       0
+   no_adhd   10      82
+                                          
+               Accuracy : 0.913           
+                 95% CI : (0.8459, 0.9575)
+    No Information Rate : 0.713           
+    P-Value [Acc &gt; NIR] : 1.379e-07       
+                                          
+                  Kappa : 0.7664          
+                                          
+ Mcnemar's Test P-Value : 0.004427        
+                                          
+            Sensitivity : 0.6970          
+            Specificity : 1.0000          
+         Pos Pred Value : 1.0000          
+         Neg Pred Value : 0.8913          
+             Prevalence : 0.2870          
+         Detection Rate : 0.2000          
+   Detection Prevalence : 0.2000          
+      Balanced Accuracy : 0.8485          
+                                          
+       'Positive' Class : adhd            
+                                          </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#RF seems the winner (I do not think that Alex agreed here). </span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated helper function to compute Mean_Balanced_Accuracy using multiClassSummary</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>calc_balacc <span class="ot">&lt;-</span> <span class="cf">function</span>(mod, truth, newdata) {</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get predicted probabilities and predicted class labels</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata =</span> newdata, <span class="at">type =</span> <span class="st">"prob"</span>)</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata =</span> newdata)</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Build a data frame with observed values, predictions, and probabilities.</span></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The column names in 'prob' must match the levels in the response factor.</span></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">obs =</span> truth,</span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">pred =</span> pred,</span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>                   prob)</span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># multiClassSummary computes several metrics including Mean_Balanced_Accuracy.</span></span>
-<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note: Even in binary classification, it returns "Mean_Balanced_Accuracy".</span></span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>  metrics <span class="ot">&lt;-</span> <span class="fu">multiClassSummary</span>(df, <span class="at">lev =</span> <span class="fu">levels</span>(truth), <span class="at">model =</span> mod)</span>
-<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>  metrics[<span class="st">"Balanced_Accuracy"</span>]</span>
-<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated evaluation function that computes balanced accuracy on train and test sets</span></span>
-<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>evaluate_models_balacc <span class="ot">&lt;-</span> <span class="cf">function</span>(model_list, train_data, test_data, response_col) {</span>
-<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>  train_balacc <span class="ot">&lt;-</span> <span class="fu">sapply</span>(model_list, <span class="cf">function</span>(mod) </span>
-<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calc_balacc</span>(mod, <span class="at">truth =</span> train_data[[response_col]], <span class="at">newdata =</span> train_data))</span>
-<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>  test_balacc <span class="ot">&lt;-</span> <span class="fu">sapply</span>(model_list, <span class="cf">function</span>(mod) </span>
-<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calc_balacc</span>(mod, <span class="at">truth =</span> test_data[[response_col]], <span class="at">newdata =</span> test_data))</span>
-<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">Model =</span> <span class="fu">names</span>(model_list),</span>
-<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">Train_BalAcc =</span> train_balacc,</span>
-<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">Test_BalAcc  =</span> test_balacc,</span>
-<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">Diff =</span> train_balacc <span class="sc">-</span> test_balacc,</span>
-<span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">row.names =</span> <span class="cn">NULL</span></span>
-<span id="cb30-34"><a href="#cb30-34" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb30-35"><a href="#cb30-35" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb30-36"><a href="#cb30-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-37"><a href="#cb30-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage for group 1 and group 2 binary models</span></span>
-<span id="cb30-38"><a href="#cb30-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-39"><a href="#cb30-39" aria-hidden="true" tabindex="-1"></a>BI_results1 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
-<span id="cb30-40"><a href="#cb30-40" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_1,</span>
-<span id="cb30-41"><a href="#cb30-41" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
-<span id="cb30-42"><a href="#cb30-42" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
-<span id="cb30-43"><a href="#cb30-43" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
-<span id="cb30-44"><a href="#cb30-44" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb30-45"><a href="#cb30-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-46"><a href="#cb30-46" aria-hidden="true" tabindex="-1"></a>BI_results2 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
-<span id="cb30-47"><a href="#cb30-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_2,</span>
-<span id="cb30-48"><a href="#cb30-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
-<span id="cb30-49"><a href="#cb30-49" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
-<span id="cb30-50"><a href="#cb30-50" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
-<span id="cb30-51"><a href="#cb30-51" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb30-52"><a href="#cb30-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-53"><a href="#cb30-53" aria-hidden="true" tabindex="-1"></a>BI_results3 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
-<span id="cb30-54"><a href="#cb30-54" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_3,</span>
-<span id="cb30-55"><a href="#cb30-55" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
-<span id="cb30-56"><a href="#cb30-56" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
-<span id="cb30-57"><a href="#cb30-57" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
-<span id="cb30-58"><a href="#cb30-58" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb30-59"><a href="#cb30-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-60"><a href="#cb30-60" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the results from the two groups for comparison</span></span>
-<span id="cb30-61"><a href="#cb30-61" aria-hidden="true" tabindex="-1"></a>BI_results1<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"No L2"</span></span>
-<span id="cb30-62"><a href="#cb30-62" aria-hidden="true" tabindex="-1"></a>BI_results2<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"With L2"</span></span>
-<span id="cb30-63"><a href="#cb30-63" aria-hidden="true" tabindex="-1"></a>BI_results3<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"BAARS"</span></span>
-<span id="cb30-64"><a href="#cb30-64" aria-hidden="true" tabindex="-1"></a>BI_results_all <span class="ot">&lt;-</span> <span class="fu">rbind</span>(BI_results1, BI_results2, BI_results3)</span>
-<span id="cb30-65"><a href="#cb30-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-66"><a href="#cb30-66" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the combined balanced accuracy results</span></span>
-<span id="cb30-67"><a href="#cb30-67" aria-hidden="true" tabindex="-1"></a>BI_results_all</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_1<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Confusion Matrix and Statistics
+
+          Reference
+Prediction adhd no_adhd
+   adhd       8       7
+   no_adhd    3      20
+                                        
+               Accuracy : 0.7368        
+                 95% CI : (0.569, 0.866)
+    No Information Rate : 0.7105        
+    P-Value [Acc &gt; NIR] : 0.4389        
+                                        
+                  Kappa : 0.4225        
+                                        
+ Mcnemar's Test P-Value : 0.3428        
+                                        
+            Sensitivity : 0.7273        
+            Specificity : 0.7407        
+         Pos Pred Value : 0.5333        
+         Neg Pred Value : 0.8696        
+             Prevalence : 0.2895        
+         Detection Rate : 0.2105        
+   Detection Prevalence : 0.3947        
+      Balanced Accuracy : 0.7340        
+                                        
+       'Positive' Class : adhd          
+                                        </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_2<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Confusion Matrix and Statistics
+
+          Reference
+Prediction adhd no_adhd
+   adhd      24       1
+   no_adhd    9      81
+                                          
+               Accuracy : 0.913           
+                 95% CI : (0.8459, 0.9575)
+    No Information Rate : 0.713           
+    P-Value [Acc &gt; NIR] : 1.379e-07       
+                                          
+                  Kappa : 0.7709          
+                                          
+ Mcnemar's Test P-Value : 0.02686         
+                                          
+            Sensitivity : 0.7273          
+            Specificity : 0.9878          
+         Pos Pred Value : 0.9600          
+         Neg Pred Value : 0.9000          
+             Prevalence : 0.2870          
+         Detection Rate : 0.2087          
+   Detection Prevalence : 0.2174          
+      Balanced Accuracy : 0.8575          
+                                          
+       'Positive' Class : adhd            
+                                          </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_2<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Confusion Matrix and Statistics
+
+          Reference
+Prediction adhd no_adhd
+   adhd       8       6
+   no_adhd    3      21
+                                          
+               Accuracy : 0.7632          
+                 95% CI : (0.5976, 0.8856)
+    No Information Rate : 0.7105          
+    P-Value [Acc &gt; NIR] : 0.3025          
+                                          
+                  Kappa : 0.4673          
+                                          
+ Mcnemar's Test P-Value : 0.5050          
+                                          
+            Sensitivity : 0.7273          
+            Specificity : 0.7778          
+         Pos Pred Value : 0.5714          
+         Neg Pred Value : 0.8750          
+             Prevalence : 0.2895          
+         Detection Rate : 0.2105          
+   Detection Prevalence : 0.3684          
+      Balanced Accuracy : 0.7525          
+                                          
+       'Positive' Class : adhd            
+                                          </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_3<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Confusion Matrix and Statistics
+
+          Reference
+Prediction adhd no_adhd
+   adhd      30       1
+   no_adhd    3      81
+                                          
+               Accuracy : 0.9652          
+                 95% CI : (0.9133, 0.9904)
+    No Information Rate : 0.713           
+    P-Value [Acc &gt; NIR] : 2.548e-12       
+                                          
+                  Kappa : 0.9134          
+                                          
+ Mcnemar's Test P-Value : 0.6171          
+                                          
+            Sensitivity : 0.9091          
+            Specificity : 0.9878          
+         Pos Pred Value : 0.9677          
+         Neg Pred Value : 0.9643          
+             Prevalence : 0.2870          
+         Detection Rate : 0.2609          
+   Detection Prevalence : 0.2696          
+      Balanced Accuracy : 0.9484          
+                                          
+       'Positive' Class : adhd            
+                                          </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>CM.models.binary_ADHD_3<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Confusion Matrix and Statistics
+
+          Reference
+Prediction adhd no_adhd
+   adhd       9       8
+   no_adhd    2      19
+                                        
+               Accuracy : 0.7368        
+                 95% CI : (0.569, 0.866)
+    No Information Rate : 0.7105        
+    P-Value [Acc &gt; NIR] : 0.4389        
+                                        
+                  Kappa : 0.4493        
+                                        
+ Mcnemar's Test P-Value : 0.1138        
+                                        
+            Sensitivity : 0.8182        
+            Specificity : 0.7037        
+         Pos Pred Value : 0.5294        
+         Neg Pred Value : 0.9048        
+             Prevalence : 0.2895        
+         Detection Rate : 0.2368        
+   Detection Prevalence : 0.4474        
+      Balanced Accuracy : 0.7609        
+                                        
+       'Positive' Class : adhd          
+                                        </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#RF seems the winner (I do not think that Alex agreed here). </span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated helper function to compute Mean_Balanced_Accuracy using multiClassSummary</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>calc_balacc <span class="ot">&lt;-</span> <span class="cf">function</span>(mod, truth, newdata) {</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get predicted probabilities and predicted class labels</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata =</span> newdata, <span class="at">type =</span> <span class="st">"prob"</span>)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata =</span> newdata)</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Build a data frame with observed values, predictions, and probabilities.</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The column names in 'prob' must match the levels in the response factor.</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">obs =</span> truth,</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">pred =</span> pred,</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>                   prob)</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># multiClassSummary computes several metrics including Mean_Balanced_Accuracy.</span></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note: Even in binary classification, it returns "Mean_Balanced_Accuracy".</span></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>  metrics <span class="ot">&lt;-</span> <span class="fu">multiClassSummary</span>(df, <span class="at">lev =</span> <span class="fu">levels</span>(truth), <span class="at">model =</span> mod)</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>  metrics[<span class="st">"Balanced_Accuracy"</span>]</span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated evaluation function that computes balanced accuracy on train and test sets</span></span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>evaluate_models_balacc <span class="ot">&lt;-</span> <span class="cf">function</span>(model_list, train_data, test_data, response_col) {</span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>  train_balacc <span class="ot">&lt;-</span> <span class="fu">sapply</span>(model_list, <span class="cf">function</span>(mod) </span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calc_balacc</span>(mod, <span class="at">truth =</span> train_data[[response_col]], <span class="at">newdata =</span> train_data))</span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>  test_balacc <span class="ot">&lt;-</span> <span class="fu">sapply</span>(model_list, <span class="cf">function</span>(mod) </span>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calc_balacc</span>(mod, <span class="at">truth =</span> test_data[[response_col]], <span class="at">newdata =</span> test_data))</span>
+<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">Model =</span> <span class="fu">names</span>(model_list),</span>
+<span id="cb40-30"><a href="#cb40-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">Train_BalAcc =</span> train_balacc,</span>
+<span id="cb40-31"><a href="#cb40-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">Test_BalAcc  =</span> test_balacc,</span>
+<span id="cb40-32"><a href="#cb40-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">Diff =</span> train_balacc <span class="sc">-</span> test_balacc,</span>
+<span id="cb40-33"><a href="#cb40-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">row.names =</span> <span class="cn">NULL</span></span>
+<span id="cb40-34"><a href="#cb40-34" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb40-35"><a href="#cb40-35" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb40-36"><a href="#cb40-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-37"><a href="#cb40-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage for group 1 and group 2 binary models</span></span>
+<span id="cb40-38"><a href="#cb40-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-39"><a href="#cb40-39" aria-hidden="true" tabindex="-1"></a>BI_results1 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
+<span id="cb40-40"><a href="#cb40-40" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_1,</span>
+<span id="cb40-41"><a href="#cb40-41" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
+<span id="cb40-42"><a href="#cb40-42" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
+<span id="cb40-43"><a href="#cb40-43" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
+<span id="cb40-44"><a href="#cb40-44" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-45"><a href="#cb40-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-46"><a href="#cb40-46" aria-hidden="true" tabindex="-1"></a>BI_results2 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
+<span id="cb40-47"><a href="#cb40-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_2,</span>
+<span id="cb40-48"><a href="#cb40-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
+<span id="cb40-49"><a href="#cb40-49" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
+<span id="cb40-50"><a href="#cb40-50" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
+<span id="cb40-51"><a href="#cb40-51" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-52"><a href="#cb40-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-53"><a href="#cb40-53" aria-hidden="true" tabindex="-1"></a>BI_results3 <span class="ot">&lt;-</span> <span class="fu">evaluate_models_balacc</span>(</span>
+<span id="cb40-54"><a href="#cb40-54" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_list =</span> models.binary_ADHD_3,</span>
+<span id="cb40-55"><a href="#cb40-55" aria-hidden="true" tabindex="-1"></a>  <span class="at">train_data =</span> train_data_ADHD_Status,</span>
+<span id="cb40-56"><a href="#cb40-56" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_data =</span> test_data_ADHD_Status,</span>
+<span id="cb40-57"><a href="#cb40-57" aria-hidden="true" tabindex="-1"></a>  <span class="at">response_col =</span> <span class="st">"ADHD"</span></span>
+<span id="cb40-58"><a href="#cb40-58" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-59"><a href="#cb40-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-60"><a href="#cb40-60" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the results from the two groups for comparison</span></span>
+<span id="cb40-61"><a href="#cb40-61" aria-hidden="true" tabindex="-1"></a>BI_results1<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"No L2"</span></span>
+<span id="cb40-62"><a href="#cb40-62" aria-hidden="true" tabindex="-1"></a>BI_results2<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"With L2"</span></span>
+<span id="cb40-63"><a href="#cb40-63" aria-hidden="true" tabindex="-1"></a>BI_results3<span class="sc">$</span>Set <span class="ot">&lt;-</span> <span class="st">"BAARS"</span></span>
+<span id="cb40-64"><a href="#cb40-64" aria-hidden="true" tabindex="-1"></a>BI_results_all <span class="ot">&lt;-</span> <span class="fu">rbind</span>(BI_results1, BI_results2, BI_results3)</span>
+<span id="cb40-65"><a href="#cb40-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-66"><a href="#cb40-66" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the combined balanced accuracy results</span></span>
+<span id="cb40-67"><a href="#cb40-67" aria-hidden="true" tabindex="-1"></a>BI_results_all</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Model Train_BalAcc Test_BalAcc        Diff     Set
 1    Logit    0.6241685   0.6632997 -0.03913115   No L2
@@ -763,51 +902,51 @@ Accuracy5  Model 3 - Test 0.7368421   0.8181818   0.7037037 0.5294118 0.6428571<
 </div>
 <p>Step 3: Computing SHAP Values for RF to understand what predictors are the most influential</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a character vector with the names of the selected predictors</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>selected_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"L2"</span>, <span class="st">"SRT"</span>, <span class="st">"DM"</span>, <span class="st">"WM"</span>, <span class="st">"PHQ"</span>, <span class="st">"Sex"</span>, <span class="st">"Age"</span>, </span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"SpokenLanguages"</span>, <span class="st">"Education"</span>)</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Subset the training data for SHAP analysis</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>BI_X_train <span class="ot">&lt;-</span> ProjectData[, selected_vars]</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co"># For binary classification, define a prediction wrapper that returns probabilities for the positive class.</span></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>predict_prob_BI <span class="ot">&lt;-</span> <span class="cf">function</span>(model, newdata) {</span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> newdata, <span class="at">type =</span> <span class="st">"prob"</span>)</span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>  prob[, <span class="dv">2</span>]</span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute SHAP values using fastshap for one of the QDR models</span></span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>BI_shap_vals_RF <span class="ot">&lt;-</span> fastshap<span class="sc">::</span><span class="fu">explain</span>(</span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">object =</span> models.binary_ADHD_2<span class="sc">$</span>RF, </span>
-<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">X =</span> BI_X_train,</span>
-<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">pred_wrapper =</span> predict_prob_BI,</span>
-<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">nsim =</span> <span class="dv">50</span></span>
-<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate absolute SHAP values for each predictor</span></span>
-<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>BI_abs_mean_RF <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(<span class="fu">abs</span>(BI_shap_vals_RF))</span>
-<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame for absolute SHAP values for plotting</span></span>
-<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>df_BI_shap_abs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">names</span>(BI_abs_mean_RF),</span>
-<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">Mean_SHAP =</span> BI_abs_mean_RF</span>
-<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Order variables by importance </span></span>
-<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a>df_BI_shap_abs <span class="ot">&lt;-</span> df_BI_shap_abs <span class="sc">%&gt;%</span></span>
-<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Mean_SHAP))</span>
-<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-36"><a href="#cb32-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar plot of the absolute mean SHAP values</span></span>
-<span id="cb32-37"><a href="#cb32-37" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_BI_shap_abs, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Variable, Mean_SHAP), <span class="at">y =</span> Mean_SHAP)) <span class="sc">+</span></span>
-<span id="cb32-38"><a href="#cb32-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"#F8766D"</span>) <span class="sc">+</span></span>
-<span id="cb32-39"><a href="#cb32-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Absolute Mean SHAP Values for RF Binary Model"</span>,</span>
-<span id="cb32-40"><a href="#cb32-40" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Variable"</span>,</span>
-<span id="cb32-41"><a href="#cb32-41" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Absolute Mean SHAP Value"</span>) <span class="sc">+</span></span>
-<span id="cb32-42"><a href="#cb32-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb32-43"><a href="#cb32-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb32-44"><a href="#cb32-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-45"><a href="#cb32-45" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a character vector with the names of the selected predictors</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>selected_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"L2"</span>, <span class="st">"SRT"</span>, <span class="st">"DM"</span>, <span class="st">"WM"</span>, <span class="st">"PHQ"</span>, <span class="st">"Sex"</span>, <span class="st">"Age"</span>, </span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"SpokenLanguages"</span>, <span class="st">"Education"</span>)</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Subset the training data for SHAP analysis</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>BI_X_train <span class="ot">&lt;-</span> ProjectData[, selected_vars]</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="co"># For binary classification, define a prediction wrapper that returns probabilities for the positive class.</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>predict_prob_BI <span class="ot">&lt;-</span> <span class="cf">function</span>(model, newdata) {</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> newdata, <span class="at">type =</span> <span class="st">"prob"</span>)</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>  prob[, <span class="dv">2</span>]</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute SHAP values using fastshap for one of the QDR models</span></span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>BI_shap_vals_RF <span class="ot">&lt;-</span> fastshap<span class="sc">::</span><span class="fu">explain</span>(</span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">object =</span> models.binary_ADHD_2<span class="sc">$</span>RF, </span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">X =</span> BI_X_train,</span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">pred_wrapper =</span> predict_prob_BI,</span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">nsim =</span> <span class="dv">50</span></span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate absolute SHAP values for each predictor</span></span>
+<span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a>BI_abs_mean_RF <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(<span class="fu">abs</span>(BI_shap_vals_RF))</span>
+<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-26"><a href="#cb42-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame for absolute SHAP values for plotting</span></span>
+<span id="cb42-27"><a href="#cb42-27" aria-hidden="true" tabindex="-1"></a>df_BI_shap_abs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb42-28"><a href="#cb42-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">names</span>(BI_abs_mean_RF),</span>
+<span id="cb42-29"><a href="#cb42-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">Mean_SHAP =</span> BI_abs_mean_RF</span>
+<span id="cb42-30"><a href="#cb42-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb42-31"><a href="#cb42-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-32"><a href="#cb42-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Order variables by importance </span></span>
+<span id="cb42-33"><a href="#cb42-33" aria-hidden="true" tabindex="-1"></a>df_BI_shap_abs <span class="ot">&lt;-</span> df_BI_shap_abs <span class="sc">%&gt;%</span></span>
+<span id="cb42-34"><a href="#cb42-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Mean_SHAP))</span>
+<span id="cb42-35"><a href="#cb42-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-36"><a href="#cb42-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar plot of the absolute mean SHAP values</span></span>
+<span id="cb42-37"><a href="#cb42-37" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_BI_shap_abs, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Variable, Mean_SHAP), <span class="at">y =</span> Mean_SHAP)) <span class="sc">+</span></span>
+<span id="cb42-38"><a href="#cb42-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"#F8766D"</span>) <span class="sc">+</span></span>
+<span id="cb42-39"><a href="#cb42-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Absolute Mean SHAP Values for RF Binary Model"</span>,</span>
+<span id="cb42-40"><a href="#cb42-40" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Variable"</span>,</span>
+<span id="cb42-41"><a href="#cb42-41" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Absolute Mean SHAP Value"</span>) <span class="sc">+</span></span>
+<span id="cb42-42"><a href="#cb42-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb42-43"><a href="#cb42-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb42-44"><a href="#cb42-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-45"><a href="#cb42-45" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
