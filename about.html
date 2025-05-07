@@ -319,6 +319,17 @@ Language variables: <em>L2</em> (a second language learning score obtained on th
 </section>
 <section id="step-2-setting-up-all-models" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-setting-up-all-models">Step 2: Setting up all models</h2>
+<p>Training models to see which fits the data better.</p>
+<p>I am running the following models in parallel:</p>
+<ul>
+<li><strong>Logistic Linear model (Logit)</strong>, which captures purely linear relationship, and acts a baseline model for comparison with other models.</li>
+<li><strong>Lasso</strong>, which sets the range of parameters where we are getting rid of the coefficients that are not important.</li>
+<li><strong>Linear Discriminant Analysis (LDA)</strong> is a classification technique that separates data into groups. This model assumes equal variance in groups.</li>
+<li><strong>Quadratic Discriminant Analysis (QDA)</strong> is a classification technique similar to LDA that also accounts for non linear relationships and does not assume equal variance in groups.</li>
+<li><strong>Random Forest (RF)</strong> is an ensemble learning technique, which automatically captures both non liner relationships and interactions. RF creates many decision trees using a bootstrapping approach, drawing random samples of the data, and selecting a random subset of features at each split.</li>
+<li><strong>eXtreme Gradient Boosting (XGBoost)</strong> is another ensemble learning technique, which automatically captures non linear relationships and complex interactions. However, XGBoost builds trees sequentially: each new tree focuses on correcting the errors made by the previous ones.</li>
+</ul>
+<p>Besides, I want to follow the hierarchical modeling approach by designing three sets of models with progressively added predictors. The first set of models has only control and memory-related variables. The second set of models also include the language related variables to see if they improve the predictive performance. The third set of models also has the scores obtained from the BAARS-IV survey.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up cross-validation using ROC as the metric</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>BI_cv_control <span class="ot">&lt;-</span> <span class="fu">trainControl</span>(</span>
@@ -337,17 +348,6 @@ Language variables: <em>L2</em> (a second language learning score obtained on th
 <span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>cl <span class="ot">&lt;-</span> <span class="fu">makePSOCKcluster</span>(<span class="fu">detectCores</span>())</span>
 <span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="fu">registerDoParallel</span>(cl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Training models to see which fits the data better.</p>
-<p>I am running the following models in parallel:</p>
-<ul>
-<li><strong>Logistic Linear model (Logit)</strong>, which captures purely linear relationship, and acts a baseline model for comparison with other models.</li>
-<li><strong>Lasso</strong>, which sets the range of parameters where we are getting rid of the coefficients that are not important.</li>
-<li><strong>Linear Discriminant Analysis (LDA)</strong> is a classification technique that separates data into groups. This model assumes equal variance in groups.</li>
-<li><strong>Quadratic Discriminant Analysis (QDA)</strong> is a classification technique similar to LDA that also accounts for non linear relationships and does not assume equal variance in groups.</li>
-<li><strong>Random Forest (RF)</strong> is an ensemble learning technique, which automatically captures both non liner relationships and interactions. RF creates many decision trees using a bootstrapping approach, drawing random samples of the data, and selecting a random subset of features at each split.</li>
-<li><strong>eXtreme Gradient Boosting (XGBoost)</strong> is another ensemble learning technique, which automatically captures non linear relationships and complex interactions. However, XGBoost builds trees sequentially: each new tree focuses on correcting the errors made by the previous ones.</li>
-</ul>
-<p>Besides, I want to follow the hierarchical modeling approach by designing three sets of models with progressively added predictors. The first set of models has only control and memory-related variables. The second set of models also include the language related variables to see if they improve the predictive performance. The third set of models also has the scores obtained from the BAARS-IV survey.</p>
 <section id="first-model-set" class="level3">
 <h3 class="anchored" data-anchor-id="first-model-set">First Model Set</h3>
 <p>The first set of models includes only control and memory-related variables: memory learning scores, age, sex, and education.</p>
