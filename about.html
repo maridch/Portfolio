@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ADHD Diagnosis Predictor – portfolio</title>
+<title>What Predicts ADHD Diagnosis? – portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,13 +155,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#this-project-aims-to-answer-the-following-research-question-what-factors-best-predict-the-adhd-diagnosis" id="toc-this-project-aims-to-answer-the-following-research-question-what-factors-best-predict-the-adhd-diagnosis" class="nav-link active" data-scroll-target="#this-project-aims-to-answer-the-following-research-question-what-factors-best-predict-the-adhd-diagnosis">This project aims to answer the following research question: What factors best predict the ADHD diagnosis?</a>
-  <ul class="collapse">
-  <li><a href="#step-1-loading-libraries-and-preparing-data-sets" id="toc-step-1-loading-libraries-and-preparing-data-sets" class="nav-link" data-scroll-target="#step-1-loading-libraries-and-preparing-data-sets">Step 1: Loading libraries and preparing data sets</a></li>
+  <li><a href="#step-1-loading-libraries-and-preparing-data-sets" id="toc-step-1-loading-libraries-and-preparing-data-sets" class="nav-link active" data-scroll-target="#step-1-loading-libraries-and-preparing-data-sets">Step 1: Loading libraries and preparing data sets</a></li>
   <li><a href="#step-2-set-up-all-models" id="toc-step-2-set-up-all-models" class="nav-link" data-scroll-target="#step-2-set-up-all-models">Step 2: Set up all models</a></li>
   <li><a href="#step-3-resampling-results-from-all-models-and-creating-the-metrics" id="toc-step-3-resampling-results-from-all-models-and-creating-the-metrics" class="nav-link" data-scroll-target="#step-3-resampling-results-from-all-models-and-creating-the-metrics">Step 3: Resampling results from all models and creating the metrics</a></li>
   <li><a href="#step-4-computing-shap-values-for-rf-to-understand-what-predictors-are-the-most-influential" id="toc-step-4-computing-shap-values-for-rf-to-understand-what-predictors-are-the-most-influential" class="nav-link" data-scroll-target="#step-4-computing-shap-values-for-rf-to-understand-what-predictors-are-the-most-influential">Step 4: Computing SHAP Values for RF to understand what predictors are the most influential</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/maridch/Portfolio/edit/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/maridch/Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -170,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ADHD Diagnosis Predictor</h1>
+<h1 class="title">What Predicts ADHD Diagnosis?</h1>
 </div>
 
 
@@ -187,10 +184,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="this-project-aims-to-answer-the-following-research-question-what-factors-best-predict-the-adhd-diagnosis" class="level1">
-<h1>This project aims to answer the following research question: What factors best predict the ADHD diagnosis?</h1>
+<p>Current project focuses on the factors that can contribute to the prediction of ADHD diagnosis in college students by utilizing different data science techniques. Particularly, it aims to answer the following research question: What factors do best predict the ADHD diagnosis?</p>
+<p>The data set consists of the following variables: DV: ADHD (self-reported clinical ADHD diagnoses, coded as 1- being diagnosed with ADHD and 0- as not being diagnosed with ADHD) IVs: Control variables: Sex (coded as 0 for males, and 1 for females), Age, and Education (number of years of formal education), and PHQ (scores from the PHQ-9 survey, which measures levels of depression) Cognitive variables: DM (a declarative memory score from a verbal declarative memory learning task MLAT and non-verbal declarative memory learning task Declearn), SRT (a procedural memory score from the suquence-learning task SRT), WM (a working memory learning score from a complex working memory span tasks: Ospan, RSpan, and Sspan) Language variables: L2 (a second language learning score obtained on the artificial language learning task) and SpokenLanguages (number of languages that the participants reported knowing)</p>
 <section id="step-1-loading-libraries-and-preparing-data-sets" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-loading-libraries-and-preparing-data-sets">Step 1: Loading libraries and preparing data sets</h2>
+<p>Loading libraries needed to run the analyses.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caret)</span>
@@ -210,7 +208,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">conflicts_prefer</span>(dplyr<span class="sc">::</span>filter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Set WD, load data, and check the names of the variables from the data set</p>
+<p>Setting up working directory, loading data, and checking the names of the variables from the data set.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ProjectData <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"DataScience_Data.xlsx"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ProjectData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -272,11 +270,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#39+ for diagnosis</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Sample Size</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>ProjectData <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Sample Size</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>ProjectData <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
       n
@@ -284,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 1   153</code></pre>
 </div>
 </div>
-<p>Variables to keep</p>
+<p>Since our data set has more variables that we need for the analysis, here, we keep only those that we will use.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ProjectData.K<span class="ot">&lt;-</span>ProjectData <span class="sc">%&gt;%</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Participant, L2, SRT, DM, WM, BAARS, ADHD, PHQ, </span>
@@ -313,6 +308,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  3rd Qu.:1.0000   3rd Qu.:20.00   3rd Qu.:3.000   3rd Qu.:15.00  
  Max.   :2.0000   Max.   :38.00   Max.   :5.000   Max.   :19.00  </code></pre>
 </div>
+</div>
+<p>Factorizing participants and changing how the code will read values from the ADHD column: 1 - as “adhd” and 0 - as “no_adhd”</p>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ProjectData.K<span class="sc">$</span>Participant <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(ProjectData.K<span class="sc">$</span>Participant)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>ProjectData.K<span class="sc">$</span>ADHD[ProjectData.K<span class="sc">$</span>ADHD <span class="sc">==</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"adhd"</span></span>
@@ -326,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
      44     109 </code></pre>
 </div>
 </div>
-<p>Split the data and create training and testing data sets 75% of data will go into the training and 25% of data will go into the testing sets</p>
+<p>Split the data and create training and testing data sets: 75% of data will go into the training and 25% of data will go into the testing sets</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">666</span>)  <span class="co"># Set seed, so that the model produce the consistent results for reproducibility</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -382,8 +380,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>cl <span class="ot">&lt;-</span> <span class="fu">makePSOCKcluster</span>(<span class="fu">detectCores</span>())</span>
 <span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="fu">registerDoParallel</span>(cl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Train models to see which fits the data better I am running the following models: <strong>Logistic Linear model (Logit)</strong>, which captures purely linear relationship. <strong>Lasso</strong>, which sets the range of parameters where we are getting rid of the coefficients that are not important. <strong>Linear Discriminant Analysis (LDA)</strong> is a clustering technique that separates data into groups. This model assumes equal variance in groups <strong>Quadratic Discriminant Analysis (QDA)</strong> <strong>Random Forest (RF)</strong> is an ensemble learning technique, which automatically captures both non liner relationships and interactions. RF creates many decision trees using a bootstrapping approach, drawing random samples of the data, and selecting a random subset of features at each split. <strong>eXtreme Gradient Boosting (XGBoost)</strong> is another ensemble learning technique, which automatically captures non linear relationships and complex interactions. However, XGBoost builds trees sequentially: each new tree focuses on correcting the errors made by the previous ones.</p>
-<p>The first set of models includes only control variables: memory learning scores, age, sex, and education</p>
+<p>Train models to see which fits the data better I am running the following models in parallel: <strong>Logistic Linear model (Logit)</strong>, which captures purely linear relationship. <strong>Lasso</strong>, which sets the range of parameters where we are getting rid of the coefficients that are not important. <strong>Linear Discriminant Analysis (LDA)</strong> is a clustering technique that separates data into groups. This model assumes equal variance in groups <strong>Quadratic Discriminant Analysis (QDA)</strong> <strong>Random Forest (RF)</strong> is an ensemble learning technique, which automatically captures both non liner relationships and interactions. RF creates many decision trees using a bootstrapping approach, drawing random samples of the data, and selecting a random subset of features at each split. <strong>eXtreme Gradient Boosting (XGBoost)</strong> is another ensemble learning technique, which automatically captures non linear relationships and complex interactions. However, XGBoost builds trees sequentially: each new tree focuses on correcting the errors made by the previous ones.</p>
+<p>Besides, I want to follow the hierarchical modeling approach by designing three sets of models with progressively added predictors. The first set of models has only control and memory-related variables. The second set of models also include the language related variables to see if they improve the predictive performance. The third set of models also has the scores obtained from the BAARS-IV survey.</p>
+<p><strong>First Model Set</strong> The first set of models includes only control and memory-related variables: memory learning scores, age, sex, and education</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>models.binary_ADHD_1 <span class="ot">&lt;-</span> <span class="fu">caretList</span>(</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  ADHD <span class="sc">~</span> SRT<span class="sc">+</span>DM<span class="sc">+</span>WM<span class="sc">+</span>PHQ<span class="sc">+</span>Sex<span class="sc">+</span>Age<span class="sc">+</span>Education,</span>
@@ -441,7 +440,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb22-54"><a href="#cb22-54" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb22-55"><a href="#cb22-55" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Train binary models for group 1 (adding language info)</p>
+<p><strong>First Model Set</strong> The second set of models includes control, memory-related variables, and language related variables (language learning score and number of spoken languages)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>models.binary_ADHD_2 <span class="ot">&lt;-</span> <span class="fu">caretList</span>(</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  ADHD <span class="sc">~</span> SRT<span class="sc">+</span>DM<span class="sc">+</span>WM<span class="sc">+</span>PHQ<span class="sc">+</span>Sex<span class="sc">+</span>Age<span class="sc">+</span>Education<span class="sc">+</span>L2<span class="sc">+</span>SpokenLanguages,</span>
@@ -499,7 +498,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-54"><a href="#cb23-54" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb23-55"><a href="#cb23-55" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Train binary models for group 3 (adding BAARS survey)</p>
+<p><strong>First Model Set</strong> The third set of models includes control, memory- and laguage-related variables, and an ADHD symptomatology score</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>models.binary_ADHD_3 <span class="ot">&lt;-</span> <span class="fu">caretList</span>(</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  ADHD <span class="sc">~</span> SRT<span class="sc">+</span>DM<span class="sc">+</span>WM<span class="sc">+</span>PHQ<span class="sc">+</span>Sex<span class="sc">+</span>Age<span class="sc">+</span>Education<span class="sc">+</span>L2<span class="sc">+</span>SpokenLanguages<span class="sc">+</span>BAARS,</span>
@@ -574,7 +573,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="about_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="about_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -584,7 +583,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="about_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="about_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -594,7 +593,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="about_files/figure-html/unnamed-chunk-9-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="about_files/figure-html/unnamed-chunk-10-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -935,14 +934,13 @@ Model 3 - Test  0.643</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="about_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="about_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
