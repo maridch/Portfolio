@@ -1868,7 +1868,7 @@ Prediction adhd no_adhd
 <span id="cb36-38"><a href="#cb36-38" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-39"><a href="#cb36-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar plot of the absolute mean SHAP values</span></span>
 <span id="cb36-40"><a href="#cb36-40" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_BI_shap_abs, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Variable, Mean_SHAP), <span class="at">y =</span> Mean_SHAP)) <span class="sc">+</span></span>
-<span id="cb36-41"><a href="#cb36-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb36-41"><a href="#cb36-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"#F8766D"</span>) <span class="sc">+</span></span>
 <span id="cb36-42"><a href="#cb36-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Absolute Mean SHAP Values for RF Binary Model"</span>,</span>
 <span id="cb36-43"><a href="#cb36-43" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Variable"</span>,</span>
 <span id="cb36-44"><a href="#cb36-44" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Absolute Mean SHAP Value"</span>) <span class="sc">+</span></span>
