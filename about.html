@@ -159,6 +159,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#step-2-setting-up-all-models" id="toc-step-2-setting-up-all-models" class="nav-link" data-scroll-target="#step-2-setting-up-all-models">Step 2: Setting up all models</a>
   <ul class="collapse">
   <li><a href="#first-model-set" id="toc-first-model-set" class="nav-link" data-scroll-target="#first-model-set">First Model Set</a></li>
+  <li><a href="#second-model-set" id="toc-second-model-set" class="nav-link" data-scroll-target="#second-model-set">Second Model Set</a></li>
+  <li><a href="#third-model-set" id="toc-third-model-set" class="nav-link" data-scroll-target="#third-model-set">Third Model Set</a></li>
   </ul></li>
   <li><a href="#step-3-resampling-results-from-all-models-and-creating-the-metrics" id="toc-step-3-resampling-results-from-all-models-and-creating-the-metrics" class="nav-link" data-scroll-target="#step-3-resampling-results-from-all-models-and-creating-the-metrics">Step 3: Resampling results from all models and creating the metrics</a></li>
   <li><a href="#step-4-computing-shap-values-for-xgboost-model-2" id="toc-step-4-computing-shap-values-for-xgboost-model-2" class="nav-link" data-scroll-target="#step-4-computing-shap-values-for-xgboost-model-2">Step 4: Computing SHAP Values for XGBOOST, Model 2</a></li>
@@ -452,8 +454,10 @@ Language variables: <em>L2</em> (a second language learning score obtained on th
 <span id="cb21-54"><a href="#cb21-54" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb21-55"><a href="#cb21-55" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Second Model Set</strong><br>
-The second set of models includes control, memory-related variables, and language related variables (language learning score and number of spoken languages).</p>
+</section>
+<section id="second-model-set" class="level3">
+<h3 class="anchored" data-anchor-id="second-model-set">Second Model Set</h3>
+<p>The second set of models includes control, memory-related variables, and language related variables (language learning score and number of spoken languages).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>models.binary_ADHD_2 <span class="ot">&lt;-</span> <span class="fu">caretList</span>(</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  ADHD <span class="sc">~</span> SRT<span class="sc">+</span>DM<span class="sc">+</span>WM<span class="sc">+</span>PHQ<span class="sc">+</span>Sex<span class="sc">+</span>Age<span class="sc">+</span>Education<span class="sc">+</span>L2<span class="sc">+</span>SpokenLanguages,</span>
@@ -511,8 +515,10 @@ The second set of models includes control, memory-related variables, and languag
 <span id="cb22-54"><a href="#cb22-54" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb22-55"><a href="#cb22-55" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Third Model Set</strong><br>
-The third set of models includes control, memory- and laguage-related variables, and the ADHD symptomatology score.</p>
+</section>
+<section id="third-model-set" class="level3">
+<h3 class="anchored" data-anchor-id="third-model-set">Third Model Set</h3>
+<p>The third set of models includes control, memory- and laguage-related variables, and the ADHD symptomatology score.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>models.binary_ADHD_3 <span class="ot">&lt;-</span> <span class="fu">caretList</span>(</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  ADHD <span class="sc">~</span> SRT<span class="sc">+</span>DM<span class="sc">+</span>WM<span class="sc">+</span>PHQ<span class="sc">+</span>Sex<span class="sc">+</span>Age<span class="sc">+</span>Education<span class="sc">+</span>L2<span class="sc">+</span>SpokenLanguages<span class="sc">+</span>BAARS,</span>
