@@ -1846,42 +1846,36 @@ Prediction adhd no_adhd
 <span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute SHAP values using fastshap for one of the QDR models</span></span>
 <span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
-<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>BI_shap_vals_RF <span class="ot">&lt;-</span> fastshap<span class="sc">::</span><span class="fu">explain</span>(</span>
-<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">object =</span> models.binary_ADHD_2<span class="sc">$</span>RF, </span>
-<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">X =</span> BI_X_train,</span>
-<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">pred_wrapper =</span> predict_prob_BI,</span>
-<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">nsim =</span> <span class="dv">50</span></span>
-<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Signed and Absolute Mean SHAP values for each predictor</span></span>
-<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a>BI_signed_mean_RF <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(BI_shap_vals_RF)</span>
-<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a>BI_abs_mean_RF    <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(<span class="fu">abs</span>(BI_shap_vals_RF))</span>
-<span id="cb36-30"><a href="#cb36-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-31"><a href="#cb36-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the SHAP means into a data frame for plotting.</span></span>
-<span id="cb36-32"><a href="#cb36-32" aria-hidden="true" tabindex="-1"></a>df_BI_shap_means <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb36-33"><a href="#cb36-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">names</span>(BI_signed_mean_RF),</span>
-<span id="cb36-34"><a href="#cb36-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">Signed   =</span> BI_signed_mean_RF,</span>
-<span id="cb36-35"><a href="#cb36-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">Absolute =</span> BI_abs_mean_RF</span>
-<span id="cb36-36"><a href="#cb36-36" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb36-37"><a href="#cb36-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-38"><a href="#cb36-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to long format for ggplot.</span></span>
-<span id="cb36-39"><a href="#cb36-39" aria-hidden="true" tabindex="-1"></a>df_BI_shap_long <span class="ot">&lt;-</span> df_BI_shap_means <span class="sc">%&gt;%</span></span>
-<span id="cb36-40"><a href="#cb36-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Signed, Absolute),</span>
-<span id="cb36-41"><a href="#cb36-41" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Metric"</span>,</span>
-<span id="cb36-42"><a href="#cb36-42" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Mean_SHAP"</span>)</span>
-<span id="cb36-43"><a href="#cb36-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-44"><a href="#cb36-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar plot of the mean SHAP values.</span></span>
-<span id="cb36-45"><a href="#cb36-45" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_BI_shap_long, <span class="fu">aes</span>(<span class="at">x =</span> Variable, <span class="at">y =</span> Mean_SHAP, <span class="at">fill =</span> Metric)) <span class="sc">+</span></span>
-<span id="cb36-46"><a href="#cb36-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Metric, <span class="at">scales =</span> <span class="st">"free"</span>) <span class="sc">+</span></span>
-<span id="cb36-47"><a href="#cb36-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb36-48"><a href="#cb36-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mean SHAP Values for RF Binary Model"</span>,</span>
-<span id="cb36-49"><a href="#cb36-49" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Variable"</span>,</span>
-<span id="cb36-50"><a href="#cb36-50" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Mean SHAP Value"</span>) <span class="sc">+</span></span>
-<span id="cb36-51"><a href="#cb36-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb36-52"><a href="#cb36-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb36-53"><a href="#cb36-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-54"><a href="#cb36-54" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>BI_shap_vals_RF <span class="ot">&lt;-</span> fastshap<span class="sc">::</span><span class="fu">explain</span>(</span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">object =</span> models.binary_ADHD_2<span class="sc">$</span>RF, </span>
+<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">X =</span> BI_X_train,</span>
+<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">pred_wrapper =</span> predict_prob_BI,</span>
+<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">nsim =</span> <span class="dv">50</span></span>
+<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate only Absolute Mean SHAP values for each predictor</span></span>
+<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a>BI_abs_mean_RF <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(<span class="fu">abs</span>(BI_shap_vals_RF))</span>
+<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame for absolute SHAP values</span></span>
+<span id="cb36-30"><a href="#cb36-30" aria-hidden="true" tabindex="-1"></a>df_BI_shap_abs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb36-31"><a href="#cb36-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">names</span>(BI_abs_mean_RF),</span>
+<span id="cb36-32"><a href="#cb36-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">Mean_SHAP =</span> BI_abs_mean_RF</span>
+<span id="cb36-33"><a href="#cb36-33" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb36-34"><a href="#cb36-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-35"><a href="#cb36-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Order variables by importance (optional but common)</span></span>
+<span id="cb36-36"><a href="#cb36-36" aria-hidden="true" tabindex="-1"></a>df_BI_shap_abs <span class="ot">&lt;-</span> df_BI_shap_abs <span class="sc">%&gt;%</span></span>
+<span id="cb36-37"><a href="#cb36-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Mean_SHAP))</span>
+<span id="cb36-38"><a href="#cb36-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-39"><a href="#cb36-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar plot of the absolute mean SHAP values</span></span>
+<span id="cb36-40"><a href="#cb36-40" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_BI_shap_abs, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Variable, Mean_SHAP), <span class="at">y =</span> Mean_SHAP)) <span class="sc">+</span></span>
+<span id="cb36-41"><a href="#cb36-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb36-42"><a href="#cb36-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Absolute Mean SHAP Values for RF Binary Model"</span>,</span>
+<span id="cb36-43"><a href="#cb36-43" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Variable"</span>,</span>
+<span id="cb36-44"><a href="#cb36-44" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Absolute Mean SHAP Value"</span>) <span class="sc">+</span></span>
+<span id="cb36-45"><a href="#cb36-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb36-46"><a href="#cb36-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb36-47"><a href="#cb36-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-48"><a href="#cb36-48" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
