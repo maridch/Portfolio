@@ -187,11 +187,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The current project focuses on the factors that can contribute to the prediction of ADHD diagnosis in college students by utilizing different data science techniques. Particularly, it aims to answer the following research question: What factors do best predict the ADHD diagnosis?<br>
 </p>
 <p>The data set consists of the following variables:<br>
-<strong>DV</strong>: <em>ADHD</em> (self-reported clinical ADHD diagnoses, coded as 1- being diagnosed with ADHD and 0- as not being diagnosed with ADHD)<br>
+<strong>DV</strong>: <em>ADHD</em> (self-reported clinical ADHD diagnoses, coded as 1- if participants reported being diagnosed with ADHD and 0- if participants did not report being diagnosed with ADHD)<br>
 <strong>IVs</strong>:<br>
-Control variables: <em>Sex</em> (coded as 0 for males, and 1 for females), <em>Age</em>, <em>Education</em> (number of years of formal education), and <em>PHQ</em> (scores from the PHQ-9 survey, which measures levels of depression)<br>
-Cognitive variables: <em>DM</em> (a declarative memory score from a verbal declarative memory learning task MLAT and non-verbal declarative memory learning task Declearn), <em>SRT</em> (a procedural memory score from the suquence-learning task SRT), <em>WM</em> (a working memory learning score from a complex working memory span tasks: Ospan, RSpan, and Sspan)<br>
-Language variables: <em>L2</em> (a second language learning score obtained on the artificial language learning task) and <em>SpokenLanguages</em> (number of languages that the participants reported knowing)<br>
+* Control variables: <em>Sex</em> (coded as 0 for males, and 1 for females), <em>Age</em>, <em>Education</em> (number of years of formal education), and <em>PHQ</em> (scores from the PHQ-9 survey, which measures levels of depression)<br>
+* Cognitive variables: <em>DM</em> (a declarative memory score from a verbal declarative memory learning task MLAT and non-verbal declarative memory learning task Declearn), <em>SRT</em> (a procedural memory score from the suquence-learning task SRT), <em>WM</em> (a working memory learning score from a complex working memory span tasks: Ospan, RSpan, and Sspan)<br>
+* Language variables: <em>L2</em> (a second language learning score obtained on the artificial language learning task) and <em>SpokenLanguages</em> (number of languages that the participants reported knowing)<br>
 </p>
 <section id="step-1-loading-libraries-and-preparing-data-sets" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-loading-libraries-and-preparing-data-sets">Step 1: Loading libraries and preparing data sets</h2>
@@ -910,15 +910,16 @@ Model 3 - Test     0.737             0.761       0.818       0.704</code></pre>
 <span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Mean_SHAP))</span>
 <span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar plot of the absolute mean SHAP values</span></span>
-<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_BI_shap_abs, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Variable, Mean_SHAP), <span class="at">y =</span> Mean_SHAP)) <span class="sc">+</span></span>
-<span id="cb41-38"><a href="#cb41-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"#F8766D"</span>) <span class="sc">+</span></span>
-<span id="cb41-39"><a href="#cb41-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Absolute Mean SHAP Values for RF Binary Model"</span>,</span>
-<span id="cb41-40"><a href="#cb41-40" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Variable"</span>,</span>
-<span id="cb41-41"><a href="#cb41-41" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Absolute Mean SHAP Value"</span>) <span class="sc">+</span></span>
-<span id="cb41-42"><a href="#cb41-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb41-43"><a href="#cb41-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb41-44"><a href="#cb41-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-45"><a href="#cb41-45" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI <span class="ot">&lt;-</span> </span>
+<span id="cb41-38"><a href="#cb41-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(df_BI_shap_abs, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Variable, Mean_SHAP), <span class="at">y =</span> Mean_SHAP)) <span class="sc">+</span></span>
+<span id="cb41-39"><a href="#cb41-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"#F8766D"</span>) <span class="sc">+</span></span>
+<span id="cb41-40"><a href="#cb41-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Absolute Mean SHAP Values for RF Binary Model"</span>,</span>
+<span id="cb41-41"><a href="#cb41-41" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Variable"</span>,</span>
+<span id="cb41-42"><a href="#cb41-42" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Absolute Mean SHAP Value"</span>) <span class="sc">+</span></span>
+<span id="cb41-43"><a href="#cb41-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb41-44"><a href="#cb41-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb41-45"><a href="#cb41-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-46"><a href="#cb41-46" aria-hidden="true" tabindex="-1"></a>Shap_Means_BI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
