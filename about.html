@@ -644,65 +644,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb28-56"><a href="#cb28-56" aria-hidden="true" tabindex="-1"></a>extract_metrics <span class="ot">&lt;-</span> <span class="cf">function</span>(cm_obj) {</span>
 <span id="cb28-57"><a href="#cb28-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
 <span id="cb28-58"><a href="#cb28-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">Accuracy =</span> cm_obj<span class="sc">$</span>overall[<span class="st">"Accuracy"</span>],</span>
-<span id="cb28-59"><a href="#cb28-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">Kappa =</span> cm_obj<span class="sc">$</span>overall[<span class="st">"Kappa"</span>],</span>
-<span id="cb28-60"><a href="#cb28-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">Balanced_Accuracy =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Balanced Accuracy"</span>],</span>
-<span id="cb28-61"><a href="#cb28-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">Sensitivity =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Sensitivity"</span>],</span>
-<span id="cb28-62"><a href="#cb28-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">Specificity =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Specificity"</span>],</span>
-<span id="cb28-63"><a href="#cb28-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">Precision =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Pos Pred Value"</span>],</span>
-<span id="cb28-64"><a href="#cb28-64" aria-hidden="true" tabindex="-1"></a>    <span class="at">NPV =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Neg Pred Value"</span>],</span>
-<span id="cb28-65"><a href="#cb28-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">F1 =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"F1"</span>],</span>
-<span id="cb28-66"><a href="#cb28-66" aria-hidden="true" tabindex="-1"></a>    <span class="at">DetectionRate =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Detection Rate"</span>],</span>
-<span id="cb28-67"><a href="#cb28-67" aria-hidden="true" tabindex="-1"></a>    <span class="at">DetectionPrevalence =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Detection Prevalence"</span>],</span>
-<span id="cb28-68"><a href="#cb28-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">Prevalence =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Prevalence"</span>],</span>
-<span id="cb28-69"><a href="#cb28-69" aria-hidden="true" tabindex="-1"></a>    <span class="at">MCC =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Matthews Corr"</span>]</span>
-<span id="cb28-70"><a href="#cb28-70" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb28-71"><a href="#cb28-71" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb28-59"><a href="#cb28-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">Sensitivity =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Sensitivity"</span>],</span>
+<span id="cb28-60"><a href="#cb28-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">Specificity =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Specificity"</span>],</span>
+<span id="cb28-61"><a href="#cb28-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">Precision =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"Pos Pred Value"</span>],</span>
+<span id="cb28-62"><a href="#cb28-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">F1 =</span> cm_obj<span class="sc">$</span>byClass[<span class="st">"F1"</span>]</span>
+<span id="cb28-63"><a href="#cb28-63" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb28-64"><a href="#cb28-64" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb28-65"><a href="#cb28-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-66"><a href="#cb28-66" aria-hidden="true" tabindex="-1"></a><span class="co"># Label for rows</span></span>
+<span id="cb28-67"><a href="#cb28-67" aria-hidden="true" tabindex="-1"></a>model_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb28-68"><a href="#cb28-68" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Model 1 - Train"</span>, <span class="st">"Model 1 - Test"</span>,</span>
+<span id="cb28-69"><a href="#cb28-69" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Model 2 - Train"</span>, <span class="st">"Model 2 - Test"</span>,</span>
+<span id="cb28-70"><a href="#cb28-70" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Model 3 - Train"</span>, <span class="st">"Model 3 - Test"</span></span>
+<span id="cb28-71"><a href="#cb28-71" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb28-72"><a href="#cb28-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-73"><a href="#cb28-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Label for rows</span></span>
-<span id="cb28-74"><a href="#cb28-74" aria-hidden="true" tabindex="-1"></a>model_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb28-75"><a href="#cb28-75" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Model 1 - Train"</span>, <span class="st">"Model 1 - Test"</span>,</span>
-<span id="cb28-76"><a href="#cb28-76" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Model 2 - Train"</span>, <span class="st">"Model 2 - Test"</span>,</span>
-<span id="cb28-77"><a href="#cb28-77" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Model 3 - Train"</span>, <span class="st">"Model 3 - Test"</span></span>
-<span id="cb28-78"><a href="#cb28-78" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb28-79"><a href="#cb28-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-80"><a href="#cb28-80" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine metrics from each confusion matrix</span></span>
-<span id="cb28-81"><a href="#cb28-81" aria-hidden="true" tabindex="-1"></a>xgb_metrics_table <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
-<span id="cb28-82"><a href="#cb28-82" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_1<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST),</span>
-<span id="cb28-83"><a href="#cb28-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_1<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST),</span>
-<span id="cb28-84"><a href="#cb28-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_2<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST),</span>
-<span id="cb28-85"><a href="#cb28-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_2<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST),</span>
-<span id="cb28-86"><a href="#cb28-86" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_3<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST),</span>
-<span id="cb28-87"><a href="#cb28-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_3<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST)</span>
-<span id="cb28-88"><a href="#cb28-88" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb28-89"><a href="#cb28-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-90"><a href="#cb28-90" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and clean up</span></span>
-<span id="cb28-91"><a href="#cb28-91" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(xgb_metrics_table) <span class="ot">&lt;-</span> model_labels</span>
-<span id="cb28-92"><a href="#cb28-92" aria-hidden="true" tabindex="-1"></a>xgb_metrics_table <span class="ot">&lt;-</span> <span class="fu">round</span>(xgb_metrics_table, <span class="dv">3</span>)</span>
-<span id="cb28-93"><a href="#cb28-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-94"><a href="#cb28-94" aria-hidden="true" tabindex="-1"></a><span class="co"># Print final table</span></span>
-<span id="cb28-95"><a href="#cb28-95" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(xgb_metrics_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-73"><a href="#cb28-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine metrics from each confusion matrix</span></span>
+<span id="cb28-74"><a href="#cb28-74" aria-hidden="true" tabindex="-1"></a>xgb_metrics_table <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb28-75"><a href="#cb28-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_1<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST),</span>
+<span id="cb28-76"><a href="#cb28-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_1<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST),</span>
+<span id="cb28-77"><a href="#cb28-77" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_2<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST),</span>
+<span id="cb28-78"><a href="#cb28-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_2<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST),</span>
+<span id="cb28-79"><a href="#cb28-79" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_3<span class="sc">$</span>Train<span class="sc">$</span>XGBOOST),</span>
+<span id="cb28-80"><a href="#cb28-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_metrics</span>(CM.models.binary_ADHD_3<span class="sc">$</span>Test<span class="sc">$</span>XGBOOST)</span>
+<span id="cb28-81"><a href="#cb28-81" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-82"><a href="#cb28-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-83"><a href="#cb28-83" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and clean up</span></span>
+<span id="cb28-84"><a href="#cb28-84" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(xgb_metrics_table) <span class="ot">&lt;-</span> model_labels</span>
+<span id="cb28-85"><a href="#cb28-85" aria-hidden="true" tabindex="-1"></a>xgb_metrics_table <span class="ot">&lt;-</span> <span class="fu">round</span>(xgb_metrics_table, <span class="dv">3</span>)</span>
+<span id="cb28-86"><a href="#cb28-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-87"><a href="#cb28-87" aria-hidden="true" tabindex="-1"></a><span class="co"># Print final table</span></span>
+<span id="cb28-88"><a href="#cb28-88" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(xgb_metrics_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                Accuracy Kappa Balanced_Accuracy Sensitivity Specificity
-Model 1 - Train    0.913 0.766             0.848       0.697       1.000
-Model 1 - Test     0.737 0.422             0.734       0.727       0.741
-Model 2 - Train    0.913 0.771             0.858       0.727       0.988
-Model 2 - Test     0.763 0.467             0.753       0.727       0.778
-Model 3 - Train    0.965 0.913             0.948       0.909       0.988
-Model 3 - Test     0.737 0.449             0.761       0.818       0.704
-                Precision   NPV    F1 DetectionRate DetectionPrevalence
-Model 1 - Train     1.000 0.891 0.821         0.200               0.200
-Model 1 - Test      0.533 0.870 0.615         0.211               0.395
-Model 2 - Train     0.960 0.900 0.828         0.209               0.217
-Model 2 - Test      0.571 0.875 0.640         0.211               0.368
-Model 3 - Train     0.968 0.964 0.937         0.261               0.270
-Model 3 - Test      0.529 0.905 0.643         0.237               0.447
-                Prevalence MCC
-Model 1 - Train      0.287  NA
-Model 1 - Test       0.289  NA
-Model 2 - Train      0.287  NA
-Model 2 - Test       0.289  NA
-Model 3 - Train      0.287  NA
-Model 3 - Test       0.289  NA</code></pre>
+<pre><code>                Accuracy Sensitivity Specificity Precision    F1
+Model 1 - Train    0.913       0.697       1.000     1.000 0.821
+Model 1 - Test     0.737       0.727       0.741     0.533 0.615
+Model 2 - Train    0.913       0.727       0.988     0.960 0.828
+Model 2 - Test     0.763       0.727       0.778     0.571 0.640
+Model 3 - Train    0.965       0.909       0.988     0.968 0.937
+Model 3 - Test     0.737       0.818       0.704     0.529 0.643</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#RF seems the winner (I do not think that Alex agreed here). </span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated helper function to compute Mean_Balanced_Accuracy using multiClassSummary</span></span>
