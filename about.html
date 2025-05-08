@@ -189,11 +189,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The current project focuses on the factors that can contribute to the prediction of the ADHD diagnosis in college students by utilizing different data science techniques (including the Lasso, LDA, QDA, Random Forest, and XGBOOST methods) and using the hierarchical modeling approach. Particularly, it aims to answer the following research question: What factors best predict the ADHD diagnosis?<br>
-The data were obtained from research conducted at a large Midwestern college. Each study session lasted approximately 3 hours, and participants had to complete computerized tasks measuring long-term and working memory, an artificial language learning task, ADHD and depression surveys, and a background questionnaire.<br>
+<p>The current project focuses on identifying the factors that contribute to the prediction of ADHD diagnoses in college students by applying various data science techniques (including Lasso, LDA, QDA, Random Forest, and XGBOOST) and using a hierarchical modeling framework. Particularly, it aims to answer the following research question: What factors best predict the ADHD diagnosis?<br>
+The data were obtained from a research study conducted at a large Midwestern college. Each study session lasted approximately 3 hours, during which participants had to complete computerized tasks measuring long-term and working memory, an artificial language learning task, ADHD and depression surveys, and a background questionnaire.<br>
 </p>
 <p>The data set (<em>N</em>=153) consists of the following variables:<br>
-<strong>DV</strong>: <em>ADHD</em> (self-reported clinical ADHD diagnoses, coded as 1- if participants reported being diagnosed with ADHD and 0- if participants did not report being diagnosed with ADHD)<br>
+<strong>DV</strong>: <em>ADHD</em> (self-reported clinical ADHD diagnoses, coded as 1- if participants reported being diagnosed with ADHD and 0- if participants did not report being diagnosed with ADHD).<br>
 <strong>IVs</strong>:<br>
 Control variables: <em>Sex</em> (coded as 0 for males, and 1 for females), <em>Age</em>, <em>Education</em> (number of years of formal education), <em>PHQ</em> (scores from the PHQ-9 survey, which measures levels of depression).<br>
 Cognitive variables: <em>DM</em> (a composite declarative memory score from a verbal declarative memory learning ability task MLAT and non-verbal declarative memory learning ability task Declearn), <em>SRT</em> (a procedural memory learning ability score from the sequence-learning task SRT), <em>WM</em> (a summed working memory score from the shortened versions of the complex working memory Span tasks: Ospan, RSpan, and Sspan).<br>
@@ -333,7 +333,7 @@ Language variables: <em>L2</em> (a second language learning score obtained on th
 <li><strong>Random Forest (RF)</strong>, which is an ensemble learning technique, which automatically captures both non liner relationships and interactions. RF creates many decision trees using a bootstrapping approach, drawing random samples of the data, and selecting a random subset of features at each split.</li>
 <li><strong>eXtreme Gradient Boosting (XGBoost)</strong>, which is another ensemble learning technique, which automatically captures non linear relationships and complex interactions. However, XGBoost builds trees sequentially: each new tree focuses on correcting the errors made by the previous ones.</li>
 </ul>
-<p>Besides, I want to follow the hierarchical modeling approach by designing three sets of models with progressively added predictors. The first set of models has only control and memory-related variables. The second set of models also include the language related variables to see if they improve the predictive performance. The third set of models also has the scores obtained from the BAARS-IV survey.</p>
+<p>Besides, I want to follow the hierarchical modeling approach by designing three sets of models with progressively added predictors. The first set of models has only control and memory-related variables. The second set of models also includes the language related variables to see if they improve the predictive performance. The third set of models also has the scores obtained from the BAARS-IV survey.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up cross-validation using ROC as the metric</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>BI_cv_control <span class="ot">&lt;-</span> <span class="fu">trainControl</span>(</span>
@@ -793,7 +793,7 @@ Prediction adhd no_adhd
 </div>
 </div>
 <p>Importantly, we focus on the sensitivity and specificity because it is important to see how well the model can identify if the person has/does not have ADHD rather than looking at the performance of the model overall. We are also including a comparative table with the parameters to easier compare and identify what model to keep.</p>
-<p>While Model 3 seems to have the highest sensitivity (0.818) and balanced accuracy (0.761) on the test set, it also has a larger decrease in specificity and greater divergence between the training and testing performance. In contrast, Model 2 shows lower sensitivity (0.727), but has a smaller gap between training and test results. Therefore, I chose to proceed with Model 2, as it appears to be the most stable and generalizable model across all sets.</p>
+<p>While Model 3 seems to have the highest sensitivity (0.818) and balanced accuracy (0.761) on the test set, it also has a larger decrease in specificity and greater divergence between the training and testing performance. In contrast, Model 2 shows lower sensitivity (0.727), but has a smaller gap between training and test results. Therefore, we proceed with Model 2, as it appears to be the most stable and generalizable model across all sets.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -844,7 +844,7 @@ Model 3 - Test     0.737             0.761       0.818       0.704</code></pre>
 </section>
 <section id="step-4-computing-shap-values-for-xgboost-model-2" class="level2">
 <h2 class="anchored" data-anchor-id="step-4-computing-shap-values-for-xgboost-model-2">Step 4: Computing SHAP Values for XGBOOST, Model 2</h2>
-<p>In order to determine which variables best predict ADHD diagnoses, we focus on the absolute SHAP values. Unlike mean SHAP values, absolute values do not indicate the direction (i.e., whether a variable increases or decreases the prediction), but they do reflect the magnitude of each predictor’s contribution. This is especially important to note given our small sample size, where mean SHAP values can be unstable and may even flip direction of the prediction. In contrast, absolute SHAP values provide a more reliable indication of which predictors are most influential.</p>
+<p>In order to determine which variables best predict ADHD diagnoses, we focus on the absolute SHAP values. Unlike mean SHAP values, absolute values do not indicate the direction (i.e., whether a variable increases or decreases the prediction), but they do reflect the magnitude of each predictor’s contribution. This is especially important to note given our small sample size, where mean SHAP values can be unstable and may even flip direction of the prediction. In contrast, absolute SHAP values provide a more reliable indication of which predictors are most influential. Thus, we proceed with them.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a character vector with the names of the selected predictors</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>selected_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"L2"</span>, <span class="st">"SRT"</span>, <span class="st">"DM"</span>, <span class="st">"WM"</span>, <span class="st">"PHQ"</span>, <span class="st">"Sex"</span>, <span class="st">"Age"</span>, </span>
